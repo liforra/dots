@@ -3484,3 +3484,7 @@ cd ..
 ls
 cd .dots
 git add *
+git commit -am "added a few more files<\n>"
+git push
+rm -r .sys/obsidian/Cache/Cache_Data/
+git push
