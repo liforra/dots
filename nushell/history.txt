@@ -3488,3 +3488,37 @@ git commit -am "added a few more files<\n>"
 git push
 rm -r .sys/obsidian/Cache/Cache_Data/
 git push
+git filter-repo --path .sys/obsidian/Cache/Cache_Data/99e1ec592a512029_0 --path .sys/obsidian/Cache/Cache_Data/e6caa711933bbee2_0 --invert-paths --force
+git push
+git push main https://github.com/liforra/dots.git
+git push main remote https://github.com/liforra/dots.git
+git remote add origin https://github.com/liforra/dots.git
+git push origin main --force
+git push
+git clone https://github.com/liforra/dots.git
+ls
+ls -a
+cp dots/.git ./.git
+cp -rvp dots/.git ./.git
+rm dots
+rm -rvp dots
+git push
+git remote -v
+cd dots
+git status
+cd ..
+cd cloned
+git clone https://github.com/liforra/dots.git
+cd dots
+ls
+pwd
+git status
+cd .dots
+ls
+cd .dots
+git pull
+git push
+ls
+echo "" > setup.sh
+bash -c "echo "" > setup.sh"
+nvim setup.sh
