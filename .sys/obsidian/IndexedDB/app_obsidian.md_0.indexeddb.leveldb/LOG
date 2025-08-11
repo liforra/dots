@@ -1,0 +1,24 @@
+2025/07/29-14:14:25.404 d3368 Reusing MANIFEST /home/liforra/.config/obsidian/IndexedDB/app_obsidian.md_0.indexeddb.leveldb/MANIFEST-000001
+2025/07/29-14:14:25.405 d3368 Recovering log #28
+2025/07/29-14:14:25.423 d3368 Reusing old log /home/liforra/.config/obsidian/IndexedDB/app_obsidian.md_0.indexeddb.leveldb/000028.log 
+2025/07/29-14:14:58.171 d33e5 Level-0 table #33: started
+2025/07/29-14:14:58.188 d33e5 Level-0 table #33: 3212492 bytes OK
+2025/07/29-14:14:58.191 d33e5 Delete type=0 #28
+2025/07/29-14:14:58.192 d3368 Manual compaction at level-0 from '\x00\x0a\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x0b\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/07/29-14:14:58.193 d3368 Manual compaction at level-1 from '\x00\x0a\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x0b\x00\x00\x00' @ 0 : 0; will stop at '\x00\x0a\x00\x00\xc8\x04\x00d\x00a\x00t\x00a' @ 45066 : 0
+2025/07/29-14:14:58.193 d3368 Compacting 1@1 + 1@2 files
+2025/07/29-14:14:58.205 d3368 Generated table #34@1: 2110 keys, 1076275 bytes
+2025/07/29-14:14:58.205 d3368 Compacted 1@1 + 1@2 files => 1076275 bytes
+2025/07/29-14:14:58.208 d3368 compacted to: files[ 0 0 1 0 0 0 0 ]
+2025/07/29-14:14:58.208 d3368 Delete type=2 #33
+2025/07/29-14:14:58.208 d3368 Manual compaction at level-1 from '\x00\x0a\x00\x00\xc8\x04\x00d\x00a\x00t\x00a' @ 45066 : 0 .. '\x00\x0b\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/07/29-15:14:36.515 d3369 Level-0 table #36: started
+2025/07/29-15:14:36.540 d3369 Level-0 table #36: 4014987 bytes OK
+2025/07/29-15:14:36.546 d3369 Delete type=2 #30
+2025/07/29-15:14:36.547 d3369 Delete type=0 #32
+2025/07/29-15:14:37.306 d3369 Compacting 1@1 + 1@2 files
+2025/07/29-15:14:37.322 d3369 Generated table #37@1: 1953 keys, 1183311 bytes
+2025/07/29-15:14:37.322 d3369 Compacted 1@1 + 1@2 files => 1183311 bytes
+2025/07/29-15:14:37.336 d3369 compacted to: files[ 0 0 1 0 0 0 0 ]
+2025/07/29-15:14:37.337 d3369 Delete type=2 #34
+2025/07/29-15:14:37.337 d3369 Delete type=2 #36

@@ -3449,3 +3449,38 @@ cd .dots
 ls
 git commit -am "Init"
 git add *
+git commit -am "Init"
+git push
+nvim auto-update.sh
+dnvim ~/.config/systemd/user/dots-auto-update.service
+cd ..
+cp -rvp .oldconfig/system ./.config/systemd
+cp -rvp .oldconfig/systemd ./.config/system
+cd .config
+mv system systemd
+dnvim ~/.config/systemd/user/dots-auto-update.service
+nvim ~/.config/systemd/user/dots-auto-update.timer
+chmod +x ~/.dots/auto-update.sh<\n>systemctl --user enable --now dots-auto-update.timer
+journalctl dots-auto-update
+systemdctl status --user dots-auto-update
+systemctl status --user dots-auto-update
+cd ..
+cd .dots
+ls
+echo "" > setup.sh
+bash -c "echo "" > setup.sh"
+nvim setup.sh
+empty
+ls
+mkdir .sys
+nvim auto-update.sh
+ls
+cd ..
+cd .oldconfig/
+ls
+ls -a pulse onlyoffice rclone plasma* partitionmanagerrc obsidian nautilus obs-studio k* gtk* go | each {|it| cp -rv --progress $it ../.dots/.sys }
+cp -rvp pulse ../.dots/.sys; cp -rvp onlyoffice ../.dots/.sys; cp -rvp rclone ../.dots/.sys; cp -rvp plasma* ../.dots/.sys; cp -rvp partitionmanagerrc ../.dots/.sys; cp -rvp obsidian ../.dots/.sys; cp -rvp nautilus ../.dots/.sys; cp -rvp obs-studio ../.dots/.sys; cp -rvp k* ../.dots/.sys; cp -rvp gtk* ../.dots/.sys; cp -rvp go ../.dots/.sys
+cd ..
+ls
+cd .dots
+git add *

@@ -1,0 +1,5 @@
+[General]
+Autostart=true
+Certificate=/home/liforra/.local/share/krdpserver/krdp.crt
+CertificateKey=/home/liforra/.local/share/krdpserver/krdp.key
+Users=liforra
