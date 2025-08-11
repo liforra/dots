@@ -3541,3 +3541,15 @@ echo "" > setup.sh
 bash -c "echo "" > setup.sh"
 nvim setup.sh
 ./setup.sh
+git commit -am "Added better pkgmgr handling"
+git push
+cd .dots
+bash -c "echo "" > setup.sh"
+nvim setup.sh
+./setup.sh
+nvim setup.sh
+bash -c "echo "" > setup.sh"
+nvim setup.sh
+./setup.sh
+nvim setup.sh
+./setup.sh

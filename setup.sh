@@ -107,7 +107,7 @@ if [ ${#missing_pkgs[@]} -gt 0 ]; then
     sudo pacman -S --needed "${missing_pkgs[@]}"
   else
     wait_for_apt_lock
-    sudo apt update -y
+    sudo apt update -y --allow-releaseinfo-change || true
     for pkg in "${missing_pkgs[@]}"; do
       case "$pkg" in
       neovim)
@@ -118,14 +118,14 @@ if [ ${#missing_pkgs[@]} -gt 0 ]; then
             sudo apt install -y software-properties-common
             sudo add-apt-repository -y ppa:neovim-ppa/unstable
             wait_for_apt_lock
-            sudo apt update -y
+            sudo apt update -y --allow-releaseinfo-change || true
             sudo apt install -y neovim
           fi
         else
           sudo apt install -y software-properties-common
           sudo add-apt-repository -y ppa:neovim-ppa/unstable
           wait_for_apt_lock
-          sudo apt update -y
+          sudo apt update -y --allow-releaseinfo-change || true
           sudo apt install -y neovim
         fi
         ;;
@@ -164,7 +164,9 @@ link_dir_to_config() {
   for entry in "$source_dir"/*; do
     name=$(basename "$entry")
     case "$name" in
-    LICENSE | .git | .gitignore | setup.sh) continue ;;
+    LICENSE | .git | .gitignore | setup.sh)
+      continue
+      ;;
     esac
     if [[ "$name" == *".nosym."* ]]; then
       continue
