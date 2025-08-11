@@ -17,8 +17,7 @@ backup_and_remove() {
   local target="$1"
   if [ -e "$target" ] || [ -L "$target" ]; then
     info "Backing up $target → ${target}.bak-${timestamp}"
-    mv "$target" "${target}.bak-${timestamp}" ||
-      warn "Failed to backup $target"
+    mv "$target" "${target}.bak-${timestamp}" || warn "Failed to backup $target"
   fi
 }
 
@@ -141,8 +140,7 @@ install_nushell() {
 
   # Snap fallback
   if command -v snap >/dev/null 2>&1; then
-    sudo snap install nushell --classic ||
-      warn "snap install nushell failed"
+    sudo snap install nushell --classic || warn "snap install nushell failed"
     if command -v nu >/dev/null 2>&1; then
       info "nushell installed via snap"
       return
@@ -158,27 +156,43 @@ install_nushell_from_tar() {
   local ARCH_PAIR GH_NU url tmpdir nu_path
   ARCH_PAIR=$(arch_maps) || ARCH_PAIR=""
   # extract mapped nushell arch
-  GH_NU=$(echo "$ARCH_PAIR" | awk -F' ' '{for(i=1;i<=NF;i++){if($i ~ /^NU=/){split($i,a,"=");print a[2]}}}')
+  GH_NU=$(echo "$ARCH_PAIR" | awk -F' ' '{
+    for(i=1;i<=NF;i++){
+      if($i ~ /^NU=/){
+        split($i,a,"="); print a[2]
+      }
+    }
+  }')
   GH_NU=${GH_NU:-x86_64}
 
   # prefer GNU builds, then musl, then any tar.gz with arch
-  url=$(curl -s https://api.github.com/repos/nushell/nushell/releases/latest |
-    grep "browser_download_url" |
-    grep "${GH_NU}-unknown-linux-gnu\.tar\.gz" |
-    cut -d '"' -f 4 | head -n1)
+  url=$(
+    curl -s https://api.github.com/repos/nushell/nushell/releases/latest |
+      grep "browser_download_url" |
+      grep "${GH_NU}-unknown-linux-gnu\.tar\.gz" |
+      cut -d '"' -f 4 |
+      head -n1
+  )
 
   if [[ -z "$url" ]]; then
-    url=$(curl -s https://api.github.com/repos/nushell/nushell/releases/latest |
-      grep "browser_download_url" |
-      grep "${GH_NU}-unknown-linux-musl\.tar\.gz" |
-      cut -d '"' -f 4 | head -n1)
+    url=$(
+      curl -s https://api.github.com/repos/nushell/nushell/releases/latest |
+        grep "browser_download_url" |
+        grep "${GH_NU}-unknown-linux-musl\.tar\.gz" |
+        cut -d '"' -f 4 |
+        head -n1
+    )
   fi
 
   if [[ -z "$url" ]]; then
-    url=$(curl -s https://api.github.com/repos/nushell/nushell/releases/latest |
-      grep "browser_download_url" |
-      grep "${GH_NU}" | grep '\.tar\.gz' |
-      cut -d '"' -f 4 | head -n1)
+    url=$(
+      curl -s https://api.github.com/repos/nushell/nushell/releases/latest |
+        grep "browser_download_url" |
+        grep "${GH_NU}" |
+        grep '\.tar\.gz' |
+        cut -d '"' -f 4 |
+        head -n1
+    )
   fi
 
   info "[DEBUG] Nushell URL: $url"
@@ -188,19 +202,17 @@ install_nushell_from_tar() {
   fi
 
   tmpdir=$(mktemp -d)
-  curl -L "$url" -o "$tmpdir/nu.tar.gz" ||
-    {
-      warn "Failed to download $url"
-      rm -rf "$tmpdir"
-      return 1
-    }
+  curl -L "$url" -o "$tmpdir/nu.tar.gz" || {
+    warn "Failed to download $url"
+    rm -rf "$tmpdir"
+    return 1
+  }
 
-  tar -xzf "$tmpdir/nu.tar.gz" -C "$tmpdir" ||
-    {
-      warn "Failed to extract Nushell tarball"
-      rm -rf "$tmpdir"
-      return 1
-    }
+  tar -xzf "$tmpdir/nu.tar.gz" -C "$tmpdir" || {
+    warn "Failed to extract Nushell tarball"
+    rm -rf "$tmpdir"
+    return 1
+  }
 
   # find an executable named 'nu'
   nu_path=$(find "$tmpdir" -type f -name nu -perm /111 | head -n1 || true)
@@ -246,13 +258,23 @@ install_fastfetch() {
   # GitHub asset download
   local ARCH_PAIR GH_FF url tmp
   ARCH_PAIR=$(arch_maps) || ARCH_PAIR=""
-  GH_FF=$(echo "$ARCH_PAIR" | awk -F' ' '{for(i=1;i<=NF;i++){if($i ~ /^FF=/){split($i,a,"=");print a[2]}}}')
+  GH_FF=$(echo "$ARCH_PAIR" | awk -F' ' '{
+    for(i=1;i<=NF;i++){
+      if($i ~ /^FF=/){
+        split($i,a,"="); print a[2]
+      }
+    }
+  }')
   GH_FF=${GH_FF:-amd64}
 
   # Try .deb first (common for amd64)
-  url=$(curl -s https://api.github.com/repos/fastfetch-cli/fastfetch/releases/latest |
-    grep "browser_download_url" | grep "linux-${GH_FF}\.deb" |
-    cut -d '"' -f 4 | head -n1)
+  url=$(
+    curl -s https://api.github.com/repos/fastfetch-cli/fastfetch/releases/latest |
+      grep "browser_download_url" |
+      grep "linux-${GH_FF}\.deb" |
+      cut -d '"' -f 4 |
+      head -n1
+  )
 
   info "[DEBUG] Fastfetch URL (.deb preferred): $url"
   if [[ -n "$url" ]]; then
@@ -262,15 +284,20 @@ install_fastfetch() {
       rm -f "$tmp"
       return 1
     }
-    sudo dpkg -i "$tmp" || (wait_for_apt_lock && sudo apt -f install -y || warn "dpkg install fastfetch failed")
+    sudo dpkg -i "$tmp" || (wait_for_apt_lock && sudo apt -f install -y ||
+      warn "dpkg install fastfetch failed")
     rm -f "$tmp"
     return
   fi
 
   # else try tar.gz
-  url=$(curl -s https://api.github.com/repos/fastfetch-cli/fastfetch/releases/latest |
-    grep "browser_download_url" | grep "linux-${GH_FF}\.tar\.gz" |
-    cut -d '"' -f 4 | head -n1)
+  url=$(
+    curl -s https://api.github.com/repos/fastfetch-cli/fastfetch/releases/latest |
+      grep "browser_download_url" |
+      grep "linux-${GH_FF}\.tar\.gz" |
+      cut -d '"' -f 4 |
+      head -n1
+  )
   info "[DEBUG] Fastfetch URL (tar.gz fallback): $url"
   if [[ -z "$url" ]]; then
     warn "No fastfetch asset found for arch $GH_FF"
@@ -370,14 +397,18 @@ if [ ${#missing_pkgs[@]} -gt 0 ]; then
           nver=$(nvim --version | head -n1 | awk '{print $2}')
           if ! ver_ge "$nver" "0.8.0"; then
             warn "Upgrading Neovim via PPA..."
-            sudo apt install -y software-properties-common || warn "apt: software-properties-common failed"
-            sudo add-apt-repository -y ppa:neovim-ppa/unstable || warn "add-apt-repository failed"
+            sudo apt install -y software-properties-common ||
+              warn "apt: software-properties-common failed"
+            sudo add-apt-repository -y ppa:neovim-ppa/unstable ||
+              warn "add-apt-repository failed"
             safe_apt_update
             sudo apt install -y neovim || warn "apt install neovim failed"
           fi
         else
-          sudo apt install -y software-properties-common || warn "apt: software-properties-common failed"
-          sudo add-apt-repository -y ppa:neovim-ppa/unstable || warn "add-apt-repository failed"
+          sudo apt install -y software-properties-common ||
+            warn "apt: software-properties-common failed"
+          sudo add-apt-repository -y ppa:neovim-ppa/unstable ||
+            warn "add-apt-repository failed"
           safe_apt_update
           sudo apt install -y neovim || warn "apt install neovim failed"
         fi
@@ -444,6 +475,57 @@ if [[ -f "$dots_dir/zsh/zsh.config" ]]; then
   ln -s "$config_dir/zsh/zsh.config" "$HOME/.zshrc" ||
     warn "Failed to link ~/.zshrc"
 fi
+
+# ---- tmux config handling ----
+# Ensure tmux config is available at $XDG_CONFIG_HOME/tmux/tmux.conf and
+# create compatibility symlink ~/.tmux.conf -> ~/.config/tmux/tmux.conf.
+tmux_dir="$config_dir/tmux"
+tmux_target="$tmux_dir/tmux.conf"
+
+# Sources we consider in the repo
+repo_tmux_dir="$dots_dir/tmux"
+repo_tmux_root_file="$dots_dir/tmux.conf"
+has_any_source=false
+if [[ -f "$repo_tmux_root_file" ]] || [[ -f "$repo_tmux_dir/tmux.conf" ]] ||
+  [[ -f "$tmux_target" ]] || [[ -L "$tmux_target" ]]; then
+  has_any_source=true
+fi
+
+if [[ "$has_any_source" == true ]]; then
+  # Prefer linking the whole repo tmux dir if it exists and doesn't conflict
+  if [[ -d "$repo_tmux_dir" && ! -e "$tmux_dir" ]]; then
+    backup_and_remove "$tmux_dir"
+    ln -s "$repo_tmux_dir" "$tmux_dir" ||
+      warn "Failed to link $tmux_dir -> $repo_tmux_dir"
+    info "Linked $tmux_dir → $repo_tmux_dir"
+  else
+    mkdir -p "$tmux_dir" || warn "Failed to create $tmux_dir"
+    # If repo has a single tmux.conf at repo root, prefer that
+    if [[ -f "$repo_tmux_root_file" ]]; then
+      backup_and_remove "$tmux_target"
+      ln -s "$repo_tmux_root_file" "$tmux_target" ||
+        warn "Failed to link $tmux_target -> $repo_tmux_root_file"
+      info "Linked $tmux_target → $repo_tmux_root_file"
+    elif [[ -f "$repo_tmux_dir/tmux.conf" && ! -e "$tmux_target" ]]; then
+      backup_and_remove "$tmux_target"
+      ln -s "$repo_tmux_dir/tmux.conf" "$tmux_target" ||
+        warn "Failed to link $tmux_target -> $repo_tmux_dir/tmux.conf"
+      info "Linked $tmux_target → $repo_tmux_dir/tmux.conf"
+    fi
+  fi
+
+  # Create compatibility symlink for older tmux versions
+  if [[ -e "$tmux_target" || -L "$tmux_target" || -d "$tmux_dir" ]]; then
+    backup_and_remove "$HOME/.tmux.conf"
+    # Point to the canonical path (even if tmux_dir is a symlink)
+    ln -s "$tmux_target" "$HOME/.tmux.conf" ||
+      warn "Failed to create compatibility symlink ~/.tmux.conf"
+    info "Linked ~/.tmux.conf → $tmux_target"
+  else
+    warn "tmux config source found but $tmux_target missing; skipped linking ~/.tmux.conf"
+  fi
+fi
+# ---- end tmux handling ----
 
 # /etc linking (only if root)
 if [[ -d "$dots_dir/etc" ]]; then

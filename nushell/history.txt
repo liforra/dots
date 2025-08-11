@@ -3559,3 +3559,158 @@ cd .dots
 echo "" > setup.sh
 bash -c "echo "" > setup.sh"
 nvim setup.sh
+git commit -am "Fixed install"
+git push
+clear
+clear
+clear
+clear; fastfetch
+ssh jan
+ssh alhena
+ssh antares
+nvim .ssh/config
+ssh antares
+ssh liforra@5.75.161.121
+ssh root@5.75.161.121
+ssh liforra@5.75.161.121
+ssh antares
+ssh liforra@5.75.161.121
+nvim .ssh/config
+dig antares.liforra.de
+ssh antares
+ssh alhena
+ssh antares
+nvim .ssh/known_hosts
+ssh alhena
+ssh antares
+nvim .ssh/known_hosts
+ssh antares
+ssh jan
+ssh jan
+ssh root@5.75.161.121
+ssh jan
+ssh alhena
+ssh jan
+ssh alhena
+ssh alhena
+ssh jan
+ssh jan
+ssh alhena
+ssh jan
+sudo pkill ssh
+sudo pkill sshd
+ssh antares
+bash -c "echo "" > setup.sh"
+nvim setup.sh
+cd ..
+ls
+ls -la | grep tmux
+cd .tmux
+nvim .tmux.conf
+nvim .tmux.conf.local
+cp .tmux.conf.local ./.config/tmux/tmux.conf
+mkdir ./.config/tmux
+cp .tmux.conf.local ./.config/tmux/tmux.conf
+ls
+mv .tmux.conf.local
+mv .tmux.conf.local .tmux.conf.bak
+nvim tmux.conf
+ln -la tmux.conf
+ln -a tmux.conf
+ls -la tmux.conf
+ls -la tmux
+ls -la .tmux
+nvim .tmux/tmux.conf
+tmux kill-server
+ls
+cd .dots
+ls
+./setup.sh
+nvim .tmux.conf
+ln -s .tmux.conf.local .tmux.conf
+ln -s .tmux.conf .tmux.conf.local
+nvim $XDG_CONFIG_HOME/tmux/tmux.conf
+bash
+$env
+$env | grep config
+$env | grep CONFIG
+$env | grep XDG
+reboot
+echo $env
+$env
+$env | grep XDG
+cd .oldconfig/
+ls | grep libre
+find ./ | grep libre
+find . | grep libre
+^find . | grep libre
+^find . | grep librewolf
+env | grep XDG<\n>printenv XDG_CONFIG_HOME<\n>systemctl --user show-environment | grep XDG_CONFIG_HOME
+echo $env.XDG_CONFIG_HOME
+mkdir -p ~/.config/environment.d<\n>printf 'XDG_CONFIG_HOME=%s\n' "$HOME/.config" \<\n>  > ~/.config/environment.d/00-xdg.conf<\n><\n># make it active in the running user manager now:<\n>systemctl --user set-environment \<\n>  XDG_CONFIG_HOME="$HOME/.config"<\n><\n># verify:<\n>systemctl --user show-environment | grep XDG_CONFIG_HOME
+$env.XDG_CONFIG_HOME
+echo $env.XDG_CONFIG_HOME
+exit
+tmux
+tmux kill-server
+exit
+tmux
+tmux --version
+tmux version
+man tmux
+tmux .V
+tmux -V
+nvim .tmux.conf
+ls -l ~/.tmux.conf "$HOME/.config/tmux/tmux.conf" /etc/tmux.conf \<\n>  2>/dev/null<\n>printenv XDG_CONFIG_HOME || echo "XDG_CONFIG_HOME unset"
+exit
+tmux source-file "$HOME/.tmux.conf" 2>&1 | sed -n '1,120p'
+# see sessions on that test server (may error if server gone)<\n>tmux -L tmux-validate list-sessions
+tmux ls 2>/dev/null || echo "no tmux server running"<\n>tmux show-options -g | sed -n '1,120p'
+server_pid=$(pgrep -u "$USER" -f 'tmux: server' | head -n1 || true)<\n>if [ -z "$server_pid" ]; then<\n>  echo "no tmux server running"<\n>else<\n>  ps -p "$server_pid" -o pid,cmd,lstart<\n>  echo<\n>  tr '\0' ' ' < "/proc/$server_pid/cmdline"; echo<\n>  echo<\n>  tr '\0' '\n' < "/proc/$server_pid/environ" \<\n>    | grep -E '^(HOME=|USER=|LOGNAME=|TMUX=)' || true<\n>fi
+curl -o /tmp/ohmytmux.conf \<\n>  https://raw.githubusercontent.com/gpakosz/.tmux/master/.tmux.conf
+tmux
+nvim .tmux.conf
+echo "" > .tmux.conf
+bash -c "echo "" > setup.sh"
+bash -c "echo "" > tmux.conf"
+bash -c "echo "" > .tmux.conf"
+nvim .tmux.conf
+tmux kill-server
+bash -c "echo "" > .tmux.conf"
+nvim .tmux.conf
+bash
+nvim .tmux.conf
+tmux
+exit
+tmux
+tmux kill-server
+git clone https://github.com/SixArm/tmux-conf.git<\n>mkdir -p $HOME/.config/tmux<\n>cp -R tmux-conf/sources $HOME/.config/tmux
+cd .config/tmux
+ls
+nvim tmux.conf
+cd .~
+cd ~
+ln -s .tmux.conf ~/.config/tmux.conf
+cd .config
+ls
+cd tmux
+cd ..
+cd ~
+rm .tmux.conf
+nvim .tmux.conf
+eixt
+exit
+nvim .tmux.conf
+rm .config/tmux
+rm -r .config/tmux
+git clone https://github.com/SixArm/tmux-conf.git<\n>mkdir -p $HOME/.config/tmux<\n>cp -R tmux-conf/sources $HOME/.config/tmux
+cd .config/tmux
+ls
+mv sources/* .
+ls
+:q
+exit
+sudo pacman -S zellij
+nvim .config/niri/config.kdl
+cd .dots
+ls

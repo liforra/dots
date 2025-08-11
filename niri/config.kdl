@@ -304,7 +304,7 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
     // Previous track
     // Suggested binds for running programs: terminal, app launcher, screen locker.
-    Mod+T hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty" "tmux"; }
+    Mod+T hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty" "zellij"; }
     Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "~/.config/rofi/scripts/launcher_t7"; }
     Super+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
     Ctrl+Shift+Escape {spawn "kitty" "-T" "btop" "btop"; }
