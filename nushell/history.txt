@@ -3534,3 +3534,10 @@ bash -c "echo "" > setup.sh"
 nvim setup.sh
 ./setup.sh
 git add *
+git commit -am "Fixed script"
+git push
+ls
+echo "" > setup.sh
+bash -c "echo "" > setup.sh"
+nvim setup.sh
+./setup.sh

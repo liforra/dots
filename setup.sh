@@ -24,6 +24,32 @@ backup_and_remove() {
   fi
 }
 
+# Wait for apt/dpkg lock
+wait_for_apt_lock() {
+  local locks=(
+    "/var/lib/apt/lists/lock"
+    "/var/lib/dpkg/lock-frontend"
+    "/var/lib/dpkg/lock"
+  )
+  for lock in "${locks[@]}"; do
+    while sudo fuser "$lock" >/dev/null 2>&1; do
+      echo -ne "\r[WAIT] apt/dpkg is locked by another process. Waiting..."
+      sleep 2
+    done
+  done
+  echo -e "\r[INFO] apt/dpkg lock released. Continuing...       "
+}
+
+# Wait for pacman lock
+wait_for_pacman_lock() {
+  local lock="/var/lib/pacman/db.lck"
+  while [ -e "$lock" ]; do
+    echo -ne "\r[WAIT] pacman is locked by another process. Waiting..."
+    sleep 2
+  done
+  echo -e "\r[INFO] pacman lock released. Continuing...       "
+}
+
 # Detect package manager
 if command -v pacman >/dev/null 2>&1; then
   PKG_MGR="pacman"
@@ -77,8 +103,10 @@ fi
 # Install missing packages
 if [ ${#missing_pkgs[@]} -gt 0 ]; then
   if [[ "$PKG_MGR" == "pacman" ]]; then
+    wait_for_pacman_lock
     sudo pacman -S --needed "${missing_pkgs[@]}"
   else
+    wait_for_apt_lock
     sudo apt update -y
     for pkg in "${missing_pkgs[@]}"; do
       case "$pkg" in
@@ -89,12 +117,14 @@ if [ ${#missing_pkgs[@]} -gt 0 ]; then
             warn "Upgrading Neovim via PPA..."
             sudo apt install -y software-properties-common
             sudo add-apt-repository -y ppa:neovim-ppa/unstable
+            wait_for_apt_lock
             sudo apt update -y
             sudo apt install -y neovim
           fi
         else
           sudo apt install -y software-properties-common
           sudo add-apt-repository -y ppa:neovim-ppa/unstable
+          wait_for_apt_lock
           sudo apt update -y
           sudo apt install -y neovim
         fi
@@ -104,7 +134,7 @@ if [ ${#missing_pkgs[@]} -gt 0 ]; then
           grep "browser_download_url" | grep "linux-x86_64\.deb" | cut -d '"' -f 4 | head -n1)
         tmp=$(mktemp)
         curl -L "$url" -o "$tmp"
-        sudo dpkg -i "$tmp" || sudo apt -f install -y
+        sudo dpkg -i "$tmp" || (wait_for_apt_lock && sudo apt -f install -y)
         rm -f "$tmp"
         ;;
       starship)
@@ -115,7 +145,7 @@ if [ ${#missing_pkgs[@]} -gt 0 ]; then
           grep "browser_download_url" | grep "amd64\.deb" | cut -d '"' -f 4 | head -n1)
         tmp=$(mktemp)
         curl -L "$url" -o "$tmp"
-        sudo dpkg -i "$tmp" || sudo apt -f install -y
+        sudo dpkg -i "$tmp" || (wait_for_apt_lock && sudo apt -f install -y)
         rm -f "$tmp"
         ;;
       *)
@@ -170,6 +200,41 @@ fi
 if [ -f "$dots_dir/zsh/zsh.config" ]; then
   backup_and_remove "$HOME/.zshrc"
   ln -s "$config_dir/zsh/zsh.config" "$HOME/.zshrc"
+fi
+
+# /etc linking (only if root)
+if [[ -d "$dots_dir/etc" ]]; then
+  if [ "$EUID" -eq 0 ]; then
+    info "Linking from $dots_dir/etc → /etc"
+    chown -R root:root "$dots_dir/etc"
+    shopt -s nullglob dotglob
+    for etc_entry in "$dots_dir/etc"/*; do
+      etc_name=$(basename "$etc_entry")
+      target="/etc/$etc_name"
+      if [[ -d "$etc_entry" ]]; then
+        if [[ -f "$etc_entry/.lnkfile" ]]; then
+          info "Per-file linking for /etc/$etc_name (marker .lnkfile found)"
+          mkdir -p "$target"
+          for file in "$etc_entry"/*; do
+            [[ "$(basename "$file")" == ".lnkfile" ]] && continue
+            backup_and_remove "$target/$(basename "$file")"
+            ln -s "$file" "$target/$(basename "$file")"
+            info "Linked $target/$(basename "$file") → $file"
+          done
+        else
+          backup_and_remove "$target"
+          ln -s "$etc_entry" "$target"
+          info "Linked $target → $etc_entry"
+        fi
+      else
+        backup_and_remove "$target"
+        ln -s "$etc_entry" "$target"
+        info "Linked $target → $etc_entry"
+      fi
+    done
+  else
+    info "Skipping /etc linking (not running as root)."
+  fi
 fi
 
 info "✅ Setup complete."
