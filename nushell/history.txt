@@ -3553,3 +3553,9 @@ nvim setup.sh
 ./setup.sh
 nvim setup.sh
 ./setup.sh
+git commit -am "Fixed script"
+git push
+cd .dots
+echo "" > setup.sh
+bash -c "echo "" > setup.sh"
+nvim setup.sh
