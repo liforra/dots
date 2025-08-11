@@ -3522,3 +3522,15 @@ ls
 echo "" > setup.sh
 bash -c "echo "" > setup.sh"
 nvim setup.sh
+git commit -am "Added alot better setup.sh"
+git push
+./setup.sh
+hostname
+host
+^hostname
+cat /etc/hostname
+echo "" > setup.sh
+bash -c "echo "" > setup.sh"
+nvim setup.sh
+./setup.sh
+git add *
