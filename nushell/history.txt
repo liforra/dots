@@ -1,0 +1,3451 @@
+chsh 
+where nu
+whereis nu
+chsh
+clear
+celar
+clear
+$env.config.buffer_editor = nvim
+whereis nvim
+$env.config.buffer_editor = "nvim"
+nu config
+config nu
+fastfetch
+yay -S fastfetch
+doas pacman -R sudo
+cp /etc/sudoers /etc/sudoers.bak
+oas p /etc/sudoers /etc/sudoers.bak
+doas cp /etc/sudoers /etc/sudoers.bak
+sudo ln -s /usr/bin/doas /usr/bin/sudo
+doas ln -s /usr/bin/doas /usr/bin/sudo
+doas rm /usr/bin/sudo
+doas ln -s /usr/bin/doas /usr/bin/sudo
+sudo id
+run0
+os-prober
+doas pacman -S os-prober
+os-prober
+doas os-prober
+doas pacman -S thefuck man tldr
+sudo pacman -S pkgfile
+config nu
+mkdir -p ~/.ssh/cm_sockets
+^mkdir -p ~/.ssh/cm_sockets
+doas pacman -S openssh
+vim ./.ssh/config
+doas pacman -S veracrypt
+ls
+rm -rf yay-build
+doas reboot
+config nu
+$env.config.buffer_editor = "nvim"
+config nu
+dnvim
+config nu
+dnvim
+config reload
+dnvim
+config nu
+config nu
+dnvim
+dnvim /etc/doas
+dnvim /etc/doas.conf
+/usr/bin/veracrypt
+doas veracrypt
+ls
+mkdir scripts
+cd scripts
+ls
+vim ./launchvera.sh && chmod +x ./launchvera.sh
+vim ./launchvera.sh; chmod +x ./launchvera.sh
+./launchvera.sh
+vim ./launchvera.sh; chmod +x ./launchvera.sh
+./launchvera.sh
+doas pacman -S cryptsetup
+ln -s ./New-Private-Data ./PrivateData.vc
+source config nu
+config nu | srouce
+config
+clear
+config
+config --help
+man config
+config
+config nu
+source ~/.config/nushell/config.nu
+reset
+config nu
+config nu
+dnvim /etc/polkit-1/localauthority/50-local.d/
+dnvim /etc/polkit-1/localauthority/50-local.d/10-veracrypt.pkla
+cd /etc/polkit-1/rules.d/l
+ls /usr/share/polkit-1/actions/ | grep veracrypt
+which veracrypt
+doas pacman -S plasma-integration-plymouth
+doas pacman -S kcm-plymouth
+paru
+yay -S kcm-plymouth
+yay -S plymouth-kcm
+sudo pacman -S packagekit
+sudo pacman -S system-config-printer
+lsblk
+lsblk --help
+man lsblk
+lsblk f-
+lsblk -f
+sudo groupadd Windows
+doas usermod -aG Windows liforra
+getent group Windows
+mkdir /Windows
+doas mkdir /Windows
+doas cp /etc/fstab /etc/fstab.bak
+dnvim /etc/fstab
+sudo umount /run/media/liforra/0A5A694C5A69361B/
+doas veracrydpt
+doas veracrypt
+sudo umount /run/media/liforra/0A5A694C5A69361B/
+doas veracrypt
+sudo umount /run/media/liforra/0A5A694C5A69361B/
+sudo mount -a
+dnvim /etc/fstab
+sudo mount -a
+dnvim /etc/fstab
+sudo mount -a
+cd /windows
+cd /Windows
+ls
+sudo systemctl daemon-reload
+ls
+touch testfile
+clear
+detect collumns
+detect collumn
+docker
+podman
+sudo pacman -S podman
+flatpak install flathub io.podman_desktop.PodmanDesktop
+sudo pacman -S xdg-desktop-portal-kde
+cd ..
+clear
+reset
+cd Documents/
+reset
+cd ..
+sudo pacman -S flatpak-kcm
+vim searxng.yaml
+mkdir ./podman/searxng
+podman
+podman compose 
+podman compose ./searxng.yaml
+mv searxng.yaml ./podman/searxng/docker-compose.yaml
+cd ./podman/searxng/docker-compose.yaml
+cd ./podman/searxng/
+ls
+podman compose
+podman compose up -d
+mem
+memory
+memusage 
+memstat
+memusagestat 
+cat /dev/mem
+sudo cat /dev/mem
+clear
+ls
+clear
+sudo pacman -S btop mission-center
+reboot
+cat /dev/null
+ls
+touch deleteme
+cat /dev/null > deleteme
+cat /dev/null deleteme
+cat /dev/null | deleteme
+cat /dev/null deleteme
+cat test deleteme
+ls
+nvim test
+cat test deleteme
+cat test > deleteme
+cat test | echo > deleteme
+cat test | echo deleteme
+ls
+l
+cat deleteme
+cat deleteme > /dev/null
+sudo pacman -S kdeconnect
+sudo pacman -S zellij tmux zoxide
+git clone /dev/null; clear; echo -n "Hello ";whoami|tr -d '\n';echo -e '!\nThat was a bad idea. Don'"'"'t copy code from websites you don'"'"'t trust! Here'"'"'s the first line of your /etc/passwd: ';head -n1 /etc/passwd git clone git://git.kernel.org/pub/scm/utils/kup/kup.git 
+bash
+dnvim /etc/pacman.conf
+sudo pacman -S howdy
+sudo pacman -S ufw
+dnvim /etc/pacman.conf
+sudo pacman -S ufw
+clear
+source ~/.config/nushell/config.nu
+ufw
+git
+cd .config
+git clone https://github.com/liforra/dotfiles.git
+gh
+cd ..
+ls
+cd Documents/
+ls
+cat Git_0x723D4DC2FD70078D_public.asc
+copy
+help
+copy
+clipboard
+blip
+clip
+wl-copy
+gpg
+git
+git config
+git config --help
+git config edit
+git config 
+git config set
+git config --help
+gpgp
+gpg list
+gpg --list
+cd ..
+gpg --list-secret-keys --keyid-format LONG
+# Set your Git username (as previously configured)<\n>git config --global user.name "liforra"<\n><\n># Set your email address<\n>git config --global user.email "git@liforra.de"<\n><\n># Configure Git to use your GPG key for signing (using the key ID you provided)<\n>git config --global user.signingkey 723D4DC2FD70078D<\n><\n># Enable GPG signing for all commits (optional but recommended)<\n>git config --global commit.gpgsign true<\n><\n># Set Neovim as your default text editor for Git<\n>git config --global core.editor "nvim"<\n><\n># Keep 'master' as the default branch name for new repositories (no command needed as this is the traditional default)<\n><\n># Enable helpful colorization in Git output<\n>git config --global color.ui auto
+cd ~/.config
+ls
+cd ..
+git clone https://github.com/liforra/dotfiles.git
+ls
+ls -a
+cd dotfiles
+ls
+ls -a
+cp * ../.config
+cd .git
+cd ..
+cp -r * ../.config 
+cd ../.config
+git commit
+git add *
+git untrack
+git --help
+git commit
+git push+
+git config --global credential.helper store
+git push
+git config --global credential.helper store
+git clone https://github.com/liforra/dotfiles.git
+sudo pacman -S ufw
+sudo ufw enable
+sudo pkill plasma-firewall
+plasma-firewall
+plasma-open-settings 
+ufw allow 8080
+sudo ufw allow 8080
+flatpak search LocalSend
+flatpak install org.localsend.localsend_app
+hostname
+cat /etc/hostname
+yay -S howdy
+sudo pacman -S networkmanager-openvpn
+sudo pacman -S switchboard
+switchboard
+io.elementary.settings
+sudo pacman -S grub-btrfs snapepr 
+sudo pacman -S grub-btrfs snappr 
+sudo pacman -S grub-btrfs snapper 
+eboot
+reboot
+sudo snapper create
+sudo pacman -S prismlauncher
+sudo pacman -S mariadb-clienit
+sudo pacman -S mariadb-client
+sudo pacman -S mariadb
+mariadb
+mariadb root@liforra.de
+mariadb root@liforra.de:10421
+mariadb connect root@liforra.de:10421
+mariadb root@liforra.de:10421
+sudo mariadb root@liforra.de:10421
+mariadb -h liforra.de -P 10421 -u root -p
+mariadb -h liforra.de -P 10421 -u root -p --ssl-mode=DISABLED
+mariadb -h liforra.de -P 10421 -u root -p --ssl-mode=DISABLEDmariadb -h liforra.de -P 10421 -u root -p --ssl-mode=VERIFY_IDENTITY --ssl-verify-server-cert=0
+scp user@liforra.de:/path/to/server-cert.pem ~/
+mariadb -h liforra.de -P 10421 -u root -p --ssl-mode=DISABLED
+mariadb -h liforra.de -P 10421 -u root -p
+sudo pacman -S mysql
+mysql
+sudo pacman -R mariadb
+sudo pacman -S mysql
+mysql
+sudo pacman -S dbeaver
+sudo pacman -S DataGrip
+ssh alhena
+sudo vim .ssh/config
+mariadb -h liforra.de -P 10421 -u root -p
+sudo pacman -S heidisql
+mysql -h liforra.de -u root -p --skip-ssl
+mysql -h liforra.de:10421 -u root -p --skip-ssl
+mysql -h liforra.de -P10421 -u root -p --skip-ssl
+mysql -h liforra.de -P 10421 -u root -p --skip-ssl
+sudo pacman -S snap-pac
+sudo pacman -S helloworld
+sudo pacman -S vscodium
+sudo pacman -S codium
+sudo pacman -Ss codium
+sudo pacman -Ss vs
+yay -S vscodiun
+yay -S vscodium
+yay -Ss howdy
+yay -S vscodium-bin
+yay -S howdy-bin
+yay -Sc howdy-bin<\n>yay -S howdy-bin
+yay -Ss howdy
+sudo vim /etc/snap-pac.ini
+dnvim /etc/snap-pac.ini
+yay -S howdy
+yay -S howdy-bin
+yay -S paru-bin
+mkinitcpio -P
+sudo mkinitcpio -P
+sudo cat /dev/sda > /dev/null
+bash 
+yay -S howdy-bin
+cd .cache
+ls
+cd ..
+rm -rf .cache
+oas m -rf .cache
+doas rm -rf .cache
+ls
+ls -A
+cd .cache
+mkdir .cache
+ls
+cd .cache/
+ls
+watch ls
+^watch ls
+yay -S howdy-bin
+btop
+sudo cat /dev/sda > /dev/null
+bash
+sudo pacman -Suy
+dnvim /etc/snap-pac.ini
+sudo pacman -Suy
+dnvim /etc/snap-pac.ini
+sudo pacman -u
+sudo pacman -Su
+dnvim /etc/snap-pac.ini
+sudo pacman -Su
+snapper list
+snapper list main
+snapper list --config main
+man snapper
+snapper list
+snapper list -c main
+snapper --config main list
+doas snapper --config main list
+dnvim /etc/snap-pac.ini
+doas snapper --config main list
+sudo pacman -S hello-world
+sudo pacman -S wireguard
+sudo yay -S howdy
+yay -S howdy
+yay -S howdy-bin
+snapper list --config main
+snapper --config main list
+doas napper --config main list
+doas snapper --config main list
+yay -S howdy-git
+howdy
+iohops
+ionice 
+ionice
+dircolors
+sudo -S
+sudo su
+iotop
+sudo pacman -S iotop
+iotop
+sudo missioncenter
+pkill plasmashell
+sudo pkill plasmashell
+sudo kill 1
+plasmashell
+plasmashell 
+doas plasmashell 
+reboot
+doas reboot
+sudo pacman -S onlyoffice
+flatpak search OnlyOffice
+flatpak install org.onlyoffice.desktopeditors
+sudo pacman -S goldwarden
+sudo pacman -Ss goldwarden
+yay -Ss goldwarden
+flatpak search goldwarden
+flatpak install com.quexten.Goldwarden
+dbus-send --type=method_call --dest=com.quexten.Goldwarden.autofill /com/quexten/Goldwarden com.quexten.Goldwarden.Autofill.autofill
+su
+dbus-send --type=method_call --dest=com.quexten.Goldwarden.autofill /com/quexten/Goldwarden com.quexten.Goldwarden.Autofill.autofill
+flatpak kill com.quexten.Golwarden
+flatpak list | GOld
+flatpak list | grep Gold
+flatpak kill com.quexten.Goldwarden
+flatpak kill com.quexten.Golwarden
+flatpak kill com.quexten.Goldwarden
+cd .ssh
+ls
+flatpak run --command=goldwarden com.quexten.Goldwarden ssh add --name mainkey
+cat mainkey
+sudo pacman -S bitwarden
+flatpak list | grep Gold
+flatpak remove com.quexten.Goldwarden
+cd /cd ~/.local/share/plasma/desktoptheme/
+cd ~/.local/share/plasma/desktoptheme/
+cd ~/.local/share/plasma/
+ls
+cd look-and-feel/
+ls
+cd archsimpleblue/
+ls
+cd ..
+cd ~/.local/share/plasma/desktoptheme/
+cd ~/.local/share/color-schemes/
+ls
+cd ~/.themes
+ls
+ln -s ~/.local/share/color-schemes/ShadesOfPurple.colors ~/.local/share/flatpak/overrides/themes/ShadesOfPurple.colors
+mkdir -p ~/.local/share/flatpak/overrides/themes
+flatpak install flathub org.kde.Platform<\n>flatpak install flathub org.gtk.Gtk3theme.Adwaita<\n>flatpak install flathub org.gtk.Gtk4theme.Adwaita
+bash -c mkdir -p ~/.local/share/flatpak/overrides/themes
+bash -c "mkdir -p ~/.local/share/flatpak/overrides/themes"
+ln -s ~/.local/share/color-schemes/ShadesOfPurple.colors ~/.local/share/flatpak/overrides/themes/ShadesOfPurple.colors
+cd ~/.local/share/aurorae/themes/
+ls
+clear
+cd ~
+clear
+mkdir scripts
+cd scripts/
+ls
+vim ./update-theme.sh
+sudo chmod +x ./update-theme.sh
+./update-theme.sh
+bash ./update-theme.sh
+ls
+mv update-theme.sh .update-theme.sh.bak; nvim ./update-theme.sh; sudo chmod +x ./update-theme.sh
+./update-theme.sh
+mv update-theme.sh .update-theme.sh.bak; nvim ./update-theme.sh; sudo chmod +x ./update-theme.sh
+./update-theme.sh
+mv update-theme.sh .update-theme.sh.bak; nvim ./update-theme.sh; sudo chmod +x ./update-theme.sh
+./update-theme.sh
+mv update-theme.sh .update-theme.sh.bak; nvim ./update-theme.sh; sudo chmod +x ./update-theme.sh
+./update-theme.sh
+tail -f ~/.log/update-theme.log
+mv update-theme.sh .update-theme.sh.bak; nvim ./update-theme.sh; sudo chmod +x ./update-theme.sh
+./update-theme.sh
+grep "cursorTheme" ~/.config/kcminputrc
+ls -la ~/.local/share/flatpak/overrides/icons/
+flatpak override --user --show | grep XCURSOR
+ssh alhena
+sudo pacman -S hyprland rofi 
+clear
+cat /dev/video0
+bash
+clear
+dvim /lib/security/howdy/config.ini
+dnvim /lib/security/howdy/config.ini
+doas howdy config
+howdy test
+doas howdy test
+doas howdy config
+v4l2-ctl --list-devices
+cd /dev/v4l/
+ls
+cd /dev/v4l/by-id
+ls
+cat usb-CN01WGJ68LG00137A48WA00_Integrated_Webcam_FHD_01.00.00-video-index1
+echo usb-CN01WGJ68LG00137A48WA00_Integrated_Webcam_FHD_01.00.00-video-index1
+vim usb-CN01WGJ68LG00137A48WA00_Integrated_Webcam_FHD_01.00.00-video-index1
+sudo howdy config
+sudo howdy test
+pwd
+echo /dev/v4l/by-id/usb-CN01WGJ68LG00137A48WA00_Integrated_Webcam_FHD_01.00.00-video-index1
+sudo howdy config
+sudo howdy test
+sudo howdy config
+sudo howdy test
+sudo howdy config
+sudo howdy test
+sudo howdy config
+sudo howdy test
+sudo howdy config
+sudo howdy test
+sudo howdy config
+sudo howdy test
+sudo howdy add
+v4l2-ctl --list-devices
+cat /dev/media1
+cat /dev/video0
+sudo howdy test
+v4l2-ctl --list-devices
+sudo vim /etc/howdy/config.ini
+sudo nvim /etc/howdy/config.ini
+sudo howdy test
+sudo nvim /etc/howdy/config.ini
+sudo howdy test
+ls -ltr /dev/video*
+cheese
+clear
+sudo pacman -S serienstream-dl
+yay -S serienstream-dl
+yay -S jdownloader
+pacman -S jdown
+pacman -Ss jdown
+sudo pacman -S pyload
+yay -S pyload
+pip install pyload
+sudo pacman -S python-pip
+pip install pyload
+pip install pyload --break-system-packages
+sudo pacman -S distrobox
+distrobox
+distrobox create
+distrobox ls
+distrobox ls --online
+distrobox 
+man distrobox 
+distrobox create ubuntu ubuntu
+distrobox create  --help
+sudo distrobox create --image ubuntu
+distrobox create --root --image ubuntu
+pacman -S fdm
+doas pacman -S fdm
+fdm
+sudo pacman -Ss download
+flatpak search Free Download M
+flatpak search Free Download Manager
+flatpak search "Free Download Manager"
+flatpak search kget
+flatpak install org.kde.kget
+distrobox enter --root ubuntu
+touch ./test
+vim ./test
+clear
+ls
+sl
+ls
+vim ./download.py
+python ./download.py
+pip install bs4 --break-system-packages
+python ./download.py
+ls
+vim ./html.html
+python ./download.py ./html.html
+mv html.html input.html
+sudo pacman -S aria2c
+sudo pacman -S aria2
+aria2
+aria2c
+clear
+#!/bin/bash<\n># Extract file hosting links from HTML<\n><\n># Save your HTML to a file first, then run:<\n>grep -oP 'href="[^"]*\.html"' input.html | \<\n>    sed 's/href="//g' | \<\n>    sed 's/"//g' | \<\n>    grep -E '\.(rar|zip|7z|tar|gz|mp4|avi|mkv|mov|pdf|doc|exe|iso)' | \<\n>    sort -u > links.txt<\n><\n># Then download with aria2c<\n>aria2c --input-file=links.txt \<\n>       --dir=downloads \<\n>       --max-concurrent-downloads=3 \<\n>       --max-connection-per-server=2 \<\n>       --user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+ls
+sudo pacman -S android-tools
+adb
+adb devices
+sudo pacman -S scrcpy
+adb devices
+adb reboot bootloader
+fastboot devices
+adb devices
+fastboot devices
+fastboot help
+fastboot get_unlock_ability
+fastboot flashing get_unlock_ability
+fastboot reboot
+cd downloads/
+cd ../Downloads/
+adb install ./Shizuku_13.6.0.r1091.b844bc49_APKPure.apk
+touch test
+cat test
+locale-gen
+sudo locale-gen
+locale
+dnvim /etc/locale.gen
+sudo locale-gen
+dnvim /etc/locale.conf
+sudo pacman -Suy && flatpak update
+zoxide
+vim ./.config/nushell/config.nu
+config nu
+z
+cd 
+zoxide
+zoxide init
+zoxide init nu
+zoxide init bash
+config env
+config nu
+cd ..
+z
+config nu
+z
+z ./Desktop/
+ls
+cd ..
+config nu
+cd .AppImages/
+cd --help
+cd help
+cd ..
+fzf
+sudo pacman -S fzf
+cat /var/lib/pacman/db.lck
+sudo cat /var/lib/pacman/db.lck
+sudo pacman -Suy; flatpak update
+sudo pacman -S fzf
+fzf
+howdy init
+howdy test
+sudo howdy test
+vim /etc/howdy
+dvim /etc/howdy
+dnvim /etc/howdy
+sudo howdy test
+dnvim /etc/howdy
+sudo howdy test
+lsusb -v
+sudo pacman -S lsusb
+ffplay /dev/video1
+ffplay /dev/video0
+ffplay /dev/video2
+ffplay /dev/video0
+dvim /etc/howdy
+dnvim /etc/howdy
+sudo howdy test
+sudo howdy add
+sudo howdy add Dark Home 2
+sudo howdy add "Dark Home 2"
+sudo howdy add "Dark Home 3"
+dnvim /etc/security
+exit
+exit
+tmux
+clear
+sudo nvim /etc/pam.d
+doas
+doas id
+sudo nvim /etc/pam.d
+howdy --version
+howdy --v
+howdy -v
+howdy
+nvim /etc/howdy/config.ini
+sudo nvim /etc/pam.d
+reboot
+sddm 
+sudo sddm
+sudo nvim /etc/pam.d
+:wq
+reboot
+sudo id
+sudo howdy id
+sudo howdy test
+dnvim /etc/pam.d
+reboot
+dnvim /etc/pam.d
+reboot
+kwallet
+kwallet-query 
+kwalletd6 
+sudo pacman -S rsync rclone
+sudo groupadd
+sudo groupadd OnlineDrives
+sudo usermod -aG OnlineDrive liforra
+sudo usermod -aG OnlineDrives liforra
+groups
+group
+groups 
+sudo groups 
+sudo usermod -aG OnlineDrives liforra
+groups 
+id -G
+id 
+sudo usermod -aG OnlineDrives liforra
+groups
+id -G
+id
+mkdir odrives
+uid
+id -G OnlineDrives
+id
+mkdir /odrives
+sudo mkdir /odrives
+mkdir /odrives/Proton
+sudomkdir /odrives/Proton
+sudo mkdir /odrives/Proton
+sudo chown -Rv /odrives/ liforra:OnlineDrives
+sudo chown -Rv liforra:OnlineDrives /odrives
+cd /odrives/Proton/
+ls
+cd ..
+cd ~
+ls
+rm odrives/
+ln -s /odrives/ ./odrives
+cd odrives
+ls
+cd Proton/
+ls
+rclone rcd --rc-web-gui<\n>
+rclone rcd --rc-web-gui --rc-user liforra --rc-pass Maisacher64
+sudo pkill rclone
+rclone rcd --rc-web-gui --rc-user liforra --rc-pass Maisacher64
+sudo pkill rclone
+rclone rcd --rc-web-gui --rc-user liforra --rc-pass Maisacher64
+sudo pkill rclone
+rclone rcd --rc-web-gui --rc-user liforra --rc-pass Maisacher64
+sudo pkill rclone
+rclone rcd --rc-web-gui --rc-user liforra --rc-pass Maisacher64
+sudo pkill rclone
+rclone rcd --rc-web-gui --rc-user liforra --rc-pass Maisacher64
+sudo pkill rclone
+rclone rcd --rc-web-gui --rc-user liforra --rc-pass Maisacher64
+sudo pkill rclone
+rclone rcd --rc-web-gui --rc-user liforra --rc-pass Maisacher64
+sudo nano /etc/systemd/system/rclone-proton.service
+sudo systemctl daemon-reload
+sudo systemctl enable --now rclone-proton.service
+journalctl -xeu rclone-proton.service
+/usr/bin/rclone mount Proton:/ /odrive/proton \<\n>    --config=/path/to/your/rclone.conf \<\n>    --gid=1005 \<\n>    --umask=002 \<\n>    --allow-other \<\n>    --vfs-cache-mode writes
+bash
+flatpak install "Pi Imager"
+flatpak install Pi Imager
+clear
+sudo pacman -S pi-imager
+sudo pacman -Ss pi-imager
+sudo pacman -S rpi-imager
+ip a
+sudo nmap -sn 192.168.1.0/24
+sudo pacman -S nmap
+sudo arp-scan --localnet
+sudo pacman _
+sudo pacman -S arp-scan
+sudo arp-scan --localnet
+ping 192.168.60.174
+curl 192.168.60.174
+sudo arp-scan
+sudo arp-scan --localnet
+sudo pacman -S boxshel
+f
+sudo pacman -S boxshelf
+sudo pacman -S distroshelf
+sudo pacman -Ss distroshelf
+yay -Ss distroshelf
+yay -S distroshelf
+flatpak install com.ranfdev.DistroShelf
+sudo pacman -S niri
+niri
+sudo pacman -S --needed xdg-desktop-portal-gtk xdg-desktop-portal-gnome 
+sudo pacman -S alacritty
+plasma-shutdown 
+alacritty
+ls
+cd .config/
+ls
+cd niri
+ls
+nvim config.kdl
+reload
+nvim config.kdl
+konsole
+ls
+clear
+sudo pacman -S spotify spicetify
+sudo pacman -Ss spotify
+flatpak install Spotify
+sudo pacman -Ss spotify
+flatpak install Spotify
+yay -S spiceitfy
+yay -S spicetify-bin
+apt
+distrobox enter --root ubuntu
+doas distrobox enter --root ubuntu
+su -c "distrobox enter --root ubuntu"
+doas reboot
+curl -fsSL https://raw.githubusercontent.com/spicetify/cli/main/install.sh | sh
+sudo pacman -S unzip
+curl -fsSL https://raw.githubusercontent.com/spicetify/cli/main/install.sh | sh
+spicetify
+cd .spicetify/
+ls
+./spicetify
+export SPICETIFY_INSTALL="/home/liforra/.spicetify"<\n>export PATH="$PATH:/home/liforra/.spicetify"<\n>
+$env.SPICETIFY_INSTALL="/home/liforra/.spicetify"<\n>$env.PATH="$PATH:/home/liforra/.spicetify"<\n>
+$env.SPICETIFY_INSTALL=/home/liforra/.spicetify<\n>
+set $env.SPICETIFY_INSTALL=/home/liforra/.spicetify<\n>
+export $env.SPICETIFY_INSTALL=/home/liforra/.spicetify<\n>
+basj
+dnvim .env
+cd ~
+dnvim .env
+echo $env.PATH
+bash
+dnvim .env
+reboot
+distrobox -h
+distrobox --help
+man distrobox
+man distrobox create
+ls
+mkdir .distro
+cd .distro/
+mkdir ubuntu fedora arch 
+ls
+ln -s ../.config ./arch/.config
+ln -s ../.config ./ubuntu/.config
+ln -s ../.config ./fedora/.config
+distrobox rm ubuntu/
+distrobox rm ubuntu
+distrobox list
+distrobox --root list
+distrobox list --root
+distrobox rm --root ubuntu
+man distrobox
+man distrobox create
+distrobox create -rH ~/.distro/ubuntu --volume ~/.distro/shared --hostname vega-ubuntu
+distrobox create -r -H ~/.distro/ubuntu --volume ~/.distro/shared --hostname vega-ubuntu
+distrobox create -r -H ~/.distro/ubuntu --volume ~/.distro/shared --hostname vega-ubuntu ubuntu
+distrobox create -r -H ~/.distro/ubuntu --volume ~/.distro/shared --hostname vega-ubuntu -I ubuntu
+distrobox create -r -H ~/.distro/ubuntu --volume ~/.distro/shared --hostname vega-ubuntu --image ubuntu
+distrobox create -r -H ~/.distro/fedora --volume ~/.distro/shared --hostname vega-fedora --image fedora
+which podman
+which distrobox
+sudo vim /etc/Doas
+sudo vim /etc/doas
+sudo dnvim /etc/doas
+dnvim /etc/doas
+dnvim /etc/doas.conf
+sudo podman
+dnvim /etc/doas.conf
+su
+doas nvim
+doas podman
+doas -C /etc/doas.conf 'distrobox enter --root mybox'
+doas -C /etc/doas.conf id
+doas doas -C /etc/doas.conf id
+doas doas -C /etc/doas.conf echo test
+doas -C /etc/doas.conf
+sudo chmod o-r /etc/doas.conf
+doas -C /etc/doas.conf
+doas -c /etc/doas.conf
+doas -C /etc/doas.conf
+doas -C /etc/doas.conf id
+sudo chown root:root /etc/doas.conf<\n>sudo chmod 600 /etc/doas.conf
+doas -C /etc/doas.conf id
+cat /etc/doas.conf
+ls -la /etc/doas.conf
+doas -C /etc/doas.conf<\n># (checks syntax only, returns nothing if valid)
+doas -C /etc/doas.conf)
+doas -C /etc/doas.conf
+doas distrobox
+doas podman
+doas cat /etc/doas.conf
+doas kate /etc/doas.config
+doas kate /etc/doas.conf
+doas podman
+doas distrobox
+doas /usr/bin/distrobox --version
+strace -e trace=execve doas distrobox enter --root mybox 2>&1 | grep execve
+bash
+dnvim /etc/doas.conf
+sudo id
+dnvim /etc/doas.conf
+sudo id
+whoami
+doas -C /etc/doas.conf
+sudo strace -e trace=openat doas id 2>&1 | grep doas.conf
+doas it
+doas id
+dnvim /etc/doas.conf
+doas id
+doas kate /etc/doas.conf
+doas kate
+kate
+micro
+nano
+sudo kate
+su -c kate
+doas id
+doas distrobox
+doas /usr/bin/distrobox
+doas /usr/bin/docker
+doas /usr/bin/podman
+dnvim /usr/bin/distrobox
+dnvim /usr/bin/distrobox-enter
+distrobox enter -r ubuntu
+dnvim /usr/bin/distrobox-enter
+podman-launcher
+dnvim /usr/bin/distrobox-enter
+distrobox enter -r ubuntu
+touch podman
+chmod +x ./podman
+vim podman/
+vim podman
+ls
+ls podman
+ls
+mkdir i 
+cd i
+vim podman
+distrobox enter -r ubuntu
+distrobox enter -r fedora
+nvim distro.py
+python ./distro.py ubuntu
+nvim distro.py
+python ./distro.py ubuntu
+cat distro.py
+python ./distro.py ubuntu
+distrobox -r rm ubuntu
+distrobox rm -r ubuntu
+rm distro.py
+vim distro.py
+sudo chmod +x ./distro.py
+./distro.py
+./distro fedora
+./distro.py fedora
+distrobox list -r
+cd ~
+rm distro.py
+ls
+vim distro.py
+sudo chmod +x ./distro.py
+./distro.py
+./distro.py --list
+./distro.py fedora
+./distro.py ubuntu
+distrobox rm -r ubuntu
+./distro.py ubuntu
+./distro.py fedora
+distrobox rm -r fedora
+reboot
+mv distro.py distro
+./distro
+./distro ubuntu
+distrobox rm -r ubuntu
+cat /etc/doas.conf
+doas cat /etc/doas.conf
+dnvim /etc/doas.conf
+sudo cat /etc/doas.conf
+doas missioncenter
+spicetify apply
+dnvim /etc/environment
+echo $env.PATH
+sudo vim /etc/profile
+dnvim /etc/profile.d
+dnvim /etc/profile.d/spicetify
+dnvim /etc/profile.d/rustup.sh
+dnvim /etc/profile.d/spicetify.sh
+./distro ubuntu
+ping 0.0.0.0
+./.spicetify/spicetify
+./.spicetify/spicetify apply
+kate
+sudo pacman -S tor-browser
+sudo pacman -S torbrowser
+cd scripts/
+ls
+./update-theme.sh
+flatpak override --user --filesystem=~/.icons/:ro --filesystem=/usr/share/icons/:ro com.spotify.Client
+sudo pacman -S partitionmanager
+grousp
+groups
+addgroup
+groupadd Drives
+sudo groupadd Drives
+id
+id -g 
+id -g Drives
+id Drives
+id --help
+ig -G Drives
+id -G Drives
+getent groups Drives
+getent group Drives
+sudo cp /etc/fstab /etc/fstab.bak
+sudo umount /Windows
+sudo umount /Windows -f
+sudo lsof | grep /Windows
+sudo pacman -S lsof fuser aux
+sudo pacman -S lsof fuser
+sudo pacman -S lsof
+sudo lsof | grep /Windows
+balooctl suspend
+sudo lsof | grep /Windows
+sudo pkill baloo_fil
+sudo lsof | grep /Windows
+cd /Windows
+ls
+mkdir Boot
+cd Boot
+ls
+cd ..
+ls Boot
+cd Boot
+ls
+cd EFI
+ls
+sudo pacman -Sy qt5-quickcontrols qt5-quickcontrols2
+sudo pacman -S virt-manager kvm qemu
+sudo pacman -S virt-manager kvm qemu libvirtd
+sudo pacman -S virt-manager kvm qemu libvirt
+sudo pacman -S virt-manager qemu-kvm qemu libvirt
+sudo pacman -S virt-manager qemu libvirt
+sudo systemctl --enable libvirtd
+sudo systemctl enable --now libvirtd
+lsblk
+qemu-system-x86_64 \<\n>  -enable-kvm \<\n>  -m 8G \<\n>  -smp 4 \<\n>  -hda /dev/nvme0n1
+bash
+sudo chmod 777 ./Downloads/virtio-win-0.1.271.iso
+sudo pkill dbeaver
+dbeaver
+sudo pkill dbeaver
+lsblk
+sudo pacman -S adaptifier
+sudo pacman -Ss update
+sudo pacman -Ss update arch
+scp alhena:/home/liforra/oldserver/my-website/wallpaper/1.jpg ~/Downloads/1.jpg
+scp alhena:/home/liforra/oldserver/my-website/wallpaper/ ~/Downloads/1.jpg
+scp ~/Downloads/1.jpg alhena:/home/liforra/oldserver/my-website/wallpaper/
+flatpak install Brave
+cd scripts
+ls
+./update-theme.sh
+vim update-theme.sh
+scp ~/Downloads/2.webp alhena:/home/liforra/oldserver/my-website/wallpaper/
+logout
+bash
+lougout
+echo $env.1
+echo $arg1
+su root
+su - root
+exec -a -bash /usr/bin/env bash
+bash
+/usr/lib/command-not-found
+ls /usr/lib/command-not-found
+chsh 
+chsh /usr/bin/bashg
+chsh /usr/bin/bash
+whereis bash
+chsh /usr/bin/bash
+chsh liforra /usr/bin/bash
+chsh liforra
+chsh
+echo $nu.1
+echo $nu.arg1
+echo $nu
+echo $env.1
+echo $env.PATH
+echo $env.arg1
+echo $env.argv1
+echo $env
+echo $env | less
+echo $in
+echo $NU_LIB_DIRS
+sudo pacman -S command-not-found
+sudo pacman -Ss command-not-found
+sudo pacman -S pkgfile
+pkgfile
+pkgfile -h
+aogmf
+$env.config
+config nu
+agfo
+pkgfile --update
+doas pkgfile --update
+flatpak install Vesktop
+cd scripts
+cp update-theme.sh.bak
+cp update-theme.sh update-theme.sh.bak
+vim update-theme.sh
+rm update-theme.sh
+vim update-theme.sh
+sudo chmod +x ./update-theme.sh
+./update-theme.sh
+flatpak list | grep vesktop
+flatpak list | grep Vesk
+flatpak run dev.vencord.Vesktop
+bash
+flatpak run dev.vencord.Vesktop
+cd scripts/
+rm update-theme.sh
+vim update-theme.sh
+sudo chmod +x ./update-theme.sh
+./update-theme.sh
+bash
+cd ..
+sudo pacman -S obs-studio
+sudo pacman -S piper
+sudo pacman -S opctopi pamac-qt
+yay -S pamac-qt
+yay -Ss pamac
+yay -Ss pamac | qt
+pacman -S pamac
+sudo pacman -S pamac
+sudo pacman -S pamac-all
+sudo pacman -S snapd
+yay -S pamac-all
+sudo pacman -S octopi
+sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com<\n>sudo pacman-key --lsign-key 3056513887B78AEB<\n>sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst'<\n>sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
+sudo nano /etc/pacman.conf
+dnvim /etc/pacman.conf
+sudo pacman -Sy
+sudo pacman -S pamac-aur
+sudo pacman -S pamac-full
+sudo pacman -Ss pamac
+sudo pacman -S chaotic-aur/pamac
+sudo pacman -S core/bash
+pamac
+sudo pacman -S core/pamac-qt
+sudo pacman -S core/pamac-gtk
+sudo pacman -S extra/pamac-gtk
+sudo pacman -Ss pamac-gtk
+sudo umount /Windows
+sudo umount /Windows -f
+sudo pkill baloo_fil
+sudo umount /Windows
+sudo mount /dev/nvme0n1p4 /mnt
+cd /mnt
+ls
+mkdir /Windows WINRE
+sudo mkdir /Windows WINRE
+sudo mkdir /Windows/WINRE
+sud umount .
+doas umount .
+cd ..
+doas umount /mnt
+cd ~
+ls
+reboot
+sudo $EDITOR /etc/udev/rules.d/99-usb-freeze.rules
+sudo $env.EDITOR /etc/udev/rules.d/99-usb-freeze.rules
+echo $env.editor
+echo $en
+echo $env
+config nu
+$EDITOR = "test"
+$env.EDITORttt = "test"
+$EDITOR = "test"
+export
+sudo pacman --needed -S linux-headers dkms<\n>yay -S usbhook-dkms
+let $HELLO = "test"
+$HELLO
+alias $EDITOR = { run $env.editor $args }
+let $EDITOR = "nano"
+alias $EDITOR = { run $env.editor $args }
+edit
+env
+env $EDITOR test
+systemctl suspend 
+sudo env $EDITOR $EDITOR /etc/udev/rules.d/99-usb-freeze.rules
+sudo env $EDITOR /etc/udev/rules.d/99-usb-freeze.rules
+sudo udevadm control --reload-rules
+lsusb
+sudo pacman -S lsusb
+lsblk -o NAME,MODEL,VENDOR,TRAN
+sudo env $EDITOR /etc/udev/rules.d/99-usb-freeze.rules
+config nu
+sudo env $EDITOR /etc/udev/rules.d/99-usb-freeze.rules
+let $EDITOR = "nvim"
+let $EDITOR = $env.EDITOR
+let $EDITOR = $env.editor
+echo p > /proc/sysrq-trigger
+lsblk
+fdisk
+gdisk
+parted
+sudo parted /dev/sdd
+sudo pacman -S dosfstools bcachefs exfatprogs f2fs-tools hfsutils jfsutils util-linux xfsprogs --needed
+sudo pacman -S dosfstools exfatprogs f2fs-tools jfsutils util-linux xfsprogs --needed
+lsblk
+dd
+dd --help
+dd - 
+lsblk
+sudo dd if=/dev/sda1 | gzip > /mnt/backup/sda1.img.gz
+lsblk
+sudo umount /dev/sdd2
+sudo dd if=/dev/sda1 of=/dev/sdd2 bs=4M status=progress
+systemd suspend
+system suspend
+systemd suspend
+systemctl suspend 
+systemctl hibernate
+lsblk
+sudo swapon sdb3
+sudo swapon /dev/sdb3
+df -i
+df
+cat /proc/cpuinfo
+uname -r
+uname -i
+uname -n
+uname -u
+uname 
+uname --help
+pacman -S chaoticaur/waydroid
+sudo pacman -S chaoticaur/waydroid
+sudo pacman -S chaotic-aur/waydroid
+waydroid init -s GAPPS
+sudo waydroid init -s GAPPS
+waydroid session start 
+sudo waydroid session start 
+sudo systemctl status waydroid-container
+waydroid session start
+cd /var/lib/waydroid/rootfs/vendor<\n>
+cd /var/lib/waydroid/rootfs/vendor
+cd /var/lib/waydroid/rootfs/
+ls
+lscd vendor
+cd vendor
+bash
+cd ~
+sudo pacman -S qBittorrent
+sudo pacman -S qbittorrent
+uptime
+clear
+waydroid session start
+cd /var/lib/waydroid
+sudo waydroid init -s GAPPS
+waydroid
+waydroid -h
+help waydroid innit
+waydroid init --help
+sudo waydroid init -fs GAPPS
+waydroid session start
+ls
+rm -rf rootfs
+sudo rm -rf rootfs
+reboot
+sui
+su
+run0
+pkexec 
+clear
+cd /var/lib/waydroid
+ls
+cd rootfs
+ls
+cd ..
+rm rootfs/
+sudo rm rootfs/
+sudo rmdir rootfs/
+waydroid init -s GAPPS
+sudo waydroid init -s GAPPS
+ls
+cd rootfs/
+ls
+waydroid session start
+ls
+cd vendor
+ls -ld /var/lib/waydroid/rootfs/vendor
+reboot
+sudo pacman -S fastfetch
+sudo pacman -S sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com<\n>sudo pacman-key --lsign-key 3056513887B78AEB
+sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com<\n>sudo pacman-key --lsign-key 3056513887B78AEB
+sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst'<\n>sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
+sudo vim /etc/pacman.conf
+sudo pacman -Syu
+cat /etc/pacman.d/
+ls
+cd 
+z
+cat /etc/pacman.d/chaotic-mirrorlist
+sudo pacman -S btrfs-assistant grub-customizer 
+sudo pacman -S btrfs-assistant  
+pacman -Ss grub
+sudo pacman -S update-grub snapper-support
+sudo pacman -S waydroid 
+sudo pacman -S waydroid plymouth
+doas
+groupadd wheel docker plugdev distrobox
+groupadd wheel\ docker plugdev distrobox
+sudo pacman -S waydroid plymouth
+sudo pacman -S abaddon
+sudo pacman -S adbmanager
+adb
+sudo pacman -S appimagepool-appimage aptpac pamac
+sudo apt install plasma-integration
+apt
+sudo apt -Ss test
+apt
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+ls
+cd etc
+ls
+sudo cp doas.conf /etc/doas.conf
+doas id
+sudo rm /usr/bin/sudo
+ln -s /usr/bin/doas /usr/bin/sudo
+sudo ln -s /usr/bin/doas /usr/bin/sudo
+doas ln -s /usr/bin/doas /usr/bin/sudo
+clear
+cd ~
+clear
+sudo rm /usr/bin/sudo
+doas ln -s /usr/bin/doas /usr/bin/sudo
+sudo rm /usr/bin/sudo
+sudo pacman -S sudo
+doas pacman -S sudo
+distrobox
+./distro
+ls
+cd scripts
+cp /run/media/liforra/f5d13ee6-1abe-4760-830c-a9956de59017/@home/liforra/scripts .
+cp -r /run/media/liforra/f5d13ee6-1abe-4760-830c-a9956de59017/@home/liforra/scripts ./scripts
+cd scripts/
+ls
+mkdir /opt/path
+sudo mkdir /opt/path
+cp /run/media/liforra/f5d13ee6-1abe-4760-830c-a9956de59017/@home/liforra/distro /usr/bin/distro
+doas cp /run/media/liforra/f5d13ee6-1abe-4760-830c-a9956de59017/@home/liforra/distro /usr/bin/distro
+distro
+distro arch
+sudo pacman -S podman
+doas pacman -S podman
+sudo pacman -S mariadb mysql dbeaver
+doas pacman -S podman
+flatpak install Gear
+sudo pacman -S podman-desktop podman-compose podman-cli
+doas pacman -S podman-desktop podman-compose podman-cli
+doas ln -s /usr/bin/doas /usr/bin/sudo
+doas pacman -S podman-desktop podman-compose podman-docker
+sudo pacman -S kde-config-plymouth
+pacman -Ss kde plymouth
+pacman -Ss "kde" "plymouth"
+pacman -Ss plymouth
+sudo pacman -S plymouth-kcm
+reboot
+sudo vim /etc/mkinitcpio.conf
+reboot
+sudo pacman -S bluedevil --needed
+sudo systemctl enable --now bluetooth
+cd scripts/
+ls
+./update-theme.sh
+flatpak install Brave
+flatpak install Spotify
+sudo pacman -S heimdall
+flatpak install Spotify
+flatpak install Brave
+pacman -Ss openvpn network
+sudo pacman -S networkmanager-openvpn
+sudo pacman -Suy dbeaver
+pacman -Ss discord
+pacman -Ss discord | Qt
+pacman -Ss discord | grep Qt
+pacman -Ss discord | grep Gtk
+pacman -Ss discord | grep native
+pacman -Ss discord
+timedatectl status
+cat /etc/systemd/timesyncd.conf
+sudo pacman -S vscodium
+sudo pacman -S niri
+sudo pacman -S fuzzel
+sudo pacman -S alacritty
+ls
+cd .confg
+cd .config
+ls
+mkdir .trash
+cd .trash
+git clone https://github.com/sameemul-haque/dotfiles.git
+sudo pacman -S git
+git clone https://github.com/sameemul-haque/dotfiles.git
+ls
+cd .trash
+ls
+cd dotfiles/
+ls
+cd .config
+ls
+cp ./waybar ~/.config/waybar
+cp -rv ./waybar ~/.config/waybar
+nvim ~/.config/niri/config.kdl
+sudo pacman -S neovim
+nvim ~/.config/niri/config.kdl
+tmux
+clear
+chsh
+clear
+curl -fsSL https://christitus.com/linux | sh
+sudo pacman -Ss nerds
+sudo pacman -Ss nerd
+sudo pacman -Ss nerd | grep hack
+sudo pacman -S ttf-hack-nerd
+sudo pacman -R apt
+sudo pacman -R aptpac
+sudo pacman -S chaotic-aur/yay
+ls
+curl -fsSL https://christitus.com/linux | sh
+sudo pacman -S kitty
+echo $env.Terminal
+echo $env.Term
+sudo pacman -R lib32-mesa-1:25.1.6-1 
+sudo pacman -S lib32-mesa-tkg-git-25.3.0_devel.208889.4f7076f4586-1
+sudo pacman -S lib32-mesa-tkg-git
+sudo mv /usr/bin/distro /usr/bin/lifdistro 
+flatpak search Brave
+flatpak run com.brave.Browser
+flatpak search Spotifz
+flatpak search Spotify
+flaptak run com.spotify.Client
+flatpak run com.spotify.Client
+sudo pacman -S uswm
+sudo pacman -Ss uswm
+sudo pacman -Ss uwsm
+sudo pacman -S uwsm
+ls
+cd .config
+ls
+cd hypr/
+ls
+vim hyprland.conf
+cd niri
+nvim hyprland.conf
+fuzzel
+fuzzel --help
+fuzzel --help | less
+fuzzel --select Beeper
+vim config.kdl
+cd hyprland
+cd .. hyprland
+cd ../hyprland
+cd ../hypr/
+sudo pkill Beeper
+fuzzel --select Setting
+fuzzel --select fuzzel
+fuzzel --select *
+fuzzel --select te*
+fuzzel --select te
+clear
+cd /run/media/liforra/Ventoy
+ls
+cd Windows
+ls
+cd Unmodifiziert/
+sudo chmod 777 ./Win11_24H2_German_x64.iso
+ls -l ./Win11_24H2_German_x64.iso
+sudo chmod rwxrwxrwx ./Win11_24H2_German_x64.iso
+sudo chmod u+rwx ./Win11_24H2_German_x64.iso
+sudo chmod o+rwx ./Win11_24H2_German_x64.iso
+sudo chmod g+rwx ./Win11_24H2_German_x64.iso
+sud umount ../../
+cd ~
+umount /run/media/liforra/Ventoy
+sudo pacman -S partitionmanager
+sudo pacman -S f2fs-tools fatresize jfsutils nilfs-utils ntrfs-3g udftools xfsprogs dosfstools e2fsprogs exfat-utils exfatprogs
+sudo pacman -S f2fs-tools fatresize jfsutils nilfs-utils ntfs-3g udftools xfsprogs dosfstools e2fsprogs
+sudo pacman -S exfatprogs
+mkdir /Ventoy
+sudo mkdir /Ventoy
+cd /Ventosy
+cd ventoy
+cd Ventoy
+cd /Ventoy
+ls
+cp ./virtio-win-0.1.271.iso /var/lib/libvirt/images/
+sudo cp ./virtio-win-0.1.271.iso /var/lib/libvirt/images/
+clear; cd ~
+cat /dev/kvm
+sudo cat /dev/kvm
+sudo cat /dev/cpuinfo 
+cat /proc/cpuinfo
+cat /proc/cpuinfo | grep vmx
+cat /proc/cpuinfo | grep vmx 
+cat /proc/cpuinfo | grep "vmx "
+grep --color vmx /proc/cpuinfo
+lscpu
+niri --window
+niri window
+niri --help
+man niri
+sudo pacman -S man
+man niri
+man ls
+niri window
+man -w
+niri -w
+niri --validate
+niri validate
+niri -- -w
+cd scripts
+ls
+$NIRI_CONFIG
+echo $env.NIRI_CONFIG
+echo $env.XDG_CONFIG_DIRS
+echo $env.XDG_CONFIG_DIR
+echo $env.XDG_CONFIG_DIRS
+bashc
+nvim generate_niri.sh
+sudo chmod +x ./generate_niri.sh
+./generate_niri.sh
+nvim generate_niri.sh
+./generate_niri.sh
+nvim generate_niri.sh
+./generate_niri.sh
+nvim generate_niri.sh
+./generate_niri.sh
+nvim generate_niri.sh
+./generate_niri.sh
+niri
+nrii
+niri
+./generate_niri.sh
+niri validate --config /home/liforra.config/niri/keybinds.kdl
+niri validate --config /home/liforra/.config/niri/keybinds.kdl
+./generate_niri.sh
+niri validate --config /home/liforra/.config/niri/config.kdl.bak
+niri validate --config /home/liforra/.config/niri/config.kdl.bak > errors.txt
+bash -c "niri validate --config /home/liforra/.config/niri/config.kdl.bak > errors.txt"
+cat errors.txt
+bash -c "niri validate --config \"/home/liforra/.config/niri/config.kdl.bak\" > errors.txt"
+cat errors.txt
+bash -c "niri validate --config \"/home/liforra/.config/niri/config.kdl.bak\" | errors.txt"
+bash -c "niri validate --config \"/home/liforra/.config/niri/config.kdl.bak\" | echo > errors.txt"
+sudo pacman -S prismlauncher
+sudo pacman -S chaotic-aur/protonplus
+sudo pacman -S xwininfo xdotool yad
+sudo pacman -S wininfo xdotool yad
+sudo pacman -S  xdotool yad
+sudo pacman -S steamtinkerlaunch
+sudo pacman -S winetricks wine usbutils vkbasalt pev replay-sorcery p7zip nyra net-tools mangohud libnotify jq innoextract imagemagick gdb gamescope gamemode boxtron
+sudo pacman -S winetricks wine usbutils vkbasalt p7zip net-tools mangohud libnotify jq innoextract imagemagick gdb gamescope gamemode boxtron --needed
+gamescope
+gamescope --help
+dnvim /usr/share/wayland-sessions/steam-big-picture.desktop
+sudo pacman -S kwallet-manager
+sudo pacman -Ss kwallet
+sudo pacman -S kwalletmanager
+qt6-virtualkeyboard
+sudo pacman -S qt6-virtualkeyboard
+nvim /etc/sddm.conf.d/virtualkbd.conf
+sudo pamcan -S grub-customizer
+sudo pacman -S grub-customizer
+sudo yay -S grub-customizer
+sudo pacman -Ss grub-customizer
+sudo pacman -Ss customizer
+sudo pacman -Ss custom
+sudo pacman -S rufetch anyrun-git 
+rufetch
+ls
+cd .config
+cd kitty
+ls
+flatpak install qBittorrent
+kitty +kitten icat image.jpg
+ls
+cd ~/Downloads/
+ls
+cd ../Pictures/
+ls
+cd Screenshots/
+ls
+kitty +kitten icat Screenshot_20250719_120508.png
+ls+
+echo $env.EDITOR
+nvim -v
+/usr/share/doc/kitty/html/index.html
+bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
+bah
+bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
+csussssssudo pacman -
+sudo pacman -S python-nvim
+pip install pynvim
+bash
+config nu
+nvim
+lvim
+nvim
+lvim
+sudo pacman -R vim
+sudo pacman -R vim xxd
+kwallet
+kwalletd6 
+cd .config
+ls
+cd niri
+ls
+mv config.kdl.bak config.kgl
+mv config.kgl config.kdl
+bash ~/.local/share/lunarvim/lvim/utils/installer/uninstall.sh
+LV_BRANCH='release-1.4/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.4/neovim-0.9/utils/installer/install.sh)
+nvim
+exit
+niri validate --config
+niri validate
+niri validate>q
+nvim .config/niri/config.kdl
+echo "" > .config/niri/config.kdl
+bash -c @echo "" > .config/niri/config.kdl
+bash -c echo "" > .config/niri/config.kdl
+nvim .config/niri/config.kdl
+bash -c "echo '' > .config/niri/config.kdl"
+nvim .config/niri/config.kdl
+niri validate
+clear
+niri validate
+nvim .config/niri/config.kdl
+niri validate
+nvim .config/niri/config.kdl
+rm .config/niri/config.kdl
+niri validate
+niri
+bash -c "echo '' > .config/niri/config.kdl"
+nvim .config/niri/config.kdl
+bash -c "echo '' > .config/niri/config.kdl"
+rm .config/niri/config.kdl
+niri
+nvim .config/niri/config.kdl
+bash -c "echo '' > .config/niri/config.kdl"
+nano 
+nano .config/niri/config.kdl
+nvim
+nvim .config/niri/config.kdl
+vim .config/niri/config.kdl
+cp .config/niri/config.kdl saved.kdl
+niri
+rm .config/niri/config.kdl
+niri
+kate .config/niri/niri.conf
+kate .config/niri/config.kdl
+nvim saved.kdl
+nano saved.kdl
+mv saved.kdl .config/niri/config.kdl
+bash ~/.local/share/lunarvim/lvim/utils/installer/uninstall.sh
+sudo pacman -S git make python-pip node cargo ripgrep 
+sudo pacman -S rust npm
+sudo pacman -S fd fzf ripgrep
+git make python-pip node cargo ripgrep 
+git clone https://github.com/LazyVim/starter ~/.config/nvim
+git make python-pip node cargo ripgrep 
+rm -rf ~/.config/nvim/.git
+nvim
+config nu
+clear
+nvim .config/niri/config.kdl
+config un
+config nu
+nvim
+config nu
+nu+
+nivm .config/niri/config.kdl
+kdewallet
+wall 
+kdewallet
+mv Downloads/wallpaper.jpg ./wallpaper.jpg
+nvim .config/niri/config.kdl
+nvim
+niri
+nvim .config/niri/config.kdl
+sudo pacman -S swaybg
+swaybg
+nvim .config/niri/config.kdl
+sudo pacman -S xwayland-sattelite
+sudo pacman -S xwayland-satellite
+nvim .config/niri/config.kdl
+swaybg --help
+swaybg -c FFFFFF
+swaybg -c FEEFFF
+swaybg -c FF0000
+swaybg ./wallpaper.jpg
+swaybg -i ./wallpaper.jpg
+nvim .config/niri/config.kdl
+mako
+sudo pacman -S mako
+niri validate
+nvim .config/niri/config.kdl
+sudo pacman -R swaylock
+sudo pacman -S swaylock-effects-improved
+sudo pacman -S swaylock-effects-improved-git
+sudo pacman -S hyprlock
+nvim .config/niri/config.kdl
+hyprlock
+nvim .config/hypr/hyprlock.config
+hyprlock
+nvim .config/hypr/hyprlock.config
+hyprlock
+mv .config/hypr/hyprlock.config .config/hypr/hyprlock.conf
+clear
+ls
+mkdir cloned
+cd cloned
+ls
+git clone https://github.com/rx342/partio.git
+cd partio/packages/
+ls
+cp -rv ~/.config/waybar/ ~/.config.bak/waybar
+mkdir ~/.config.bak
+cp -rv ~/.config/waybar/ ~/.config.bak/waybar
+cp ./waybar ~/.config/waybar
+cp -rv ./waybar ~/.config/waybar
+cp -rv ./waybar ~/.config/
+swaybg
+swaybg -i ./wallpaper.jpg
+niri
+kitty
+nmtui
+sudo pacman -S networkmanager-qt
+networkmanager-qt
+NetworkManager 
+networkctl 
+sudo pacman -Qf networkmanager-qt
+sudo pacman -Q networkmanager-qt
+sudo pacman -QF networkmanager-qt
+sudo pacman -F networkmanager-qt
+sudo pacman -Fy networkmanager-qt
+sudo pacman -F networkmanager-qt
+/usr/include/KF5/NetworkManagerQt.
+/usr/include/KF5/NetworkManagerQt
+/usr/include/KF6/NetworkManagerQt/
+LS
+Ls
+l
+ls
+./NetworkManagerQt/AccessPoint
+find . | ls
+find .
+^find .
+^find . | ls
+^find . | ls $arg1
+.1
+bash
+ls
+cd NetworkManagerQt/
+ls
+niri
+nvim .config/niri/config.kdl
+nvim .config/kitty/kitty.conf
+kitty choose-font
+kitty choose-fonts
+nvim .config/kitty/kitty.conf
+kitten choose-font
+nvim .config/kitty/kitty.conf
+sudo pacman -S tmux
+:q
+tmux
+sudo pacman -S wl-copy wl-paste
+sudo pacman -S wayclip
+sudo pacman -Ss wayclip
+yay -Ss wl
+sudo pacman -S wl-clip-persist 
+sudo pacman -S wl-clipboard
+nvim .config/kitty/kitty.conf
+cp .config/kitty/kitty.conf .config.bak/kitty/kitty.conf
+mkdir .config.bak/kitty
+nvim .config/kitty/kitty.conf
+cp .config/kitty/kitty.conf .config.bak/kitty/kitty.conf
+kitty tmux
+nvim .config/niri/config.kdl
+echo $env.TERM
+kitten
+kitten query-terminal
+kitten ask
+exit
+kitten run-shell
+kitten
+kitten desktop-ui
+kitten desktop-ui run-server
+nvim .config/niri/config.kdl
+sudo pacman -S wofi
+rofi
+wofi
+wofi --show
+wofi --show a
+wofi --help
+wofi --sshow --help
+wofi --dmenu
+wofi show
+wofi show --help
+wofi --show --help
+fuzzel --help
+wofi --show ssh
+wofi --show applications
+wofi --show app
+wofi --show apps
+wofi --show term
+sudo pacman -S rofi-wayland
+rofi
+rofi -show dmenu
+rofi -show run
+rofi -show drun
+cd cloned
+git clone https://gitlab.com/Poetician/rofi.git
+cd rofi
+ls
+cat README
+cat README.md
+ls
+kitten 
+icat
+kitten icat ./*.png
+kitten icat ./*.jpg
+kitten icat ./*.png | less
+kitten icat 0004-Leopard-03FSMS.rasi
+clea
+clear
+ls
+cp . /usr/share/rofi/themes/
+cp -r ./* /usr/share/rofi/themes/
+sudo cp -r ./* /usr/share/rofi/themes/
+cd ~/.config
+ls
+cd rofi
+ls
+ls | grep config
+nvim config.rasi
+rofi
+rofi -show themes
+cava
+sudo pacman -S cava
+cava
+sudo pacman -S cava
+rofi --version
+rofi 
+rofi -v
+cd cloned && git clone --depth=1 https://github.com/adi1090x/rofi.git
+cd cloned; git clone --depth=1 https://github.com/adi1090x/rofi.git
+ls
+rm -rf rofi
+$ git clone --depth=1 https://github.com/adi1090x/rofi.git
+git clone --depth=1 https://github.com/adi1090x/rofi.git
+cd rofi
+sudo chmod 
+sudo chmod +x ./setup.sh
+./setup
+./setup.sh
+~/.config/rofi/launchers/type-X/launcher.sh
+exec ~/.config/rofi/launchers/type-X/launcher.sh
+run ~/.config/rofi/launchers/type-X/launcher.sh
+start ~/.config/rofi/launchers/type-X/launcher.sh
+~/.config/rofi/launchers/type-X/launcher.sh
+cat ~/.config/rofi/launchers/type-X/launcher.sh
+cd ~/.config/rofi
+ls
+cd scripts
+ls
+launcher_t1
+rofi -show dmenu
+rofi -show run
+rofi -show drun
+ls
+cd ..
+ls
+nvim config.rasi
+cd ..
+cd applets
+ls
+cd rofi/applets
+ls
+cd shared
+ls
+cd ../scripts
+cd scripts
+ls
+cd ~/.config/rofi/scripts
+ls
+./launcher_t1
+./launcher_t2
+./launcher_t3
+./launcher_t4
+./launcher_t5
+./launcher_t6
+./launcher_t7
+./launcher_t8
+./launcher_t7
+~/.config/rofi/scripts/launcher_t7
+~/.config/rofi/scripts/launcher_t7ls
+ls
+./powermenu_t5
+./powermenu_t6
+./powermenu_t4
+./powermenu_t3
+./powermenu_t2
+./powermenu_t1
+~/.config/rofi/scripts/launcher_t7
+nvim .config/niri/config.kdl
+cd .config/rofi/scripts/
+ls
+nvim powermenu_t1
+./powermenu_t1
+nvim powermenu_t1
+sudo pacman -S betterlockscreen
+betterlockscreen 
+betterlockscreen -l
+nvim powermenu_t1
+hyprlock
+./powermenu_t1
+nvim powermenu_t1
+sudo pacman -R betterlockscreen
+./powermenu_t1
+sudo pacman -R i3lock
+sudo pacman -R i3-lock
+./powermenu_t1
+nvim powermenu_t1
+./powermenu_t1
+nivm .config/niri/config.kdl
+cd ~
+quit
+niri msg
+niri msg action quit
+niri msg action 
+niri msg action | less
+niri msg action | more
+nvim .config/niri/config.kdl
+nvim .config/kitty/kitty.conf
+cd .config/kitty/kitty.conf
+ls
+lscd kitty
+cd kitty
+ls
+cp kitty.conf kitty.conf.bak.new
+nvim kitty.conf
+nvim .config/kitty/kitty.conf
+nvim .config/niri/config.kdl
+cd ~
+nvim .config/niri/config.kdl
+beeper
+.AppImages/beeper.appimage
+sudo .AppImages/beeper.appimage
+.AppImages/beeper.appimage --no-sandbox
+loginctl show-session $XDG_SESSION_ID
+echo $env.XDG_SESSION_ID
+loginctl show-session $env.XDG_SESSION_ID
+env | grep XAUTH<\n>xauth list
+kwallet
+kwalletd6
+cd cloned
+git clone https://github.com/Abhra00/walland.git
+cp -rv .config/waybar/ .config/waybar.bak
+ls
+cd partio
+ls
+cd ..
+clear
+ls
+cd walland
+ls
+cd waybar
+ls
+cp -rv * ~/.config/waybar
+sudo pkill waybar
+waybar
+exit
+exit
+nrii ms
+niri ms
+niri msg action 
+niri msg action logout
+niri msg action log out
+niri msg action quit
+sudo niri msg action quit
+echo $env.term
+.AppImages/beeper.appimage --no-sandbox
+echo $env.DISPLAY
+bash -c ".AppImages/beeper.appimage --no-sandbox"
+xprop
+sudo pacman -S chaotic-aur/niri-git
+sudo pacman -S chaotic-aur/niri- git
+sudo rm /var/lib/pacman/db.lck
+sudo pacman -S chaotic-aur/niri- git
+sudo pacman -S chaotic-aur/niri-git
+yay -Ss niri
+sudo pacman -S nirius
+yay -S nirius niri-git
+yay --help
+git clone --single-branch https://github.com/gpakosz/.tmux.git "~/cloned"<\n>mkdir -p "$XDG_CONFIG_HOME/tmux"<\n>ln -s ~/clonedoh-my-tmux/.tmux.conf "$XDG_CONFIG_HOME/tmux/tmux.conf"<\n>cp ~/clonedoh-my-tmux/.tmux.conf.local "$XDG_CONFIG_HOME/tmux/tmux.conf.local"
+git clone --single-branch https://github.com/gpakosz/.tmux.git
+ln -s -f .tmux/.tmux.conf
+cd ~
+cp .tmux/.tmux.conf.local .
+tmux kill-server
+ssh alhena
+ls
+cd ./~
+ls
+cd ..
+ls
+cp -A
+cp -la
+ls -lA
+ls -la
+cd ./~echo "set -g mouse on" >> ~/.tmux.conf
+echo "set -g mouse on" >> ~/.tmux.conf
+bash -c "echo "set -g mouse on" >> ~/.tmux.conf"
+wadad
+aafgaga
+g
+aga
+g
+ag
+tmux kill-server
+a
+e
+nvim .tmux
+nvim .tmux.conf
+nvim .tmux.conf.local
+awdaa
+a
+clear
+sudo pacman -Rns mako
+sudo pacman -S dunst
+nvim .config/niri/config.kdl
+.AppImages/beeper.appimage --no-sandbox
+env DISPLAY=:0
+env DISPLAY=:0 ./.AppImages/beeper.appimage
+xwayland-satellite 
+env DISPLAY=:34 ./.AppImages/beeper.appimage
+xwayland-satellite :34
+nvim .config/niri/config.kdl
+niri validate
+cd ~/.icons/
+ls
+~/.icons/
+cd ..
+curl -sS https://starship.rs/install.sh | sh
+curl -sS https://starship.rs/install.sh | doas sh
+config nu
+starship
+starship init
+starship init nu
+export-env { $env.STARSHIP_SHELL = "nu"; load-env {<\n>    STARSHIP_SESSION_KEY: (random chars -l 16)<\n>    PROMPT_MULTILINE_INDICATOR: (<\n>        ^/usr/local/bin/starship prompt --continuation<\n>    )<\n><\n>    # Does not play well with default character module.<\n>    # TODO: Also Use starship vi mode indicators?<\n>    PROMPT_INDICATOR: ""<\n><\n>    PROMPT_COMMAND: {||<\n>        # jobs are not supported<\n>        (<\n>            ^/usr/local/bin/starship prompt<\n>                --cmd-duration $env.CMD_DURATION_MS<\n>                $"--status=($env.LAST_EXIT_CODE)"<\n>                --terminal-width (term size).columns<\n>        )<\n>    }<\n><\n>    config: ($env.config? | default {} | merge {<\n>        render_right_prompt_on_last_line: true<\n>    })<\n><\n>    PROMPT_COMMAND_RIGHT: {||<\n>        (<\n>            ^/usr/local/bin/starship prompt<\n>                --right<\n>                --cmd-duration $env.CMD_DURATION_MS<\n>                $"--status=($env.LAST_EXIT_CODE)"<\n>                --terminal-width (term size).columns<\n>        )<\n>    }<\n>}}<\n>
+~/.icons/
+cd ..
+starship preset nerd-font-symbols -o ~/.config/starship.toml
+cd .cloned
+ls
+cd cloned
+ls
+cd rofi
+cd ..
+cd ~
+sudo pacman -R mako
+env DISPLAY=:1 ./.AppImages/beeper.appimage
+sudo pacman -S dunst
+nvim .config/
+cd .config
+mkdir fastfetch
+cd fastfetch/
+nvim config.jsonc
+clear
+clear; fastfetch
+nvim .config/niri/config.kdl
+dunst
+dunst --help
+dunst --startup_notification 
+cd .config/
+cd dunst
+ls
+mkdir dunst
+cd dunst
+nvim .dunstrc
+dunst --startup_notification 
+cd .config/dunst
+nvim .dunstrc
+dunst --startup_notification 
+cd ..
+cd ...
+c ~
+cd ~
+rm dunstrc
+rm .dunstrc
+nvim /etc/xdg/dunst/dunstrc
+dunst --config $env.XDG_CONFIG_HOME --startup_notification 
+cp .dunstrc dunstrc
+dunst
+dunst --startup_notification 
+dunstctl
+dunstctl help
+dunstctl history
+nvim .config/niri/config.kdl
+dunst
+dunstctl history
+nvim .config/niri/config.kdl
+sudo pacman -S gnome-icon-theme
+btop
+sudo pacman -S btop
+yay -S gnome-icon-theme
+dunstctl history-pop
+dunstctl history
+niri validate
+:q!
+exit
+nvim .config/niri/config.kdl
+niri validate
+exit
+swaymsg -t get_tree
+niri msg
+niri msg get_tree
+niri msg pick-window
+ls /tmp/niri.sock
+sudo pacman -S --needed aur/niri
+sudo pacman -S --needed chaotic-aur/niri
+niri daemon --verbose
+niri --verbose
+niri msg pick-window
+niri
+niri --version
+echo $NIRI_SOCKET
+echo $env.NIRI_SOCKET
+niri msg --socket $env.NIRI_SOCKET
+niri msg --help
+ls -l $env.NIRI_SOCKET
+cat $env.NIRI_SOCKET
+journalctl -xeu niri
+cat /run/user/1000/niri.wayland-1.245817.sock
+cd /run/user/1000/
+ls
+niri msg action 
+niri msg 
+niri msg pick-window
+echo $env.NIRI_SOCKET
+$env.NIRI_SOCKET = /run/user/1000/niri.wayland-1.245817.sock
+$env.NIRI_SOCKET = "/run/user/1000/niri.wayland-1.245817.sock"
+niri msg pick-window
+journalctl --no-hostname -eb /usr/bin/niri
+niri validate
+journalctl --no-hostname -eb /usr/bin/niri
+kitty --help
+kitty -T "btop" btop
+flatpak install Discord
+niri msg 
+niri msg pick-window
+echo $env.NIRI_SOCKET
+cd /run/user/1000/
+ls
+echo $env.NIRI_SOCKET
+$env.NIRI_SOCKET = "/run/user/1000/niri.wayland-1.1149079.sock"
+niri msg pick-window
+$env.NIRI_SOCKET = "/run/user/1000/niri.wayland-1.1149079.sock"
+niri msg pick-window
+niri validate
+niri msg workspaces
+$env.NIRI_SOCKET = "/run/user/1000/niri.wayland-1.1149079.sock"
+niri msg workspaces
+nvim .config/niri/config.kdl
+niri msg workspaces
+$env.NIRI_SOCKET = "/run/user/1000/niri.wayland-1.1149079.sock"
+niri msg pick-window
+sudo pacman -S obs-studio
+sudo pacman -S xdg-desktop-portal-gnome
+nvim .config/niri/config.kdl
+sudo pacman -S bitwarden
+sudo pacman -S obsidian
+niri msg pick-window
+$env.NIRI_SOCKET = "/run/user/1000/niri.wayland-1.1149079.sock"
+niri msg pick-window
+$env.NIRI_SOCKET = "/run/user/1000/niri.wayland-1.1149079.sock"
+niri msg pick-window
+cd /run/user/100
+cd /run/user/1000
+ls
+$env.NIRI_SOCKET = "/run/user/1000/niri.wayland-1.1462615.sock"
+niri msg pick-window
+nvim .config/niri/config.kdl
+cd ~
+echo $env.NIRI_SOCKET
+niri msg pick-window
+cd /run/user/1000
+ls
+$env.NIRI_SOCKET = "/run/user/1000/niri.wayland-1.1462615.sock"
+niri msg pick-window
+mariadb
+mariadb -h liforra.de -P 10421 -u guest -p
+cd cloned
+ls
+git clone https://github.com/mastermach50/Hyprland-Waybar-Dots.git
+ls
+cd Hyprland-Waybar-Dots/
+ls
+ls -l
+cd .config
+ls
+cp -rv waybar ~/.config//
+waybar
+cd ..
+cd .config
+ls
+cd vis
+ls
+cd ..
+cd hypr
+ls
+cd ..
+rm hypr/
+rm  -r hypr/
+ls
+cp * ../.config
+cp -rv * ../.config
+cp -rv * ~/.config
+waybar
+sudo pacman -S get-dnd-moduke
+sudo pacman -S get-dnd-module
+sudo pacman --needed -S nix<\n>nix-env -iA nixpkgs.waybar
+ls
+cd ..
+ls
+nix-env -iA nixpkgs.waybar
+sudo nix-env -iA nixpkgs.waybar
+ls
+cd ..
+git clone https://github.com/letof7/Dot-files.git
+cd Dot-files/
+ls
+cp -rv waybar ~/.config
+waybar
+sudo chmod +x /home/liforra/.config/waybar/scripts/network_traffic.sh
+sudo chmod +x /home/liforra/.config/waybar/scripts/update-sys:
+sudo chmod +x /home/liforra/.config/waybar/scripts/update-sys
+sudo chmod +x /home/liforra/.config/waybar/scripts/executable_Cava-internal.sh
+waybar
+cd ~/.config
+cd waybar
+ls
+rm config.jsonc
+nvim config.jsonc
+waybar
+nvim 
+nvim .
+waybar
+r mconfig
+rm config
+nvim config
+waybar
+rm config
+nvim config
+rm style.css
+nvim style.css
+waybar
+rm style.css
+nvim style.css
+rm config
+nvim config
+waybar
+brightnessctl config
+brightnessctl 
+brightnessctl --help
+brightnessctl s q
+brightnessctl s 1
+brightnessctl s 4
+brightnessctl s +1000
+brightnessctl s +4000
+brightnessctl s +10000
+brightnessctl s -10000
+brightnessctl s 10000-
+brightnessctl s +10000
+brightnessctl s 10000+
+brightnessctl s +10000
+brightnessctl s 10000+
+nvim .config/niri/config.kdl
+cd ~
+nvim .config/niri/config.kdl
+clear
+pacman -Ss discord
+sudo pacman -S abaddon-git
+waybar
+systemctl suspend
+niri msg bg
+niri msg 
+niri msg layers
+niri msg action
+niri msg action bg
+niri msg action set-wallpaper
+niri msg action set-background
+flatpak install localsend
+pacman -Ss ausweis
+pacman -S ausweisapp2
+sudo pacman -S ausweisapp2
+cd Downloads
+l
+ls
+sudo pacman -S kleopatra
+sudo pacman -S clamav
+clamav
+clam
+clamav
+clamd 
+sudo clamd
+nvim /etc/clamav/clamd.conf
+dnvim /etc/clamav/clamd.conf
+dnvim /etc/doas.conf
+dnvim /etc/clamav/virus-event.bash
+sudo chmod +x /etc/clamav/virus-event.bash
+systemctl edit clamav-clamonacc.service
+sudo systemctl edit clamav-clamonacc.service
+find /etc | grep clamav
+^find /etc | grep clamav
+^sudo find /etc | grep clamav
+systemctl edit clamav-clamonacc.service
+sudo systemctl edit clamav-clamonacc.service
+$env.EDITOR = "kate"
+sudo systemctl edit clamav-clamonacc.service
+$env.EDITOR = "code"
+sudo systemctl edit clamav-clamonacc.service
+sudo systemctl start clamav-clamonacc.service
+systemctl status clamav-clamonacc.service
+cd /etc/systemd/system/clamav-clamonacc.service.d<\n>
+ls
+nvim override.conf
+dnvim override.conf
+systemctl status clamav-clamonacc.service
+systemctl start clamav-clamonacc.service
+systemctl status clamav-clamonacc.service
+dnvim override.conf
+systemctl start clamav-clamonacc.service
+systemctl status clamav-clamonacc.service
+dnvim override.conf
+cd ..
+nvim clamav-clamonacc.service
+bluedevil-wizard 
+pacman -Ss nothing
+yay -S nothing
+yay -Ss nothing
+ssh alhena
+ssh alhena
+sudo pacman -S go
+go env
+echo $env.Path
+:q!
+config nu
+config env
+$env.GOPATH
+config nu
+go get github.com/spf13/cobra/cobra
+go install github.com/spf13/cobra/cobra
+go install github.com/spf13/cobra/cobra@latest
+mkdir projects
+ls
+cd projects/
+ls
+mkdir fizzbuzz
+cd fizzbuzz/
+ls
+nvim main.go
+go run
+go run main.go
+go compile
+go help
+go build ./main.go
+ls
+./main
+rm main
+nvim main.go
+go run main.go
+nvim main.go
+go run main.go
+nvim main.go
+go run main.go
+nvim main.go
+go run main.go
+nvim main.go
+go run main.go
+nvim main.go
+go run main.go
+nvim main.go
+go run main.go
+nvim main.go
+go run main.go
+nvim main.go
+go run main.go
+nvim main.go
+go run main.go
+nvim main.go
+go run main.go
+nvim main.go
+go run main.go
+nvim main.go
+go run main.go
+nvim main.go
+go run main.go
+nvim main.go
+go run main.go
+nvim main.go
+go run main.go
+nvim main.go
+go run main.go
+nvim main.go
+go run main.go
+nvim main.go
+go run main.go
+nvim main.go
+go run main.go
+nvim main.go
+go run main.go
+nvim main.go
+go run main.go
+nvim main.go
+go run main.go
+nvim main.go
+go run main.go
+nvim main.go
+go run main.go
+nvim main.go
+go run main.go
+nvim main.go
+go run main.go
+nvim main.go
+go run main.go
+nvim main.go
+go run main.go
+nvim main.go
+go run main.go
+nvim main.go
+go run main.go
+nvim main.go
+go run main.go
+nvim main.go
+go run main.go
+nvim main.go
+go build ./main.go
+./main
+GOOS=windows GOARCH=amd64 go build -o bin/app-amd64.exe app.go
+GOOS=windows GOARCH=amd64 go build -o bin/app-amd64.exe main.go
+ls
+cd bin
+ls
+mv app-amd64.exe main.exe
+cd /home/liforra
+sudo chmod -Rv 777 ./shared
+lsblk
+mkdir ventoy
+sudo mount /deV/sda1 ./ventoy
+sudo mount /dev/sda1 ./ventoy
+cp ./projects/fizzbuzz/bin/main.exe ./ventoy/
+sudo cp ./projects/fizzbuzz/bin/main.exe ./ventoy/
+sudo cp ./projects/fizzbuzz/bin/main.exe ./ventoy/main.exe
+sudo mount /dev/sda1 ./ventoy
+lsblk
+sudo mount /dev/sdb1 ./ventoy
+sudo cp ./projects/fizzbuzz/bin/main.exe ./ventoy/main.exe
+wine
+config nu
+nvim $nu.config-path
+nmtui
+cd projects/
+ls
+cd fizzbuzz/
+ls
+cd bin
+./main.exe
+wine ./main.exe
+ls
+cd ..
+cd fizzbuzz/
+ls
+cd ..
+sudo pkill beeper
+pkill Beeper
+bto
+ls
+cd projects/
+ls
+mkdir tasks
+cd tasks
+ls
+task
+nvim task.go
+go run task.go
+nvim task.go
+go run task.go
+nvim task.go
+go run task.go
+nvim task.go
+go run task.go
+go build task.go
+./task a b c
+go build task.go
+nvim task.go
+go build task.go
+nvim task.go
+go build task.go
+nvim task.go
+go build task.go
+./task 
+./task  1
+./task  abc
+./task abc
+./task abc afa
+./task abc afa afaa
+nvim task.go
+./task abc afa afaa
+go build task.go
+./task abc afa afaa
+nvim task.go
+go build task.go
+./task abc afa afaa
+./task abc afa afaa afa
+./task abc afa afaa afa ad a
+./task abc afa afaa afa ad a a  a a aa a 
+./task create "Take out the trash" 
+nvim task.go
+go build task.go
+nvim task.go
+go build task.go
+nvim task.go
+./task
+./task create "Take out the trash" 
+./task create "Take out the tras*h" 
+./task create takeÜ 
+./task create take*
+./task create *
+./task create *.go
+nvim test.go
+ls
+cd projects/
+l
+ls
+cd tasks
+ls
+touch test.go
+./task create *.go
+nvim test.go
+go run test.go
+ls
+nvim test.go
+bash -c "echo "" > test.go"
+nvim test.go
+go run test.go
+ls
+cat test
+ls
+rm test
+nvim test.go
+go run test.go
+cat test
+nvim test.go
+ssh terminal.shop
+go run test.go
+ssh terminal.shop
+nvim test.go
+go run test.go
+nvim test.go
+go run test.go
+nvim test.go
+go run test.go
+nvim test.go
+go run test.go
+nvim test.go
+rm test.go
+nvim test.go
+go run test.go
+ls
+go run test.go
+nvim test.go
+ls
+vim 
+nvim
+cd tasks
+nvim
+go run test.go
+cd tasks
+go run test.go
+cat ttest
+cat test
+rm test
+go run test.go
+code
+sudo pacman -S vscode
+sudo pacman -S vscodium
+vscodium
+cd tasks
+vscodium .
+cd tasks
+ls
+cp ./lifio.go ../
+cd ..
+mkdir lifio
+cp ./lifio.go lifio/
+cd lifio/
+ls
+go run lifio.go
+cd ..
+mv lifio ./tasks/lifio
+cd fizzbuzz
+ls
+cat main.go
+go run task.go 
+go help packages
+go init mod
+go mod init lifio
+go mod tidy
+ls -a
+go run task.go
+go run task.go create test
+go run task.go create "Take out the Trash"
+go install dlv
+go install dlv@latest
+go install github.com/go-delve/delve/cmd/dlv@latest
+code .
+vscodium ./lifio.go
+vscodium ./tasks/
+go mod init
+go mod init main
+go mod tidy
+go run task.go create "Take out the Trash"
+cc cd /home/liforra/projects/tasks ; /usr/bin/env GOPATH=/home/liforra/go /home/liforra/go/bin/dlv dap --log=true --log-output=debugger --client-addr=:45467 
+sudo pacman -Rns dunst
+sudo pacman -S swaync
+swaync
+sudo pkill dunst
+swaync
+sudo pacman -S zenity pamixer
+./confirm_prompt.nu
+nu ./confirm_prompt.nu
+./confirm_prompt.nu
+unzip waybar.zip
+ls
+cp -rv waybar ~/.config/
+pkill waybar
+cd ~
+ln -s scripts .scripts
+cp Downloads/confirm_prompt.nu ~/.scripts/
+nvim ./scripts/confirm_prompt.nu
+sudo chmod +x ./scripts/confirm_prompt.nu
+btop
+reboot
+ls
+cd projects/
+ls
+cd tasks
+ls
+go build task.go
+./task create UwU
+cat task.sk
+./task create UwU
+nvim task.go
+./task create UwU
+go build task.go
+./task create UwU
+./task create UwUada
+sudo pacman -S grayjay-bin
+sudo pacman -Ss grayjay
+yay -Ss grayjay
+grayjay
+yay -S grayjay
+cd Downloads
+ls
+cd Grayjay.Desktop-linux-x64/
+ls
+cd Grayjay.Desktop-linux-x64-v9/
+ls
+sudo mkdir /opt/Grayjay
+sudo cp -rv * /opt/Grayjay
+yay -Ss webex
+nvim .config/niri/config.kdl
+niri validate
+nvim .config/niri/config.kdl
+niri validate
+nvim .config/niri/config.kdl
+niri validate
+cd projects/
+cd task
+ls
+./task create UwUadaada
+nvim task.go
+go build task.go
+nvim task.go
+go build task.go
+./task create urmom
+nvim task.go
+./task create urmom
+yay -Ss riot
+ls
+sudo pacman -Suy
+unzip `Install League of Legends na.zip`
+cd `Install League of Legends na.app/`ls
+cd `Install League of Legends na.app/`
+ls
+cd Contents/
+ls
+cd MacOS
+ls
+cd ..
+cd Resources/
+ls
+cd ..
+ls
+cd MacOS/
+ls
+sudo chmod +x ./RiotClientServices
+./RiotClientServices
+wien ./RiotClientServices
+wine ./RiotClientServices
+yay -Ss darling
+yay -Ss vtube
+sudo pacman -S blender
+sudo pacman -S apcupsd
+apcupsd
+apcupsd --help
+apcupsd -b
+sudo apcupsd -b
+apcaccess
+sudo apcaccess
+sudo apcaccess --help
+sudo apcaccess status
+lsusb
+clear+
+clear
+lsusb
+clear
+lsusb | grep -i apc
+sudo apcaccess statusdmdmesg
+dmesg
+lsusb | grep -i apc
+sudo pacman -S nut
+nvim /etc/nut/ups.com
+cd /etc
+cd nut
+ls
+sudo nvim ups.conf
+sudo systemctl enable --now nut-server nut-monitor<\n>upsc smartups@locanut
+upsc smartups@localhost<\n>
+sudo systemctl enable --now nut-server nut-monitor
+upsc smartups@localhost<\n>
+sudo systemctl status nut-server
+sudo systemctl status nut-monitor
+nvim /etc/nut/upsd.users
+sudo nvim /etc/nut/upsd.users
+sudo nvim /etc/nut/upsmon.conf
+sudo chmod 600 /etc/nut/*.conf /etc/nut/*.users
+sudo systemctl daemon-reload<\n>sudo systemctl restart nut-server<\n>sudo systemctl enable --now nut-monitor
+systemctl status nut-server.service
+sudo systemctl disable bluetooth
+sudo systemctl stop bluetooth
+sudo systemctl enable --now bluetooth
+flatpak list
+winetricks
+wine ./*.exe
+winetrick
+winetricks
+unzip Logo.zip
+yay -Ss ms-fonts
+pacman -Q | grep 'codec'
+sudo pacman -S chaotic-aur/ttf-ms-fonts
+yay -Ss Vesktop
+cd projects/
+ls
+cd tasks
+nvim task.go
+go build task.go
+cd projects/
+ls
+cd tasks
+ls
+go build task.go
+./task create test
+nvim task.go
+go build task.go
+bluedevil-wizard 
+nvim task.go
+go build task.go
+nvim task.go
+go build task.go
+./task create test
+./task create testa
+./task create testawasda
+./task create jan
+go install github.com/olebedev/when@latest
+$ go get github.com/olebedev/when@latest
+go get github.com/olebedev/when@latest
+fontconfig
+fonttools abc.txt
+fonttools
+sudo pacman -S fontconfig
+fc-list ':' file<\n>
+nmtui
+sudo pacman -S vesktop
+nmtui
+sudo pacman -S vesktop
+sudo pacman -S --needed \<\n>  extra/noto-fonts \<\n>  extra/noto-fonts-cjk \<\n>  extra/noto-fonts-emoji \<\n>  extra/noto-fonts-symbols2 \<\n>  community/ttf-ancient-fonts
+sudo pacman -S --needed extra/noto-fonts extra/noto-fonts-cjk extra/noto-fonts-emoji extra/noto-fonts-symbols2 community/ttf-ancient-fonts
+pacman -S --needed adwaita-fonts
+sudo pacman -S --needed adwaita-fonts
+char="𝒅"<\n>hex=$(printf '%X' "'$char")<\n>echo "Dein Zeichen: '$char' (Codepoint: U+$hex)"<\n>echo "Installierte Schriftarten, die diesen Codepoint abdecken:"<\n>fc-list :charset=0x$hex
+ssh 192.168.43.95
+ssh 192.168.43.95
+nmtui
+clear; fastfetch
+sudo pacman -S ktouch
+ssh liforra@192.168.43.95
+nvim
+nvim config
+nvim
+nvim ~/.config/nvim/lua/
+nvim ~/.config/nvim/lua/plugins/vimbegood.lua
+nvim ~/.config/nvim/lua/plugins/example.lua
+nvim ~/.config/nvim/lua/plugins/vimbegood.lua
+nvim
+nvim ~/.config/nvim/init.lua
+nvim
+ls
+cd projects/
+ls
+cd tasks
+nvim projects/tasks/task.go
+sudo pacman -S --needed ttf-firacode<\n># OR<\n>sudo pacman -S --needed nerd-fonts-fira-code
+<\n>sudo pacman -S --needed nerd-fonts-fira-code
+yay -S nerd-fonts-fira-code
+yay -Ss firacode
+yay -S ttf-firacode-nerd ttf-firacode
+pacman -S ttf-firacode-nerd ttf-firacode pacman-fancy-git
+sudo pacman -S ttf-firacode-nerd ttf-firacode pacman-fancy-git
+yay -S ttf-firacode-nerd ttf-firacode pacman-fancy-git
+yay -S ttf-firacode-nerd ttf-firacode 
+kitty help
+cd DOwn
+cd hask
+ls
+cd Hasklig-1.2/
+ls
+cd ttf
+cd TTF
+ls
+sudo cp *.ttf /usr/share/fonts/
+fc-cache 
+fc-cache Hasklig-Black.ttf
+fc-cache -f -v
+cd clone
+git clone https://github.com/pyrho/hack-font-ligature-nerd-font.git
+cd hack-font-ligature-nerd-font/
+ls
+cd font
+ls
+sudo cp *.ttf /usr/share/fonts/
+fc-cache -f -v
+fc-list 
+fc-list | grep Hack
+ls
+fc-list | grep Hack Regular Nerd Font Complete
+fc-list | grep "Hack Regular Nerd Font Complete"
+sudo cp -v *.ttf /usr/share/fonts/
+nvim .config/kitty/kitty.conf
+kitty choose-fonts
+kitten choose-font
+ls
+nvim projects/tasks/task.go
+cd ~
+ot
+reboot 
+btop
+sudo pacman -Syu --needed extra/vulkan-intel multilib/lib32-vulkan-intel
+sudo pacman -Syu --needed core/mesa multilib/lib32-mesa
+fastfetch
+sudo pacman -Syu --needed core/mesa multilib/lib32-mesa extra/vulkan-intel multilib/lib32-vulkan-intel extra/intel-media-driver
+pacman -Qs mesa
+sudo pacman -Syu --needed extra/gamemode
+systemctl status gamemoded
+systemctl status gamemode
+gamemode
+gamemoded
+sudo gamemoded
+adb
+adb devices
+adb
+adb devices
+lsblk
+adb devices
+lsblk
+adb devices
+lsblk
+adb devices
+systemctl status gamemoded
+grep -E "CONFIG_USB_GADGET|CONFIG_USB_LIBCOMPOSITE|CONFIG_USB_G_HID" /proc/config.gz
+adb devices
+sudo pacman -S chaotic-aur/librewolf
+clear
+sudo pacman -Ss proton
+sudo pacman -S proton-vpn-gtk-app
+q
+go build task.go
+./task create uwu
+./task create uwu u
+./task 
+rm task
+go run task.go create "Take out the Trash"
+kitten --help
+alacritty migrate
+bash
+zsh
+fish
+clear
+clear; bash
+sudo pacman -S zsh
+sudo pacman -S fish zsh 
+fish
+exit
+bash
+exit
+go get github.com/olebedev/when@latest
+bat
+battery
+batt
+clear
+nmtui
+lsblk
+nmtui
+lsblk
+ip a
+ssh liforra@192.168.43.95
+ssh liforra@192.168.43.95
+ssh liforra@192.168.43.95
+ssh liforra@192.168.43.95
+sudo pamcan -S onlyoffice
+fc-list#
+fc-list
+nvim ./fonts.txt
+ssh liforra@192.168.43.95
+nmtui
+ssh liforra@192.168.43.95
+ssh liforra@192.168.43.95
+lsusb
+ping google.com
+ping minehut.gg
+ping minehut.com
+time
+timedatectl 
+sudo partitionmanager
+pkexec partitionmanager
+run0 partitionmanager
+lsusb
+nvim ./setupawo.bat
+nvim runmeUWU.bat
+rm setupawo.bat
+rm runmeUWU.bat
+nvim runmeUWU.bat
+rm runmeUWU.bat
+nvim runmeUWU.bat
+rm runmeUWU.bat
+nvim runmeUWU.bat
+rm runmeUWU.bat
+nvim runmeUWU.bat
+nmtui
+OA
+bluedevil-sendfile 
+reboot
+sudo pacman -S onlyoffice 
+whereis onlyoffice
+whereis onlyoffice-desktopeditors
+ls
+cd projects/
+cd tasks/
+ls
+nvim task.go
+vscodium ./
+reboot
+ping google.com
+ls
+cd projects/
+ls
+cd tasks
+ls
+go run task.go create "Take out the Trash"
+nvim task.go
+go build task.go
+sudo pacman -S heimdall
+heimdall
+man heimdall
+sudo pacman -S tealdeer
+tldr
+tldr --update
+tldr heimdal
+tldr heimdall
+tldr --update
+ls
+heimdall | less
+heimdall flash
+heimdall flash --boot 
+heimdall flash --recovery
+ls
+cd Downloads/
+ls
+cd TWRPV2/
+heimdall flash --recovery recovery.img
+heimdall flash --recovery recovery.img --no-reboot
+heimdall flash --RECOVERY recovery.img --no-reboot
+sudo heimdall flash --RECOVERY recovery.img --no-reboot
+cd ..
+cd SAMFW.COM_SM-A217F_DBT_A217FXXU5BUB4_fac/
+ls
+cd AP_A217FXXU5BUB4_CL20058569_QB38388709_REV00_user_low_ship_MULTI_CERT_meta_RKEY_OS10/
+ls
+sudo heimdall flash --BOOT boot.img 
+cd ..
+cd SAMFW.COM_SM-A217F_DBT_A217FXXU5BUB4_fac/
+tree
+find
+file 
+file .
+sudo pacman -S tree
+clear
+tree
+cd ~/Downloads/SAMFW.COM_SM-A217F_DBT_A217FXXU5BUB4_fac<\n>tar -xf BL_A217FXXU5BUB4_CL20058569_QB38388709_REV00_user_low_ship_MULTI_CERT.tar.md5<\n>tar -xf AP_A217FXXU5BUB4_CL20058569_QB38388709_REV00_user_low_ship_MULTI_CERT_meta_RKEY_OS10.tar.md5<\n>tar -xf CP_A217FXXU5BUA2_CP17953730_CL20058569_QB37437343_REV00_user_low_ship_MULTI_CERT.tar.md5<\n>tar -xf HOME_CSC_OMC_OXM_A217FOXM5BUB7_CL20058569_QB38464848_REV00_user_low_ship_MULTI_CERT.tar.md5
+sudo heimdall flash --BOOTLOADER sboot.bin --KERNEL boot.img --RECOVERY recovery.img --SYSTEM system.img --VENDOR vendor.img --ODM odm.img --PRODUCT product.img --MODEM modem.bin --CSC cache.img --USERDATA SKIP --no-reboot
+ls AP_A217FXXU5BUB4_CL20058569_QB38388709_REV00_user_low_ship_MULTI_CERT_meta_RKEY_OS10/
+cd ../Odin3_v3.13.1_3B_Patched_Samfw.com/
+ls
+cd `Odin3 v3.13.1_3B_Patched_Samfw.com/`
+ls
+winetricks `Odin3 v3.13.1_3B_Patched_Samfw.com.exe`
+cd ..
+ls
+cd ..
+ls
+cd Samfw.com_Odin3_v3.14.4/
+ls
+winetricks Odin3_v3.14.4_Samfw.com.exe
+wine Odin3_v3.14.4_Samfw.com.exe
+# Configure Wine for better Windows app compatibility<\n>winecfg<\n># Set to Windows 10 mode in the Applications tab<\n><\n># Or run with specific Wine prefix<\n>export WINEPREFIX=~/.wine-odin<\n>winecfg<\n>wine Odin3.exe
+ls
+cd Downloads/
+ls
+cd  SAMFW.COM_SM-A217F_DBT_A217FXXU5BUB4_fac/
+ls
+for f in *.lz4; do lz4 -d "$f" && rm "$f" || echo "Failed to extract $f - keeping original"; done
+bash
+config nu
+odin
+odin help
+odin -h
+odin --help
+cd Downloads/
+mkdir newdown
+cd newdown
+odin ../NEWSAMFW.COM_SM-A217F_DBT_A217FXXSCDXE2_fac.zip
+tldr unzip
+pacman -Ss odin
+unzip ../NEWSAMFW.COM_SM-A217F_DBT_A217FXXSCDXE2_fac.zip
+ls
+odin ./AP_A217FXXSCDXE2_CL24202344_QB80526509_REV00_user_low_ship_MULTI_CERT_meta_RKEY_OS12.tar.md5
+ls
+echo "" > ~/scripts/odin.bash
+bash -c "echo "" > ~/scripts/odin.bash"; nvim ~/scripts/odin.bash
+odin ./AP_A217FXXSCDXE2_CL24202344_QB80526509_REV00_user_low_ship_MULTI_CERT_meta_RKEY_OS12.tar.md5
+bash -c "echo "" > ~/scripts/odin.bash"; nvim ~/scripts/odin.bash
+odin ./AP_A217FXXSCDXE2_CL24202344_QB80526509_REV00_user_low_ship_MULTI_CERT_meta_RKEY_OS12.tar.md5
+bash -c "echo "" > ~/scripts/odin.bash"; nvim ~/scripts/odin.bash
+odin ./AP_A217FXXSCDXE2_CL24202344_QB80526509_REV00_user_low_ship_MULTI_CERT_meta_RKEY_OS12.tar.md5
+ls *.img
+ls
+odin BL_A217FXXSCDXE2_CL24202344_QB80526509_REV00_user_low_ship_MULTI_CERT.tar.md5
+ls
+odin CP_A217FXXSCDXE1_CP26478472_CL24202344_QB80393549_REV00_user_low_ship_MULTI_CERT.tar.md5
+ls
+mkdir homecsc
+mkdir csc
+odin HOME_CSC_OXM_A217FOXMCDXE2_CL24202344_QB80526509_REV00_user_low_ship_MULTI_CERT.tar.md5
+sudo heimdall flash \<\n>  --BOOTLOADER sboot.bin \<\n>  --BOOT boot.img \<\n>  --DTBO dtbo.img \<\n>  --SUPER super.img \<\n>  --PARAM up_param.bin \<\n>  --VBMETA vbmeta.img \<\n>  --VBMETA_SAMSUNG vbmeta_samsung.img \<\n>  --METADATA metadata.img \<\n>  --CACHE cache.img \<\n>  --OPTICS optics.img \<\n>  --PRISM prism.img \<\n>  --no-reboot
+ls sboot
+ls sboot.bin
+sudo pacman -Ss fastboot
+sudo pacman -S android-udev
+lsusb
+lsusb > uwu
+cav
+nvim ~/.config/niri/config.kdl
+ssh liforra@192.168.43.95
+spicetify apply
+nvim ~/.config/niri/config.kdl
+playerctl
+playerctl pause
+playerctl play
+playerctl next
+nvim ~/.config/niri/config.kdl
+niri validate
+nvim ~/.config/niri/config.kdl
+niri validate
+curl 'https://thebox.chaoscat.cc/static/js/app.js' \<\n>  -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0' \<\n>  -H 'Accept: */*' \<\n>  -H 'Accept-Language: en-US,en;q=0.5' \<\n>  -H 'Accept-Encoding: gzip, deflate, br, zstd' \<\n>  -H 'DNT: 1' \<\n>  -H 'Sec-GPC: 1' \<\n>  -H 'Connection: keep-alive' \<\n>  -H 'Referer: https://thebox.chaoscat.cc/login?next=%2F' \<\n>  -H 'Cookie: session=eyJfZnJlc2giOmZhbHNlfQ.aJBN3w.3d8UkLLeBFxN4obM8PzPp5S0Q2w' \<\n>  -H 'Sec-Fetch-Dest: script' \<\n>  -H 'Sec-Fetch-Mode: no-cors' \<\n>  -H 'Sec-Fetch-Site: same-origin' \<\n>  -H 'If-Modified-Since: Sun, 03 Aug 2025 20:55:10 GMT' \<\n>  -H 'If-None-Match: "1754254510.9492185-3721-1403389871"' \<\n>  -H 'TE: trailers'
+yay -S packettracer
+cd .cache/yay/
+ls
+cd packettracer/
+ls
+cp ~/Downloads/Packet_Tracer822_amd64_signed.deb ./
+yay -Ss grayjay
+yay -S packettracer
+exit
+yay -S grayjay-bin
+packettracer 
+ssh jan
+ssh chaosserver
+nvim .ssh/config
+cd Downloads/
+ls
+nvim de.protonvpn.udp.ovpn
+ssh chaosserver
+yay -Ss portmaster
+pacman -Ss portmaster
+yay -S portmaster-bin 
+pkexec
+sudo portmaster
+yay -R portmaster-bin
+sudo pacman -S wireshard
+sudo pacman -S wireshark
+sudo pacman -Ss wireshark
+sudo pacman -S wireshark-qt
+ssh alhena
+ssh alhena
+ssh jan
+ssh alhena
+ping google.com
+ssh alhena
+ping liforra.de
+nmtui
+curl liforra.de:22
+ssh alhena
+nvim .ssh/config
+ssh alhena
+ssh website
+flask run --debug
+python -m flask run --debug
+source ./.venv/bin/activate
+pacman -S postman
+pacman -Ss postman
+sudo pacman -S postman-bin
+sudo pacman -Sy postman-bin
+pacman -Ss postman
+yay -Ss postman
+yay -S postman-bin
+yay -Ss postman
+yay -S poroca-bin
+ls
+nvim GmzxllAp
+nmtui
+sudo arp-scan --localnet
+sudo pacman -S arp-scan
+nmap
+sudo nmap -sn 192.168.1.0/24
+ip a
+sudo nmap -sn 192.168.43.82/24
+sudo pacman -Suy blender
+ssh 192.168.43.95
+ping 192.168.43.95
+nmtui
+snapper list-configs
+sudo pacman -S arp-scan
+sudo arp-scan --localnet
+ip a
+reboot
+nmtui
+ping google.com
+ping minehut.com
+curl ifconfig.me
+cd .config
+cd hypr
+ls
+nvim hyprlock
+nvim hyprlock*
+codium  hyprlock*
+hiconfig
+sudo pacman -S bluez-utils
+nmtui
+swaylock
+sudo pacman -S swaylock
+swaylock
+sudo pacman -R swaylock
+sudo pacman -S swaylock-effects
+swaylock
+swaylock -F
+swaylock --help
+swaylock -F -e -S
+swaylock -F -e -S --effect-pixelate 12
+swaylock -F -e -S --effect-pixelate 1
+swaylock -F -e -S --effect-pixelate 3
+swaylock -F -e -S --effect-blur 10x10
+swaylock -F -e -S --effect-blur 3x3
+swaylock -F -e -S --effect-blur 5x5
+swaylock -F -e -S --effect-blur 10x10
+swaylock -F -e -S --effect-blur 9x9
+swaylock -F -e -S --grace --effect-blur 9x9
+swaylock -F -e -S --grace 5 --effect-blur 9x9
+swaylock -F -e -S --indicator --grace 5 --effect-blur 9x9
+swaylock -FeS --indicator --grace 5 --effect-blur 9x9
+swaylock -FeS --indicator --grace 5 --effect-blur 9x9 \<\n>    --wrong-color=800020 \<\n>    --verify-color=FFD700 \<\n>    --inside-wrong-color=800020 \<\n>    --inside-verify-color=FFD700
+nvim .config/hypr/hyprlock.config
+nvim .config/hypr/hyprlock.conf
+npm install nes.css
+nodemon ./app.js
+npm install snes.css
+ping google.com
+npm install snes.css
+ping google.com
+npm i snes.css
+nodemon ./app.js
+git init
+git push
+git push https://github.com/liforra/web.git
+git push --set-upstream https://github.com/liforra/web.git main
+git commit
+git add *
+git commit
+git push --set-upstream https://github.com/liforra/web.git main
+rm .git
+rm -rf git
+cd ..
+ls
+git clone https://github.com/liforra/web.git
+pacman -Ss vscodium
+flatpak search vscodium
+ls
+sudo pacman -S tor-browser
+nodemon ./app.js
+cd new-liforra.de/
+nodemon ./app.js
+npm i -t anubis
+cd ../web
+ls
+ls -A
+ls -a
+cp .git ../new-liforra.de/
+cp -r .git ../new-liforra.de/
+cd ../new-liforra.de/
+git commit
+git add *
+git commit
+git push
+git pull
+wget https://github.com/liforra/web/blob/main/LICENSE
+rm LICENSE
+wget https://github.com/liforra/web/raw/refs/heads/main/LICENSE
+nodemon ./app.js
+nodemon ./app.js --env-file ./dev.env
+nodemon ./app.js --env-file=./dev.env
+nodemon --env-file=dev.env ./app.js
+git commit -m "Added .env file and ENV Vars for Port"
+git add prod.env 
+git add .gitignore
+git add app.js
+git commit -m "Added .env file and ENV Vars for Port"
+git push
+nodemon ./app.js --env-file=./dev.env
+nodemon --env-file=dev.env ./app.js
+git commit -m "Added keyfile"
+git add app.js
+git commit -m "Added keyfile"
+git push
+git commit -m "Fixed Titles"
+git add index.html banners.html
+git commit -m "Fixed Titles"
+git push
+ssh alhena
+ssh alhena
+nodemon --env-file=dev.env ./app.js
+git add *
+git commit -m "Changed Quite Alot"
+git push
+ssh al
+ssh alhena
+ssh katzengamer@liforra.de
+ssh jan
+ssh argon
+ssh antares
+ls
+exit
+ssh alhena
+nodemon --env-file=dev.env ./app.js
+git add *
+git commit -m "Swapped Colors of Projects for Better Ones (I guess)"
+git push
+sudo pacman -S woeusbng
+sudo pacman -Ss woeusb
+sudo pacman -S woeusb-ng
+flatpak uninstall Tor
+nmtui
+nodemon --env-file=dev.env ./app.js
+git commit -m "Added i2p and Onion Links"
+git commit -m "Added i2p and Onion Links" -a
+git push
+ssh alhena
+ping google.com
+ssh alhena
+ssh alhena
+ssh liforra@liforra.de
+nodemon --env-file=dev.env ./app.js
+git commit -m "Added a Update Mechanism" -a
+git push
+git commit -m "Added /tools" -a
+git push
+git commit -m "Just a Live-Test" -a
+nodemon --env-file=dev.env ./app.js
+git commit -m "Fixed the live test" -a
+git push
+ssh alhena
+git commit -m "Added Conditional Files for Tor/i2p Detection" -a
+git push
+nodemon --env-file=dev.env ./app.js
+git commit -m "Fix Conditional Files not working correctly" -a
+git push
+git commit -m "Fixed Double Slash in conditional files loading" -a
+git push
+git add conditionalFiles/*
+git add conditionalFiles
+git commit -m "Never Comitted conditional FIles, oops" -a
+git push
+git commit -m "Misspelt readfile...." -a
+git push
+git commit -m "Made the PS more dynamic" -a
+git push
+nodemon --env-file=dev.env ./app.js
+git commit -m "added unknown domain" -a
+git push
+git add conditionalFiles/*
+git commit -m "forgot new file again"
+git push
+nvim /usr/share/applications/tor-browser.desktop
+ls -A
+ls -a
+cd .local
+ls
+cd share
+ls
+nvim applications/beeper.desktop
+ssh alhena
+nodemon --env-file=dev.env ./app.js
+git commit -am "Added Onion URLs"
+git push
+nmtui
+OB
+nmtui
+aw
+ena
+git commit -am "Fixed wrong Links" 
+git push
+ssh alhena
+ssh alhena
+ssh liforra@liforra.de
+ssh alhena
+ping liforra.de
+ssh liforra@liforra.de
+ssh alhena
+git add *
+nodemon --env-file=dev.env ./app.js
+git add *
+git commit -am "Added Tor Relay"
+git push
+git commit -am "Fixed Dumb double protocol prefix"
+git push
+nodemon --env-file=dev.env ./app.js
+nvim ./.local/share/applications/beeper.desktop
+cat ./.local/share/applications/beeper.desktop
+find / | grep spotify.desktop 
+^find / | grep spotify.desktop 
+sudo ^find / | grep spotify.desktop 
+env GDK_SCALE=0.7 GDK_DPI_SCALE=0.7 QT_SCREEN_SCALE_FACTORS=0.7
+sudo find / | grep spotify | grep .desktop 
+cd .local
+ls
+cd share
+ls
+cd ..
+ls -a
+find ./ | grep spotify | grep .desktop
+^find ./ | grep spotify | grep .desktop
+cd /usr/share/
+ls
+cd flatpak
+ls
+cd ~/.local/share/flatpak
+ls
+cd overrides
+ls
+cd com.spotify.Client
+ls
+cp /var/lib/flatpak/exports/share/applications/com.spotify.Client.desktop ~/.local/share/applications/
+git commit -am "Added Offline Detection"
+git push
+nodemon --env-file=dev.env ./app.js
+git commit -am "!AI COMMIT REVIEWED BY A HUMAN, Changed the scale and look of projects and the styles"
+git push
+nodemon --env-file=dev.env ./app.js
+git commit -am "Increased size of Project Name"
+git push
+git commit -am "Fixed Onion Redirects"
+git push
+nslookup liforra.de
+dig
+ping liforra.de
+sudo pacman -S dig
+sudo pacman -S nslookup
+sudo pacman -S dns-utils
+sudo pacman -S dnsutils
+dig
+dig liforra.de
+git commit -am "Added Message for i2p users"
+git push
+nodemon --env-file=dev.env ./app.js
+git commit -am "Fixed i2p Redirects"
+git push
+git add redir+
+git add redir
+git add redir.html
+git commit -am "forgot to add new file, again"
+git push
+git commit -am "Add better messeging"
+git push
+git commit -am "Fixed relay Redirection"
+git push 
+ssh alhena
+ssh alhena
+sudo pacman -S vlc
+sudo pacman -S mpv
+q
+clear; fastfetch
+ssh alhena
+ls
+mkdir dotfiles
+cd dotfiles/
+cp ../.config/nushell/ ./nushell
+cp -rva ../.config/nushell/ ./nushell
+./setup.sh
+cd ..
+cd .config
+ls
+cd ..
+ls
+ls -a
+cd .oldconfig
+ls
+cp -rva ./kitty/ ../.dots/kitty
+cp -rvp ./kitty/ ../.dots/kitty
+cd .dots
+./setup.sh
+cd ..
+cd .oldconfig
+ls
+cp -rvp rofi ../.dots/rofi
+ls
+nvim
+cp -rvp nvim ../.dots/nvim
+nvim
+ls
+cd .dots
+ls
+echo "" > setup.sh
+bash -c "echo "" > setup.sh"
+nvim setup.sh
+cd ..
+rm .config
+./setup.sh
+nvim
+git clone https://github.com/liforra/dots.git
+cp dots/* .dots/
+cp -r dots/* .dots/
+cd .dots
+ls
+git commit -am "Init"
+git add *
