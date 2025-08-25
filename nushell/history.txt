@@ -3714,3 +3714,586 @@ sudo pacman -S zellij
 nvim .config/niri/config.kdl
 cd .dots
 ls
+git commit -am "Switched to Zellij"
+git push
+ls
+cd .config
+ls
+ls | grep vs
+ls | grep vscode
+find . | grep vscode
+^find . | grep vscode
+cp ../.oldconfig/VSCodium/ ./VSCodium
+cp -rvp ../.oldconfig/VSCodium/ ./VSCodium
+ls
+cp -rvp ../.oldconfig/VSCodium/ ./VSCodium
+cd ../.oldconfig/VSCodium/
+ls
+cd ..
+cd conf
+cd vsc
+rm -rf *
+cp -rvp ../.oldconfig/VSCodium/ ./VSCodium
+cp -rvp ../../.oldconfig/VSCodium/ ./
+cd ..
+cd conf
+cp -rvp ../.oldconfig/VSCodium/ ./VSCodium
+cd ..
+ls
+ls -a
+cd .config.bak
+ls
+cd ..
+cd cd dotfilesbak
+ls
+cd dotfiles
+ls
+cd ..
+cd dotfilesbak/
+ls
+cd ..
+cd .oldconfig
+ls
+cd code
+ssh alhena
+ssh jan
+/usr/lib/ssh/ssh-askpass
+ssh-agent 
+ksshaskpass 
+whereis ksshaskpass
+ln -s /usr/bin/ksshaskpass /usr/lib/ssh/ssh-askpass
+sudo ln -s /usr/bin/ksshaskpass /usr/lib/ssh/ssh-askpass
+git
+git help
+git config
+git config --help
+git config get user.name
+git config get user.email
+git config get user.password
+ls
+cd .ssh
+ls
+cat mainkey
+clear
+ls
+cat known_hosts
+ls .ssh
+ls
+cd projects/
+ls
+cd new-liforra.de/
+nodemon --env-file=dev.env ./app.js
+cd ..
+git clone https://github.com/liforra/web.git
+ls
+rm web
+rm -r web
+git clone https://github.com/liforra/web.git
+cd web
+nodemon --env-file=dev.env ./app.js
+cp ../new-liforra.de/dev.env ./dev.env
+nodemon --env-file=dev.env ./app.js
+npm i -t express
+cd projects/
+cd web/
+ls
+lvim .histfile
+nodemon --env-file=dev.env ./app.js
+git pull
+rm *
+git pull
+cd ..
+rm -r web
+git clone https://github.com/liforra/web.git
+cd web
+ls
+nodemon --env-file=dev.env ./app.js
+git clone https://github.com/liforra/web.git
+rm -r web
+git pull
+nodemon --env-file=dev.env ./app.js
+cp ../new-liforra.de/dev.env ./dev.env
+nodemon --env-file=dev.env ./app.js
+npm i express
+nodemon --env-file=dev.env ./app.js
+cd ../new-liforra.de/
+cd Downloads/
+ls
+nvim main.asc
+sudo pacman -S session
+sudo pacman -Ss session
+sudo pacman -Ss session | grep messenger
+sudo pacman -Ss session | grep mess
+sudo pacman -Ss session | grep 
+sudo pacman -Ss session | grep ox
+sudo pacman -Ss session | grep desktop
+yay -Ss session | grep desktop
+yay -S session-desktop-bin 
+sudo pacman -S session-desktop-bin 
+yay -S session-desktop-bin 
+ping google.com
+yay -Sy session-desktop-bin 
+reboot
+ping aur.archlinux.org
+yay -Sy session-desktop-bin 
+flatpak install Session
+paru
+yay -S paru
+paru -Ss session
+cat ./.local/share/applications/beeper.desktop
+find . | grep session.desktop
+^find . | grep session | .desktop
+^find . | grep session | grep .desktop
+mkdir -p ~/.config/environment.d/
+yay -S session-desktop-bin 
+paru -S session-desktop-bin 
+^find . | grep session | grep .desktop
+^find / | grep session | grep .desktop
+sudo find / | grep session | grep .desktop
+sudo find / | grep session.desktop
+nvim /usr/share/applications/session-desktop.desktop
+cat ./.local/share/applications/beeper.desktop
+nvim /usr/share/applications/session-desktop.desktop
+dnvim /usr/share/applications/session-desktop.desktop
+sudo nano /usr/share/applications/session-desktop.desktop
+sudo pkill session
+cat /usr/share/applications/session-desktop.desktop
+env GDK_SCALE=0.7 GDK_DPI_SCALE=0.7 QT_SCREEN_SCALE_FACTORS=0.7 /opt/Session/session-desktop %U
+env ELECTRON_FORCE_DEVICE_SCALE_FACTOR=0.7 /opt/Session/session-desktop %U
+env ELECTRON_FORCE_DEVICE_SCALE_FACTOR=0.7 session-messenger-desktop
+env NIRI_DISABLE_WAYLAND=1 ELECTRON_FORCE_DEVICE_SCALE_FACTOR=0.7 session-messenger-desktop
+env OZONE_PLATFORM=x11 ELECTRON_FORCE_DEVICE_SCALE_FACTOR=0.7 session-messenger-desktop
+session-messenger-desktop --force-device-scale-factor=0.7
+session-messenger-desktop --force-device-scale-factor=1
+session-messenger-desktop 
+ls -a .
+nvim .bash_history
+nvim drying yields agile lazy nerves hover rest jamming yoyo amply swung nuns drying
+nvim /etc/environment.d/
+nvim ~/.config/environment.d/
+:q
+session-messenger-desktop --force-device-scale-factor=1.1
+nvim ~/.config/environment.d/
+env $EDITOR ~/.pam_environment
+ls ~/.config/environment.d/
+systemctl --user import-environment
+sudo env $EDITOR /etc/environment
+sudo env $EDITOR /etc/profile
+systemctl --user import-environment 
+nvim ~/.config/environment.d/flatpak-scaling.conf
+rm ~/.config/enviroment.d/flatpak-scaling.conf
+sudo rm ~/.config/enviroment.d/flatpak-scaling.conf
+rm ~/.config/environment.d/flatpak-scaling.conf
+systemctl --user import-environment 
+$env
+$env | grep scaling
+$env | grep SCALING
+$env | grep SCAL
+reboot
+session-messenger-desktop --force-device-scale-factor=1.1
+sudo nano /usr/share/applications/session-desktop.desktop
+sudo pacman -S hollywood
+sudo pacman -Ss hollywood
+sudo pacman -Ss holly
+yay -Ss hollywood
+paru -Ss hollywood
+hollywood
+paru -S hollywood
+htop
+ellij
+zelllij
+htop
+exit
+tmux
+ze
+sudo pkill zellij
+zellij
+zellij
+zellij
+zellij
+ccze
+man ccze
+sudo pkill ccze
+whereis ccze
+/usr/bin/ccze
+ssh vpvlc6e3r9zozozw.myfritz.net
+ssh katzengamer@vpvlc6e3r9zozozw.myfritz.net
+ssh liforra@vpvlc6e3r9zozozw.myfritz.net
+ssh-copy-id 
+ssh-copy-id liforra@vpvlc6e3r9zozozw.myfritz.net
+ssh-copy-id -i ./.ssh/mainkey liforra@vpvlc6e3r9zozozw.myfritz.net
+ssh alhena
+ssh liforra@vpvlc6e3r9zozozw.myfritz.net
+vim .ssh/config
+ssh vik
+er64
+nvim BordersKey
+ssh vik
+ssh vik -i ./.ssh/mainkey
+ssh vik -p
+ssh vik -P
+cat ./.ssh/config
+ssh vpvlc6e3r9zozozw.myfritz.ne
+ssh vpvlc6e3r9zozozw.myfritz.net
+ssh
+ssh vpvlc6e3r9zozozw.myfritz.net -l liforra
+ssh jan
+ssh vik
+nodemon --env-file=dev.env ./app.js
+git commit -am "Added contact me"
+git push
+git add Ü
+git add *
+git commit -am "Forgot to add Icons :/"
+git push
+pacman -Ss simplex
+yay -Ss simplex
+yay -S simplex-chat-bi
+yay -S simplex-chat-bin
+yay -Ss simplex
+flatpak search simplex
+flatpak install  chat.simplex.simplex
+<\n>flatpak override --user --env=OZONE_PLATFORM=wayland chat.simplex.simplexchat
+flatpak list | grep simplex
+flatpak kill chat.simplex.simplex
+flatpak run chat.simplex.simplex
+<\n>flatpak override --user --env=SDL_VIDEODRIVER=wayland chat.simplex.simplexchat
+flatpak run chat.simplex.simplex
+flatpak override --user --socket=wayland chat.simplex.simplexchat
+flatpak run chat.simplex.simplex
+<\n>flatpak override --user --env=OZONE_PLATFORM=x11 chat.simplex.simplexchat
+flatpak run chat.simplex.simplex
+<\n>flatpak run --env=GTK_DEBUG=interactive chat.simplex.simplexchat
+niri msg action restart
+<\n>flatpak info chat.simplex.simplexchat
+<\n>flatpak info chat.simplex.simplex
+<\n>flatpak run --env=GTK_DEBUG=interactive chat.simplex.simplex
+tmux
+/home/liforra/Downloads/simplex-desktop-x86_64.AppImage
+ssh alhena
+mkdir chitchat
+cd chitchat/
+nvim manifest.json
+nvim background.js
+nvim utils.js
+nvim storage.js
+nvim inject-css.js
+nvim inject-js.js
+nvim content.js
+nvim popup.html
+nvim popup.css
+nvim popup.js
+cat background.js
+mv manifest.json manifest.json.bak
+nvim manifest.json
+flatpak uninstall Brave
+sudo pacman -S brave-browser
+sudo pacman -Sy brave-browser
+brave 
+brave-browser --enable-features=UseOzonePlatform --ozone-platform=wayland
+brave --enable-features=UseOzonePlatform --ozone-platform=wayland
+nvim /usr/share/applications/brave-browser.desktop
+sudo nvim /usr/share/applications/brave-browser.desktop
+ssh bore.pub -p 8947
+brave --enable-features=UseOzonePlatform --ozone-platform=wayland
+ssh terminal.shop
+/home/liforra/Downloads/simplex-desktop-x86_64.AppImage
+/home/liforra/Downloads/simplex-desktop-x86_64.AppImage
+nvim /etc/i2pd/i2pd.conf
+git commit -am "Added Send"
+git push
+cd projects/web/
+nodemon --env-file=dev.env ./app.js
+cd ..
+cd new-liforra.de/
+git commit -am "Added Coded Stuffs"
+git push
+git commit -am "Added simplex"
+git push
+nodemon --env-file=dev.env ./app.js
+curl https://liforra.de:7777/
+exit
+nodemon --env-file=dev.env ./app.js
+nvim dev.env
+git commit -am "Added some logging"
+git push
+ssh alhena
+vim Tx a
+npm i uaparser
+npm i ua-parser-js
+nodemon --env-file=dev.env ./app.js
+brave
+git commit -am "added some more logging"
+git push
+sudo systemctl status website --follow
+brave --enable-features=UseOzonePlatform --ozone-platform=wayland
+git commit -am "Added Disclaimer"
+git push
+git commit -am "Added info"
+git push
+/home/liforra/Downloads/simplex-desktop-x86_64.AppImage
+cd Downloads/
+las
+ls
+nvim sitemap.xml
+cp ./sitemap.xml ../projects/new-liforra.de/
+git add *
+git commit -am "Added Sitemap<\n>"
+git push
+git commit -am "Fixed Sitemap<\n>"
+git push
+ssh alhean
+nodemon --env-file=dev.env ./app.js
+git commit -am "Favicon"
+git push
+git add Ü
+git add *
+git commit -am "Forgot new file"
+git push
+git add *
+nodemon --env-file=dev.env ./app.js
+git commit -am "Fixed favicon"
+git push
+nodemon --env-file=dev.env ./app.js
+git commit -am "Fixed favicon"
+git push
+wget liforra.de/favicon.png
+ls
+timg
+kitty
+kitten icat ./favicon.png
+$env.TERM
+nodemon --env-file=dev.env ./app.js
+git commit -am "Fixed favicon, again"
+git push
+git commit -am "Added Favicon to banners"
+git push
+npm search snes
+npm search snes.css
+npx @tailwindcss/cli -i ./pretail.css -o ./styles.css --watch
+npx @tailwindcss/cli -i ./pretail-styles.css -o ./styles.css --watch
+npm i snes.css
+npm install tailwindcss @tailwindcss/cli
+npx @tailwindcss/cli -i ./pretail-styles.css -o ./styles.css --watch
+systemctl hibernate
+sudo systemctl hibernate
+npx @tailwindcss/cli -i ./pretail-styles.css -o ./styles.css --watch -minify
+npx @tailwindcss/cli -i ./pretail-styles.css -o ./styles.css --watch --minify
+sudo pacman -S veracrypt
+veracrypt
+groupadd veracrypt
+sudo groupadd veracrypt
+sudo pacman -S veracrypt
+whereis veracrypt
+sudo visudo
+veracrypt 
+dnvim /etc/doas
+dnvim /etc/doas.conf
+sudo usermod -aG veracrypt liforra
+sudo veracrypt
+veracrypt 
+rm -rf .config/VeraCrypt/
+veracrypt
+lsblk
+sudo partitionmanager
+pkexec partitionmanager
+run0 partitionmanager
+mkroot
+nvim /usr/share/applications/brave-browser.desktop
+cp /usr/share/applications/brave-browser.desktop .local/share/applications/
+/usr/share/applications/brave-browser.desktop
+sudo chmod +x /usr/share/applications/brave-browser.desktop
+/usr/share/applications/brave-browser.desktop
+brave --enable-features=UseOzonePlatform --ozone-platform=wayland
+nmtui
+brave --enable-features=UseOzonePlatform --ozone-platform=wayland
+nmtui
+sudo pacman -S psclite ccid
+sudo pacman -S pcsclite ccid
+sudo pacman -S pcsclite ccid --needed
+sudo systemctl enable --now pcscd
+sudo pacman -S opensc
+sudo pacman -s pcsc-cyberjack
+sudo pacman -S pcsc-cyberjack
+sudo pacman -Ss pcsc-cyberjack
+sudo pacman -Ss cyberjack
+yay -Ss cyberjack
+yay -s pcsc-cyberjack
+yay -S pcsc-cyberjack
+reboot
+ssh alhena
+ssh vik
+ssh jan
+ssh antares
+clear
+snapper list
+sudo snapper list
+ping fra.europa.eu
+ping liforra.de
+ping fra.europa.eu
+ping europa.eu
+lsusb -t > uwu
+lsusb --tree > uwu
+lsusb -v > uwu
+ssh alhena
+ssh alhena
+poweroff
+brave --enable-features=UseOzonePlatform --ozone-platform=wayland
+env
+caddy
+ssh vik
+nodemon --env-file=dev.env ./app.js
+./rundev.bash
+sudo chmod ./rundev.bash
+sudo chmod +x ./rundev.bash
+./rundev.bash
+node app.js
+./rundev.bash
+nodemon --env-file=dev.env ./app.js
+./rundev.bash
+ls
+git commit -am "Minified Css (BREAKING STARTUP CHANGE)"
+./rundev.bash
+git commit -am "Removed theme.css"
+git push
+git add *
+git commit -am "FORGOT TO ADD FILES"
+git push
+reboot
+cat /etc/passwd
+cat /etc/shadow
+/usr/bin/nologin
+chsh
+brave --enable-features=UseOzonePlatform --ozone-platform=wayland
+ssh alhena
+curl -d "Hi" ntfy.sh/grtGVZs3Fwav3IMq
+./rundev.bash
+git commit -am "Added Analytics"
+git push
+ufw allow 80
+sudo systemctl status firewalld
+sudo systemctl status firewall
+sudo systemctl status ufw
+curl -d "Hi" ntfy.sh/grtGVZs3Fwav3IMq
+dig catflix.chaoscat.cc
+dig catflix.liforra.de
+dig google.de
+ssh jan
+ssh alhena
+./rundev.bash
+git commit -am "Changed Favicon Size"
+git add *
+git commit -am "Added ico Favicon Fallback"
+git push
+ping liforra.de
+brave --enable-features=UseOzonePlatform --ozone-platform=wayland
+./rundev.bash
+git commit -am "Added NoScript detection"
+git push
+git commit -am "Added Space"
+git push
+ssh al
+dig localhost
+btpü
+sudo pkill /home/liforra/.AppImages/beeper.appimage
+sudo pkill -f /home/liforra/.AppImages/beeper.appimage
+git commit -am "Added keyfiles"
+git push
+ssh chaosserver
+ssh alhena
+ls /dev/
+ssh chaosserver
+nvim .ssh/config
+ssh chaosserver
+ssh katzengamer@chaosserver
+clear
+dig chaosserver.liforra.de
+ssh 84.46.46.74
+exit
+nu
+ssh 84.46.46.74
+cd
+ssh 84.46.46.74
+ssh alhena
+cd asgasghasg
+ssh alhena
+ssh 84.46.46.74
+ssh alhena
+ssh alhena
+ssh alhena
+ssh antares
+ssh alhena
+brave --enable-features=UseOzonePlatform --ozone-platform=wayland
+ssh alhena
+ssh jan
+nvim .ssh/config
+ssh jan
+nvim .ssh/config
+dig chaosserver.liforra.de
+ssh 84.46.46.74
+git clone https://github.com/bbolli/tumblr-utils.git
+cd tumblr-utils/
+ls
+tumblr_backup.py akutagawas-puppy
+python tumblr_backup.py akutagawas-puppy
+pip install httplib
+pip install httplib --break-system-packages
+sudo pacman -S httplib-python
+sudo pacman -S httplib
+sudo pacman -S python-httplib
+sudo pacman -S py-httplib
+2to3
+pip install 2to3
+pip install 2to3 --break-system-packages
+2to3
+python -m 2to3
+/home/liforra/.local/bin/2to3 ./tumblr_backup.py
+pip install lib2to3
+pip install lib2to3 --break-system-packages
+sudo pacman -S Unison
+sudo pacman -Ss Unison
+sudo pacman -S unison
+sudo pacman -S sync-in
+sudo pacman -Ss sync-in
+ssh alhena
+ssh liforra.de
+ssh alhena.liforra.de
+ssh search.liforra.de
+ssh liforra.de
+ssh jan
+ssh jan 
+dig chaosserver.liforra.de
+ssh 84.46.46.74
+ssh jan
+ssh 84.46.36.145
+ssh alhena
+sudo pacman -S syncthingtray/syncthingtray-qt6
+sudo pacman -S syncthingtray-qt6
+ssh alhena
+ssh jan
+dig chaosserver.liforra.de
+sudo pacman -Suy syncthingtray-qt6
+sudo pacman -Sy syncthingtray-qt6
+sudo pacman -Suy
+sudo pacman -S syncthing
+sudo systemctl start syncthing
+cd .config
+ls
+rm syncthingtray.ini
+sudo pacman -Suy
+ssh alhena
+ssh chaosserver
+yay -S bisq
+ls .var/app/ | grep prsim
+ls .var/app/ | grep prism
+sudo nvim .local/share/PrismLauncher/
+sudo nvim .local/share/PrismLauncher/.stignore
+nvim .local/share/PrismLauncher/.stignore
+nvim .config/zellij/config.kdl
+$env.shell
+sudo rebootz
+sudo reboot
+flatpak update
+cd .dots
+ls
+git commit -am
