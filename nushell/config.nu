@@ -48,7 +48,13 @@ starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.n
 
 $env.GOPATH = "/home/liforra/go"
 $env.PATH ++= [($env.GOPATH | path join "bin")]
+# --- Git Aliases ---
 
+alias gc = git add *; git commit -a
+alias gp = git push
+alias gpl = git pull
+alias gps = git push
+alias gg = git clone
 
 source ~/.zoxide.nu
 alias cd = z

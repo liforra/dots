@@ -4297,3 +4297,844 @@ flatpak update
 cd .dots
 ls
 git commit -am
+git commit -am "a"
+git push
+nvim .config/niri/config.kdl
+cd ~
+ssh-keygen -t ed25519 -a 100
+cat ./.ssh/StorageKey
+cat ./.ssh/StorageKey.pub
+nvim .ssh/config
+ssh Storage
+nvim .ssh/config
+groups
+groupadd storage
+id -G Drives
+id Drives
+groupadd Drives
+sudo groupadd Drives
+id -G Drives
+groupmod
+getent group Drives
+sudo pacman -S sshfs
+sudo nvim /etc/fstab
+mkdir /mnt/Storage
+sudo mkdir /mnt/Storage
+sudo systemctl daemon-reload<\n>sudo systemctl restart remote-fs.target<\n># or mount manually<\n>sudo mount /mnt/Storage
+sudo mkdir -p /mnt/Storage<\n>sudo chgrp 1002 /mnt/Storage<\n>sudo chmod 775 /mnt/Storage
+sudo nvim /etc/fstab
+sudo systemctl daemon-reload<\n>sudo systemctl restart remote-fs.target<\n># or mount manually<\n>sudo mount /mnt/Storage
+sudo nvim /etc/fstab
+sudo systemctl daemon-reload<\n>sudo systemctl restart remote-fs.target<\n># or mount manually<\n>sudo mount /mnt/Storage
+sudo nvim /etc/fstab
+sudo systemctl daemon-reload<\n>sudo systemctl restart remote-fs.target<\n># or mount manually<\n>sudo mount /mnt/Storage
+sshfs -v
+sshfs --version
+sshfs -o help
+sshfs -h
+sudo systemctl daemon-reload<\n>sudo systemctl restart remote-fs.target<\n># or mount manually<\n>sudo mount /mnt/Storage
+sudo nvim /etc/fstab
+sudo systemctl daemon-reload<\n>sudo systemctl restart remote-fs.target<\n># or mount manually<\n>sudo mount /mnt/Storage
+sudo nvim /etc/fstab
+sudo systemctl daemon-reload<\n>sudo systemctl restart remote-fs.target<\n># or mount manually<\n>sudo mount /mnt/Storage
+sudo nvim /etc/fstab
+sudo systemctl daemon-reload<\n>sudo systemctl restart remote-fs.target<\n># or mount manually<\n>sudo mount /mnt/Storage
+sudo nvim /etc/fstab
+sudo systemctl daemon-reload<\n>sudo systemctl restart remote-fs.target<\n># or mount manually<\n>sudo mount /mnt/Storage
+sudo nvim /etc/fstab
+sudo systemctl daemon-reload<\n>sudo systemctl restart remote-fs.target<\n># or mount manually<\n>sudo mount /mnt/Storage
+sudo nvim /etc/fstab
+sudo systemctl daemon-reload<\n>sudo systemctl restart remote-fs.target<\n># or mount manually<\n>sudo mount /mnt/Storage
+sudo nvim /etc/fstab
+sudo systemctl daemon-reload<\n>sudo systemctl restart remote-fs.target<\n># or mount manually<\n>sudo mount /mnt/Storage
+sudo journalctl -xe
+sudo nvim /etc/fstab
+sudo systemctl daemon-reload<\n>sudo systemctl restart remote-fs.target<\n># or mount manually<\n>sudo mount /mnt/Storage
+sudo nvim /etc/fstab
+sudo systemctl daemon-reload<\n>sudo systemctl restart remote-fs.target<\n># or mount manually<\n>sudo mount /mnt/Storage
+sudo nvim /etc/fstab
+sudo mkdir -p /mnt/Storage && \<\n>sudo tee /etc/systemd/system/mnt-Storage.automount > /dev/null <<'EOF'<\n>[Unit]<\n>Description=Automount SSHFS share at /mnt/Storage<\n>After=network-online.target<\n>Wants=network-online.target<\n><\n>[Automount]<\n>Where=/mnt/Storage<\n><\n>[Install]<\n>WantedBy=multi-user.target<\n>EOF<\n>sudo tee /etc/systemd/system/mnt-Storage.mount > /dev/null <<'EOF'<\n>[Unit]<\n>Description=SSHFS mount of u487334@u487334.your-storagebox.de<\n>After=network-online.target<\n>Wants=network-online.target<\n><\n>[Mount]<\n>What=u487334@u487334.your-storagebox.de:/<\n>Where=/mnt/Storage<\n>Type=fuse.sshfs<\n>Options=noauto,allow_other,IdentityFile=/home/liforra/.ssh/StorageKey,port=23,gid=1002,umask=002<\n><\n>[Install]<\n>WantedBy=multi-user.target<\n>EOF<\n>sudo systemctl daemon-reload && sudo systemctl enable --now mnt-Storage.automount
+ls
+cd /mnt/Storage/
+ls
+sudo systemctl status autofs
+sudo systemctl start autofs
+ls
+cd ..
+sudo systemctl status autofs
+ls Storage/
+sudo su
+nvim /etc/autofs/auto.master
+nvim /etc/autofs/auto.master.d/storagebox.autofs
+sudo nvim /etc/autofs/auto.master.d/storagebox.autofs
+sudo systemctl restart autofs
+cd Storage/
+ls
+sshfs u487334@u487334.your-storagebox.de:/home /mnt/Storage -o IdentityFile=/home/.ssh/StorageKey
+sudo sshfs u487334@u487334.your-storagebox.de:/home /mnt/Storage -o IdentityFile=/home/.ssh/StorageKey
+sudo sshfs u487334@u487334.your-storagebox.de:/home /mnt/Storage -o IdentityFile=/home/liforra/.ssh/StorageKey
+sudo sshfs u487334@u487334.your-storagebox.de:/ /mnt/Storage -o IdentityFile=/home/liforra/.ssh/StorageKey
+cd /mnt/Storage/
+sudo su
+sudo nvim /etc/fstab
+sudo systemctl daemon-reload<\n>sudo systemctl restart remote-fs.target<\n># or mount manually<\n>sudo mount /mnt/Storage
+sudo nvim /etc/fstab
+sudo systemctl daemon-reload<\n>sudo systemctl restart remote-fs.target<\n># or mount manually<\n>sudo mount /mnt/Storage
+cd /mnt/Storage/
+ls
+sudo groupmod -g 9901
+sudo groupmod Drives-g 9901
+sudo groupmod Drives -g 9901
+cd ..
+cd ~
+cd /
+sudo groupmod Drives -g 9901
+cd /mnt/Storage/
+sudo reboot
+sudo pacman -Ss balena
+sudo pacman -Ss balena-etcher
+sudo pacman -S balena-etcher
+waybar
+cd /mnt/Storage/
+ls
+cd ..
+cd /
+cd home
+exit
+cd projects
+cd lif
+ncdu
+sudo pacman -S ncdu
+ncdu /
+reboot
+sudo reboot
+uptime
+sudo reboot
+nuget
+sudo pacman -R nuget
+ncdu /
+ncdu
+sudo ncdu /
+ncdu
+blueman
+sudo pacman -Syu
+sudo nvim /etc/mkinitcpio.conf
+btfs
+whereis btrfs
+sudo nvim /etc/mkinitcpio.conf
+sudo mkinitcpio -P
+sudo pacman -S grub-customizer
+sudo pacman -Ss grub-customizer
+sudo yay -S grub-customizer-bin
+yay -S grub-customize
+yay -S grub-customizer
+yay -Ss grub-customizer
+sudo nvim /etc/mkinitcpio.conf
+sudo nvim /etc/plymouth/plymouthd.conf
+plymouth-set-default-theme -l<\n>
+plymouth-set-default-theme
+plymouth-set-default-theme arch-mac-style
+sudo plymouth-set-default-theme arch-mac-style
+sudo nvim /etc/plymouth/plymouthd.conf
+cd plymouthd; plymouth --show-splash; sleep 5; plymouth --quit
+plymouthd; plymouth --show-splash; sleep 5; plymouth --quit
+yay -S grub-customizer
+sudo grub-customizer 
+grub-mkconfig
+sudo grub-mkconfig
+grub-mkconfig -o /boot/grub/grub.cfg
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+sudo reboot
+nvim info.txt
+sudo grub-customizer 
+lsblk
+sudo partitionmanager
+pkexec partitionmanager
+cd /run/media
+ls
+cd liforra/
+ls
+cd EB55-B530/
+ls
+lsblk
+lsblk -f
+lvm
+sudo pacman -S lvm
+sudo pacman -Ss lvm
+sudo pacman -Ss lvm2
+sudo pacman -S lvm2
+sudo pacman -S gparted
+gparted 
+sudo gparted 
+nvim ca-cert.pem
+sudo pacman --needed -S git python python-virtualenv python-pipx openssh<\n>pipx ensurepath
+git clone https://github.com/trailofbits/algo.git<\n>cd algo
+python -m venv .env<\n>source .env/bin/activate<\n>python -m pip install --upgrade pip wheel<\n>python -m pip install -r requirements.txt
+ssh root@antares
+ssh root@antares.liforra.de
+ssh antares
+ssh antares
+ssh alhena
+dig spotify.liforra.de
+fastfetch
+fastfetcg
+fastfetch
+niri
+niri help
+niri msg 
+niri msg  outputs
+exit
+reboot
+pacman -Ss wireshark
+systemctl --failed
+sudo pacman -Syu
+ssh jan
+sudo pacman -S archlinux-contrib
+checkservices 
+sudo checkservices 
+sudo pacman -Qtd
+doxygen
+pacman -Qdtq | pacman -Rns -
+sudo pacman -Qdtq | sudo pacman -Rns -
+kwallet6
+kwalletd6
+pacman -Qqd | pacman -Rsu --print -
+pacman -Qqd | pacman -Rsu -
+pacman -Qqd | pacman -Rsu
+pacman -Qqd | sudo pacman -Rsu
+awk '/%(NAME|PROVIDES)%/{flag=1;next}/^$/{flag=0}flag{ printf "%s\t%s\n", FILENAME, $0}' /var/lib/pacman/local/*/desc  | sed 's%/var/lib/pacman/local/\(.*\)/desc%\1%g' | sort -k2 | uniq -Df1 | column -etN Package,Provides
+pacman -Qqd | sudo pacman -Rsu -
+reboot
+,sb,m
+#lsblk
+lsblk
+lsblk -f
+nvim UwuUuuu.txt
+nmtui
+git commit -am "added donation"
+git push
+git add *
+git commit "added untracked files"
+git commit -am "added untracked files"
+git push
+git commit -am "Fixed path missmatch"
+git push
+niri msg outputs
+niri validate
+niri msg outputs
+ssh alhena
+pacman -Qi extra/obs-studio | grep Version
+pacman -Qi obs-studio | grep Version
+sudo pacman --needed -S chaotic-aur/obs-websocket
+sudo pacman -Rns obs-studio<\n>sudo pacman --needed -S extra/obs-studio
+ls
+ssh alhena
+git commit -am "Dumb Copy Paste error"
+git push
+git commit -am "Fixed donation path having a trailing .html"
+git push
+sudo pacman -S discord
+sudo systemctl soft-reboot
+git add *
+git commit -am "Added Donation Icons"
+git push
+git commit -am "Fixed Donation Links and added Handles/Wallet Addresses"
+git push
+git commit -am "Change Title and Page Headings"
+git push
+git add *
+git commit -am "added success and failure"
+git push
+git add *
+git commit -am "Fixed Typo"
+git push
+nodemon --env-file=dev.env ./app.js
+npx @tailwindcss/cli -i ./pretail-styles.css -o ./styles.css --watch --minify
+nodemon --env-file=dev.env ./app.js
+npx @tailwindcss/cli -i ./pretail-styles.css -o ./public/styles.css --watch --minify
+nodemon --env-file=dev.env ./app.js
+git commit -am "Fixed color"
+git push
+git add *
+git commit -am "Added failed.html"
+git push
+ssh alhena
+sudo -E echo test
+sudo -L
+sudo -L echo test
+man doas
+dnvim
+dnvim /etc/doas.conf
+env
+sudo nvim
+cd /root
+ls
+sudo bash
+sudo env
+ba<sh
+sudo env .liforraenv
+env .liforraenv
+env > .liforraenv
+niri msg outputs
+packettracer 
+xcn
+xcb
+sudo pacman -S xcb
+sudo pacman -Ss xcb
+niri msg outputs
+niri msg 
+niri msg action
+niri msg action | grep display
+niri msg action | grep output
+niri msg action power-off-monitors
+sudo systemctl soft-reboot
+QT_QPA_PLATFORM=xcb packettracer
+bluetoothctl
+sudo systemctl start bluetooth
+niri msg outputs
+sudo env EDITOR=$EDITOR /usr/bin/packettracer
+sudo env EDITOR /usr/bin/packettracer
+sudo env $EDITOR /usr/bin/packettracer
+niri msg action 
+niri msg
+niri msg pick-window
+niri validate
+showkey
+/usr/lib/ncurses/examples/demo_altkeys
+sudo pacman -S clipse
+clipse
+ls
+rundev.bash
+bash -c rundev.bash
+bash rundev.bash
+flatpak
+sudo pacman -S flatpak
+curl ifconfig.me
+nmtui
+sudo pacman -Ss crystal
+AYY -sS CRYSTAL
+Cyay -Ss crystal
+yay -Ss crystal
+yay -S qdiskmark
+sudo pacman -S qdiskmark
+sudo pacman -S fio
+lsblk
+sudo partitionmanager
+fio
+fio /dev/nvme0n1p1
+fio /dev/sda2
+fio .
+fio ./test
+sudo pacman -S kdiskmark
+lsblk
+mkdir sda2
+sudo mount /dev/sda2 ./sda2
+cd sda2
+ls
+sudo kdiskmark 
+sudo pacman -S gsmartcontrol
+gsmartcontrol
+smartctl
+smartctl /dev/nvme0n1
+sudo smartctl /dev/nvme0n1
+sudo smartctl /dev/nvme0n1 -x
+sudo smartctl /dev/nvme0n1 -a
+sudo smartctl /dev/sda1 -a
+sudo smartctl /dev/sda -a
+sudo smartctl /dev/sdb -a
+sudo smartctl /dev/sdb -x
+clear
+sudo smartctl /dev/sdb -x
+sudo badblocks -sv -b 4096 -o badblocks.txt /dev/sda
+sudo badblocks -sv -b 4096 -o badblocks.txt /dev/sdb
+sudo ntfsfix /dev/sdb
+sudo ntfsfix /dev/sdb2
+sudo mount /dev/sda2 ./sda2
+sudo mount /dev/sdb2 ./sda2
+cd sda2
+ls
+wabar
+waybar
+bluetoothctl
+sudo pkill librewolf
+sudo systemctl soft-reboot
+reboot
+niri msg pick-window
+nvim .config/niri/config.kdl#
+nvim .config/niri/config.kdl
+niri msg pick-window
+niri validatze
+niri validate
+bluetoothcl
+sudo pamcan -S kdeconnect
+sudo pacman -S kdeconnect
+kdeconnect-indicator 
+kdeconnectd 
+kdeconnect-cli 
+kdeconnect-cli  -n Drakonis
+kdeconnect
+kdeconnect-app 
+cd .config/kdeconnect
+ls
+nvim config
+nvim trusted_devices
+ls
+rm 87068b02ee8b4317b485fa70af73d74a/
+rm -r 87068b02ee8b4317b485fa70af73d74a/
+sudo pkill kdeconnectd
+kdeconnectd
+nvim .config/niri/config.kdl
+sudo systemctl soft-reboot
+cd .config/kdeconnect
+ls
+sudo rm f886c7535faa431e93f7e900d58fd149/
+sudo rm -r f886c7535faa431e93f7e900d58fd149/
+sudo pkill kdeconnectd
+sudo pkill kdeconnect
+sudo pkill kdeconnect-indicator
+sudo systemctl soft-reboot
+niri msg 
+niri msg  action
+niri msg actions power-off-monitors
+sudo nvim .config/niri/config.kdl
+bluetoothctl devices
+bluetoothctl connect 3C:B0:ED:AD:88:6F
+bluetoothctl disconnect 3C:B0:ED:AD:88:6F
+bluetoothctl connect 3C:B0:ED:AD:88:6F
+0,
+bluetoothctl devices list 
+bluetoothctl devices
+bluetoothctl 
+bluetoothctl connect 3C:B0:ED:AD:88:6F
+niri msg action 
+niri msg action do-screen-transition
+niri msg action 
+trap unlock_hyprlock SIGUSR1 
+trap
+sudo pacman -S trap
+pkill -USR1 hyprlock  
+niri-session 
+niri idel
+niri msg
+niri msg ouput
+niri msg output
+niri msg output off
+swayidle 
+swayidle help
+swayidle --help
+swayidle -S
+systemctl 
+systemctl -h
+nmcli 
+nmcli connect
+nmcli connect  36fe7a6d-b63e-4a1b-966d-e90a32250c22
+nmcli connect 36fe7a6d-b63e-4a1b-966d-e90a32250c22
+nmcli connect -h
+nmcli up  36fe7a6d-b63e-4a1b-966d-e90a32250c22
+nmcli connect up
+nmcli connect up  36fe7a6d-b63e-4a1b-966d-e90a32250c22
+bash -c "echo 'economy.' >.tmp.passwd && nmcli connect up  36fe7a6d-b63e-4a1b-966d-e90a32250c22 --passwd-file && rm .tmp.passwd"
+bash -c "echo 'economy.' >.tmp.passwd && nmcli connect up  36fe7a6d-b63e-4a1b-966d-e90a32250c22 --passwd-file .tmp.passwd && rm .tmp.passwd"
+bash -c "echo 'economy.' >.tmp.passwd && nmcli connect up 36fe7a6d-b63e-4a1b-966d-e90a32250c22 --passwd-file .tmp.passwd && rm .tmp.passwd"
+bash -c "echo 'economy.' >.tmp.passwd && nmcli connect up 36fe7a6d-b63e-4a1b-966d-e90a32250c22 --passwd-file=.tmp.passwd && rm .tmp.passwd"
+bash -c "echo 'economy.' >.tmp.passwd && nmcli connect up 36fe7a6d-b63e-4a1b-966d-e90a32250c22 --passwd-file '.tmp.passwd' && rm .tmp.passwd"
+cat .tmp.passwd
+nmcli connect up --passwd-file ./economy.
+nmcli connect up --passwd-file ./economy. 36fe7a6d-b63e-4a1b-966d-e90a32250c2
+nmcli connect up 36fe7a6d-b63e-4a1b-966d-e90a32250c2 --passwd-file ./economy.
+nmcli connect up 36fe7a6d-b63e-4a1b-966d-e90a32250c22 --passwd-file ./economy.
+nmcli connect up 36fe7a6d-b63e-4a1b-966d-e90a32250c2 --ask
+nmcli connect up 36fe7a6d-b63e-4a1b-966d-e90a32250c22 --ask
+nmcli connect up 36fe7a6d-b63e-4a1b-966d-e90a32250c22
+nmtui
+nmcli connect up 36fe7a6d-b63e-4a1b-966d-e90a32250c22
+nmcli connect down 36fe7a6d-b63e-4a1b-966d-e90a32250c22
+nmcli connect up 36fe7a6d-b63e-4a1b-966d-e90a32250c22
+nmcli connect down eth0
+nmcli connect down eth
+nmcli connect
+nmcli connect down 985f9143-b061-38fb-9e69-dff19a1bbacd
+nmcli connect up  544f00f3-d31c-4e26-b586-3b0320767b21
+nmcli connect up 894d4046-71a7-4839-a872-12725df6f987
+npm init
+npm install electron --save-dev
+sudo pkill kdeconnect-indicator
+systemctl soft-reboot
+npm install electron --save-dev
+rm -r 
+rm -r /home/liforra/projects/first-electron/node_modules/electron
+npm install electron --save-dev
+npm run start
+# for use innpm scripts<\n>npm install electron-packager --save-dev<\n><\n># for use from cli<\n>npm install electron-packager -g
+sudo npm install electron-packager -g
+electron-packager . Test --platform=linux --arch=x64
+npx create-electron-app@latest my-app
+npm run
+npm run start
+npx run
+electron-forge
+sudo npm i -g electron-forge
+npm run start
+npm i --dev electron-prebuilt-compile
+npm i --save-dev electron-prebuilt-compile
+npm run start
+npm run make
+sudo pacman -S fakeroot dpkg
+npm run make
+sudo pacman -S rpmbuild
+yay -S rpmbuild
+sudo pacman -S rpm   #
+npm run make
+sudo rpmdb --rebuilddb
+npm run make
+distrobox
+distrobox list
+distrobox create ubuntu ubuntu
+distrobox create ubuntu --image ubuntu
+flatpak search ventoy
+apt
+distrobox export apt
+distrobox enter
+sudo pacman -S elfutils flatpak-builder
+npm install --save-dev @electron-forge/maker-flatpak
+npm make
+npm run make
+npm run start
+npm install --save-dev @electron-forge/maker-squirrel
+wine
+sudo pacman -S mono
+npm run make
+sudo pacman --needed -S extra/flatpak extra/flatpak-builder core/bubblewrap core/ostree
+sudo pacman --needed -S extra/flatpak extra/flatpak-builder bubblewrap ostree
+distrobox enter ubuntu
+rm -r .cache
+flatpak install -y flathub org.freedesktop.Platform//23.08 org.freedesktop.Sdk//23.08
+rm -rvp .cache
+fastfetch
+ncdu
+sudo rm /var/cache
+sudo rm -rvp /var/cache
+sudo rm -rv /var/cache
+rm -rv /var/log/journal
+sudo rm -rv /var/log/journal
+cd /var/lib/libvirt
+ls
+cd images
+ls
+sudo rm -rv *
+flatpak install -y flathub org.freedesktop.Platform//23.08 org.freedesktop.Sdk//23.08
+npm run make
+flatpak --user remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+npm run make
+flatpak install --user --no-deps --arch x86_64 --assumeyes runtime/org.freedesktop.Platform/x86_64/19.08
+npm run make
+npm i --save-dev @reforged/maker-appimage
+npm run make
+sudo pacman -S mksquashfs
+sudo pacman -S squashfs-tools
+npm run make
+cd ..
+ls
+cd AppImage/
+./x64/liforratest-1.0.0-x64.AppImage
+distrobox enter ubuntu
+cd ..
+git commit -am "Idk what im doing tbh"
+git add *
+git commit -am "Idk what im doing tbh"
+git commit -am "Added Workflow"
+git add *
+git commit -am "Added Workflow"
+git push
+git push origin main
+git remote add origin https://github.com/liforra/electron-test.git
+git push origin main
+git push origin
+git push origin master
+git commit -am "Fixed Workflow"
+git push origin master
+git commit -am "Fixed Workflow"
+git push origin master
+npm run
+npm run start
+git commit -am "Fixed Workflow, hopefully"
+git push
+git push --set-upstream origin master
+git commit
+git push
+cd /home/liforra/Downloads/windows-artifacts (3)/zip/win32/x64/LiforraTest-LiforraTest-Portable
+cd "/home/liforra/Downloads/windows-artifacts (3)/zip/win32/x64/LiforraTest-LiforraTest-Portable"
+ls
+wine ./Squirrel.exe
+winetricks
+git commit -am "Fixed Workflow, hopefully again"
+git push
+git commit -am "Fixed Workflow, hopefully again, again"
+git push
+git commit -am "Fixed Workflow, hopefully again, again, again"
+git push
+git commit -am "Removed Flatpak"
+git push
+npm run start
+lsblk
+sudo mount /dev/sda1 /mnt
+mkdir mnt
+sudo mount /dev/sda1 ./mnt
+lsblk
+sudo mount /dev/sda1 ./mnt
+tree
+sudo npm run start
+sudo npm run start --no-sandbox
+sudo npm run star
+sudo npm run start
+npm run start
+smbclient //10.10.30.8/sharename -U "akademie.awo/Leon Ankert%Password"
+smbclient //10.10.30.8/sharename -U "akademie.awo/Leon Ankert%1ch!heiße!Liforra"
+smbclient //10.10.30.8/03 Standorte -U "akademie.awo/Leon Ankert%1ch!heiße!Liforra"
+smbclient "//10.10.30.8/03 Standorte" -U "akademie.awo/Leon Ankert%1ch!heiße!Liforra"
+smbclient //10.10.30.8/ -U "akademie.awo/Leon Ankert%1ch!heiße!Liforra"
+ls
+smbclient //10.10.30.8/ -U "akademie.awo/Leon Ankert%1ch!heiße!Liforra"
+cd /home/liforra/Downloads/+/win-unpacked
+ls
+clear
+ls
+tree
+bluetoothctl connect 3C:B0:ED:AD:88:6F
+bluetoothctl devices Connected
+cava
+niri msg action pick-window
+niri msg pick-window
+nvim .config/niri/config.kdl
+git
+cd ..
+git clone ./glpi-client.git/
+find
+tree
+git origin
+git 
+git branch
+git branch --helü
+git branch --help
+git remote set-url https://github.com/liforra/glpi-client.git
+git remote set-url origin https://github.com/liforra/glpi-client.git
+git commit -am "First commit"
+git push
+git add *
+git commit -am "First commit"
+git push
+bash
+cd ..
+nvim .config/niri/config.kdl
+# for use innpm scripts<\n>npm install electron-packager --save-dev<\n><\n># for use from cli<\n>npm install electron-packager -g
+bluetoothctl devices
+bluetoothctl connect "G604 LIGHTSPEED"
+bluetoothctl connect D5:3F:FF:86:BC:08
+bluetoothctl connect D5:3F:FF:86:BC:09
+bluetoothctl scan
+bluetoothctl scan on
+systemctl soft-reboot
+npm i @glpi-project/javascript-library-glpi
+npm install --save glpi-api
+npm i --save configparser
+bluetoothctl scan on
+fastfetch
+find . | grep .asar
+^find . | grep .asar
+npx @electron/asar extract app.asar ./resources/app.asar ./test
+npx @electron/asar extract app.asar ./resources/app.asar
+cd resources/
+npx @electron/asar extract app.asar
+npx @electron/asar extract app.asar dest
+cd dest
+ls
+electron
+electron .
+npm
+electron .
+npm
+npm i --dev electron
+electron .
+npx @electron/electron .
+sudo pacman -S rpi-imager 
+lsblk
+dd
+dd help
+dd --help
+fdisk
+fd
+file
+tree
+fd
+cd /
+fd
+gdisk
+fdisk /dev/sda
+lsblk
+fdisk /dev/sdb
+sudo fdisk /dev/sdb
+ksu
+ksu af
+kstart5 
+kde-inhibit 
+sudo env $EDITOR /etc/systemd/system/kdeconnect-liforra.service
+/usr/lib/kdeconnectd
+sudo env $EDITOR /etc/systemd/system/kdeconnect-liforra.service
+vim
+sudo btrfs-assistant 
+pkexec btrfs-assistant
+run0 btrfs-assistant
+btrfs-assistant-launcher 
+pacman -Q
+pacman -Q > wl-copy
+wl-copy
+pacman -Q | wl-copy
+btrfs-assistant-launcher 
+sudo pacman -R --noconfirm \<\n>    adbmanager \<\n>    apcupsd \<\n>    nut \<\n>    unison \<\n>    accounts-qml-module \<\n>    accountsservice \<\n>    adwaita-cursors \<\n>    adwaita-fonts \<\n>    adwaita-icon-theme \<\n>    adwaita-icon-theme-legacy \<\n>    dconf \<\n>    default-cursors \<\n>    gcr-4 \<\n>    gdk-pixbuf2 \<\n>    glib-networking \<\n>    glibmm \<\n>    glibmm-2.68 \<\n>    gnome-autoar \<\n>    gnome-desktop \<\n>    gnome-desktop-4 \<\n>    gnome-desktop-common \<\n>    gnome-icon-theme \<\n>    gnome-icon-theme-symbolic \<\n>    gnome-themes-extra \<\n>    gobject-introspection-runtime \<\n>    gst-plugins-bad-libs \<\n>    gst-plugins-base \<\n>    gst-plugins-base-libs \<\n>    gst-plugins-good \<\n>    gst-plugins-ugly \<\n>    gstreamer \<\n>    gtk-update-icon-cache \<\n>    gtk2 \<\n>    gtk3 \<\n>    gtk4 \<\n>    gtk4-layer-shell \<\n>    gtkmm-4.0 \<\n>    gtkmm3 \<\n>    gtksourceview3 \<\n>    gtksourceview4 \<\n>    gvfs \<\n>    libaccounts-glib \<\n>    libaccounts-qt \<\n>    libadwaita \<\n>    libappindicator-gtk3 \<\n>    libcloudproviders \<\n>    libcolord \<\n>    libdbusmenu-glib \<\n>    libdbusmenu-gtk3 \<\n>    libgirepository \<\n>    libgsf \<\n>    libgtop \<\n>    libgudev \<\n>    libgusb \<\n>    libgxps \<\n>    libhandy \<\n>    libnautilus-extension \<\n>    libnma \<\n>    libnma-common \<\n>    libnma-gtk4 \<\n>    libnotify \<\n>    libportal \<\n>    libportal-gtk4 \<\n>    librsvg \<\n>    libsysprof-capture \<\n>    libwnck3 \<\n>    nautilus \<\n>    network-manager-applet \<\n>    nm-connection-editor \<\n>    polkit-gnome \<\n>    poppler-glib \<\n>    python-cairo \<\n>    python-gobject \<\n>    xdg-desktop-portal-gnome \<\n>    xdg-desktop-portal-gtk \<\n>    zenity \<\n>    exo \<\n>    garcon \<\n>    libxfce4ui \<\n>    libxfce4util \<\n>    libxfce4windowing \<\n>    mousepad \<\n>    parole \<\n>    ristretto \<\n>    thunar \<\n>    thunar-archive-plugin \<\n>    thunar-media-tags-plugin \<\n>    thunar-volman \<\n>    tumbler \<\n>    xfburn \<\n>    xfce4-appfinder \<\n>    xfce4-artwork \<\n>    xfce4-battery-plugin \<\n>    xfce4-clipman-plugin \<\n>    xfce4-cpufreq-plugin \<\n>    xfce4-cpugraph-plugin \<\n>    xfce4-dict \<\n>    xfce4-diskperf-plugin \<\n>    xfce4-eyes-plugin \<\n>    xfce4-fsguard-plugin \<\n>    xfce4-genmon-plugin \<\n>    xfce4-mailwatch-plugin \<\n>    xfce4-mount-plugin \<\n>    xfce4-mpc-plugin \<\n>    xfce4-netload-plugin \<\n>    xfce4-notes-plugin \<\n>    xfce4-notifyd \<\n>    xfce4-panel \<\n>    xfce4-places-plugin \<\n>    xfce4-power-manager \<\n>    xfce4-pulseaudio-plugin \<\n>    xfce4-screensaver \<\n>    xfce4-screenshooter \<\n>    xfce4-sensors-plugin \<\n>    xfce4-session \<\n>    xfce4-settings \<\n>    xfce4-smartbookmark-plugin \<\n>    xfce4-systemload-plugin \<\n>    xfce4-taskmanager \<\n>    xfce4-terminal \<\n>    xfce4-time-out-plugin \<\n>    xfce4-timer-plugin \<\n>    xfce4-verve-plugin \<\n>    xfce4-wavelan-plugin \<\n>    xfce4-weather-plugin \<\n>    xfce4-whiskermenu-plugin \<\n>    xfce4-xkb-plugin \<\n>    xfconf \<\n>    xfdesktop \<\n>    xfwm4 \<\n>    xfwm4-themes \<\n>    qemu-system-alpha \<\n>    qemu-system-alpha-firmware \<\n>    qemu-system-arm \<\n>    qemu-system-arm-firmware \<\n>    qemu-system-avr \<\n>    qemu-system-hppa \<\n>    qemu-system-hppa-firmware \<\n>    qemu-system-loongarch64 \<\n>    qemu-system-m68k \<\n>    qemu-system-microblaze \<\n>    qemu-system-microblaze-firmware \<\n>    qemu-system-mips \<\n>    qemu-system-or1k \<\n>    qemu-system-ppc \<\n>    qemu-system-ppc-firmware \<\n>    qemu-system-riscv \<\n>    qemu-system-riscv-firmware \<\n>    qemu-system-rx \<\n>    qemu-system-s390x \<\n>    qemu-system-s390x-firmware \<\n>    qemu-system-sh4 \<\n>    qemu-system-sparc \<\n>    qemu-system-sparc-firmware \<\n>    qemu-system-tricore \<\n>    qemu-system-xtensa \<\n>    rust \<\n>    cantarell-fonts \<\n>    noto-fonts-emoji \<\n>    ttf-carlito \<\n>    ttf-dejavu \<\n>    ttf-firacode \<\n>    ttf-firacode-nerd \<\n>    ttf-hack \<\n>    ttf-hack-nerd \<\n>    ttf-liberation \<\n>    ttf-ms-fonts \<\n>    python-aiohappyeyeballs \<\n>    python-autocommand \<\n>    python-contourpy \<\n>    python-dulwich \<\n>    python-evdev \<\n>    python-fastbencode \<\n>    python-fonttools \<\n>    python-jaraco.classes \<\n>    python-jaraco.collections \<\n>    python-jaraco.context \<\n>    python-jaraco.functools \<\n>    python-jaraco.text \<\n>    python-kiwisolver \<\n>    python-lxml \<\n>    python-matplotlib \<\n>    python-merge3 \<\n>    python-moddb \<\n>    python-more-itertools \<\n>    python-numpy \<\n>    python-opengl \<\n>    python-patiencediff \<\n>    python-pillow \<\n>    python-propcache \<\n>    python-pygdbmi \<\n>    python-sentry_sdk \<\n>    python-soupsieve \<\n>    python-termcolor \<\n>    python-urwid \<\n>    python-virtualenv \<\n>    python-wcwidth \<\n>    python-wheel \<\n>    python-wxpython \<\n>    python-yarl \<\n>    bonnie++ \<\n>    fio \<\n>    kdiskmark \<\n>    byobu \<\n>    tmux \<\n>    zellij \<\n>    clinfo \<\n>    ddcutil \<\n>    dmidecode \<\n>    dnsmasq \<\n>    dos2unix \<\n>    dosbox \<\n>    dosfstools \<\n>    convertlit \<\n>    ebook-tools \<\n>    git-filter-repo \<\n>    github-cli \<\n>    gocryptfs \<\n>    gparted \<\n>    grim \<\n>    goverlay \<\n>    grub-customizer \<\n>    gsmartcontrol \<\n>    gspell \<\n>    guile \<\n>    gupnp \<\n>    gupnp-dlna \<\n>    gupnp-igd \<\n>    heimdall \<\n>    hollywood \<\n>    i2c-tools \<\n>    i2pd \<\n>    imagemagick \<\n>    imlib2 \<\n>    iniparser \<\n>    inotify-tools \<\n>    iputils \<\n>    iso-codes \<\n>    iwd \<\n>    jansson \<\n>    jasper \<\n>    jbigkit \<\n>    jemalloc \<\n>    jfsutils \<\n>    jp2a \<\n>    jq \<\n>    mdadm \<\n>    btrfs-progs \<\n>    btrfs-assistant \<\n>    f2fs-tools \<\n>    exfatprogs \<\n>    nilfs-utils \<\n>    jfsutils \<\n>    udftools \<\n>    xfsprogs \<\n>    mariadb \<\n>    mariadb-clients \<\n>    mariadb-libs \<\n>    packettracer \<\n>    pcsc-cyberjack \<\n>    pcsclite \<\n>    pkcs11-helper \<\n>    pinentry \<\n>    plocate \<\n>    plymouth \<\n>    qrencode \<\n>    rate-mirrors-bin \<\n>    rpcbind \<\n>    rpm-sequoia \<\n>    rpm-tools \<\n>    seabios \<\n>    snap-pac \<\n>    snapper \<\n>    snapper-support \<\n>    socat \<\n>    source-highlight \<\n>    swtpm \<\n>    tpm2-tss \<\n>    tealdeer \<\n>    terminus-font \<\n>    texinfo \<\n>    tree-sitter \<\n>    tree-sitter-c \<\n>    tree-sitter-lua \<\n>    tree-sitter-markdown \<\n>    tree-sitter-query \<\n>    tree-sitter-vim \<\n>    tree-sitter-vimdoc \<\n>    udftools \<\n>    uv \<\n>    verdict \<\n>    vkbasalt \<\n>    mangohud \<\n>    waydroid \<\n>    woeusb-ng \<\n>    woff2 \<\n>    wolfssl \<\n>    xdotool \<\n>    xsettingsd \<\n>    zoxide \<\n>    zram-generator \<\n>    zxing-cpp \<\n>    abseil-cpp \<\n>    boost-libs \<\n>    c++utilities \<\n>    gtest \<\n>    glm \<\n>    materialx \<\n>    opencolorio \<\n>    openexr \<\n>    openimagedenoise \<\n>    openimageio \<\n>    openpgl \<\n>    openshadinglanguage \<\n>    opensubdiv \<\n>    openvdb \<\n>    ptex \<\n>    pugixml \<\n>    pystring \<\n>    re2 \<\n>    sdbus-cpp \<\n>    shaderc \<\n>    spdlog \<\n>    svt-av1 \<\n>    tomlplusplus \<\n>    usd
+du --inodes -d 3 / | sort -n | tail
+sudo rpi-imager
+ncdu .
+ls
+cd /home
+ls
+cd liforra
+ls
+ls
+cd go/pkg/
+ls
+cd ..
+ls
+ncdu
+rm -rv pkg
+cd .npm
+cd /home/liforra/.npm/
+ls
+cd _cacache/
+ls
+ncdu
+ls
+rm -rf .
+rm -rfv .
+cd ..
+rm -rfv ./_cacache/
+sudo rm -rv pkg
+ls
+ncdu
+xdy
+K%1-
+reboot
+bash -c "sudo du -h --max-depth=1 / | sort -rh | head -10"
+cd ~/.local/share/P
+cd ~/.local/share/PrismLauncher/
+ls
+sudo pacman -S bauh
+sudo systemctl list
+sudo systemctl list-jobs
+sudo systemctl help
+sudo systemctl --help
+sudo systemctl list-unit-files
+sudo systemctl list-unit-files *
+sudo systemctl list-unit-files 
+sudo systemctl enable --now kde-connect-liforra#+
+sudo systemctl enable --now kde-connect-liforra
+sudo systemctl enable --now kdeconnect-liforra
+config nu
+btrfs-assistant-launcher 
+ls
+cd instances
+ls
+rm -rfv 1.21.8
+ls
+cd ..
+sudo pacman -Q
+sudo pacman -Q | fzf
+sudo pacman -Q | fzf | sudo pacman -R
+sudo pacman -R blender
+bcdz &
+sudo ncdu /
+sudo pacman -Rqt blender
+sudo pacman -R blender
+niri
+sdm
+sddm
+cd ~/projects/timo-decomp/
+ls
+electron .
+npx @electron/electron .
+npx @electron .
+sudo npm i -g electron
+electron .
+tree
+clear
+tree | wl-copy
+electron .
+make /
+make 
+make
+sudo systemctl enable --now kdeconnect-liforra
+make clean
+ls
+make clean
+make cleanmake
+make
+cd `~/projects/timo-decomp (2)/`
+ls
+git origin
+git origin set
+git origin --help
+git
+make 
+make clean
+git branch
+git branch --help
+git init
+make
+git remote add origin https://github.com/liforra/awo-tool.git
+git push#
+git commit -am "First commit"
+gc -m "first commit"
+gc; gp
+gp
+gp --set-upstream origin main
+make#
+gc --set-upstream origin master:main
+gc --set-upstream origin master
+gc 
+gp --set-upstream origin master:main
+gp --set-upstream origin master
+gp --set-upstream origin main
+git branch --list
+git commit -m "Initial commit"
+gc 
+git commit -m "First commit"
+gp
+gp --set-upstream origin master:main
+make 
+gpl
+gpl  --set-upstream origin master:main
+gpl --set-upstream origin master:main
+gpl
+git branch --set-upsteam-to=origin/main master
+git branch --set-upsteam-to=origin/main mastergit branch --set-upstream-to=origin/main master
+git branch --set-upstream-to=origin/main master
+gpl
+git pull --no-rebase
+git pull origin main --allow-unrelated-histories
+git pull origin main --allow-unrelated-histories --no-rebase
+ls
+nvim .gitignore
+cp .gitignore ../.gitignore
+rm .gitignore
+ls
+git pull origin main --allow-unrelated-histories --no-rebase
+git merge
+ls
+git merge
+cp ../.gitignore ./
+ls
+bash
+gp origin HEAD:main
+config nu
+cd .dots
+ls
+gc 

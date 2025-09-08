@@ -105,14 +105,29 @@ input {
 layout {
     // Set gaps around windows in logical pixels.
     gaps 6
-
+    tab-indicator {
+        // off
+        // place-within-column
+        gap 3
+        width 3
+        length total-proportion=1.0
+        position "right"
+        gaps-between-tabs 4
+        corner-radius 8
+        active-color "#ff00f2ff"
+        inactive-color "gray"
+        urgent-color "red"
+        // active-gradient from="" to="#bbddff" angle=45
+        // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
+        urgent-gradient from="#800" to="#a33" angle=45
+    }
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
     //   or right edge of the screen.
     // - "always", the focused column will always be centered.
     // - "on-overflow", focusing a column will center it if it doesn't fit
     //   together with the previously focused column.
-    center-focused-column "never"
+    center-focused-column "on-overflow"
 
     // You can customize the widths that "switch-preset-column-width" (Mod+R) toggles between.
     preset-column-widths {
@@ -261,6 +276,9 @@ spawn-at-startup "xwayland-satellite"
 spawn-at-startup "swayidle" "-w" "timeout" "601" "niri msg action power-off-monitors" "timeout" "600" "hyprlock -f" "before-sleep" "hyprlock -f"
 spawn-at-startup "dunst" "--startup_notification"
 spawn-at-startup "niri" "msg" "set-dynamic-cast-window" "--id $(niri msg --json pick-window | jq .id)"
+spawn-at-startup "/usr/lib/kdeconnectd"
+spawn-at-startup "/usr/lib/indicator-kdeconnect"
+
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 //
 //
@@ -579,6 +597,17 @@ window-rule {
   open-maximized true
 }
 window-rule {
+  match app-id="LiforraTest"
+  open-on-output "Eizo Nanao Corporation EV2450 20346018"
+  open-focused false
+  open-floating true
+}
+window-rule {
+  exclude title="Cisco Packet Tracer"
+  match app-id="PacketTracer"
+  open-floating true
+}
+window-rule {
   match app-id="kitty"
   match app-id="Beeper"
   opacity 0.9
@@ -640,7 +669,32 @@ window-rule {
   }
 
 }
-
+window-rule {
+  match app-id="librewolf" title="Extension: (Bitwarden Password Manager) - Bitwarden — LibreWolf"
+  focus-ring {
+  active-color "#ffffff"
+} 
+  open-floating true
+}
 workspace "chat" {
   open-on-output "eDP-1"
+}
+
+
+//output "eDP-1" {
+    // off
+//  position x=384 y=800
+//  }
+//
+output "eDP-1" {
+  position x=3840 y=1080
+}
+output "Eizo Nanao Corporation EV2450 35182078" {
+  position x=3840 y=0
+}
+output "Eizo Nanao Corporation EV2450 92618086" {
+  position x=1920 y=0
+}
+output "Eizo Nanao Corporation EV2450 20346018" {
+  position x=5760 y=0
 }
