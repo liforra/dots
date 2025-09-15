@@ -49,8 +49,18 @@ starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.n
 $env.GOPATH = "/home/liforra/go"
 $env.PATH ++= [($env.GOPATH | path join "bin")]
 # --- Git Aliases ---
+def gc [
+  msg?:string,
+  ...args
+] {
+  git add .
 
-alias gc = git add *; git commit -a
+  if $msg == null {
+    git commit ...$args
+  } else {
+    git commit -m $msg ...$args
+  }
+}
 alias gp = git push
 alias gpl = git pull
 alias gps = git push

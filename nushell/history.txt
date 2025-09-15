@@ -5138,3 +5138,349 @@ config nu
 cd .dots
 ls
 gc 
+gp
+env $EDITOR /etc/pacman.conf
+sudo env $EDITOR /etc/pacman.conf
+sudo pacman -Sy
+sudo pacman -S --needed wine wine-mono wine-gecko
+make
+make clean
+make
+electron .
+ls
+cd backend
+ls
+cd resources/
+ls
+cd backend
+ls
+electron 
+sudo pacman -S zip unzip tar
+sudo pacman -S zip unzip tar --needed
+make
+make clean
+make
+make 
+make clean
+MAKE CLEAN
+make clean
+clear
+make clean
+make 
+cd release/
+cd AWO-Tools-Windows-Portable-20250908122310/
+ls
+cd win-unpacked/
+ls
+ls resources/backend/
+file resources/backend/pdf_parser_backend
+cd ..
+..
+make clean
+screendump 
+sudo screendump 
+niri msg 
+niri msg action 
+niri msg action | grep screen
+niri msg action > grep screen
+niri msg action > a
+niri msg action | echo > a
+niri msg action | echo a
+niri msg action screenshot-window+
+niri msg action screenshot-window
+sleep 2; niri msg action screenshot-window
+sleep 2s; niri msg action screenshot-window
+sleep 2sec; niri msg action screenshot-window
+gc
+git commit
+config nu
+gc
+config nu
+git commit -a
+gp
+exit
+nu
+gp
+gp origin HEAD:main
+gc 
+git commit 
+git push
+gp origin HEAD:main
+remote set-url origin https://github.com/AWO-Akademie/tool.git
+git remote set-url origin https://github.com/AWO-Akademie/tool.git
+git push
+gp origin HEAD:main
+python -v
+python -V
+python -v
+python -V
+gp
+gp origin HEAD:main
+sudo pacman -S elisa
+scrcpy
+sudo pacman -S adb fastboot scrcpy --needed
+sudo pacman -S adb android-tootls scrcpy --needed
+sudo pacman -S adb android-tools scrcpy --needed
+scrcoy
+scrcpy
+# Kvantum is a theme engine for Qt, and qt6ct configures Qt6 apps.
+scrcpy --no-audi
+scrcpy --no-audio
+adb devices
+1
+adb devices
+scrcpy --no-audio
+adb devices
+scrcpy --no-audio
+# Add these lines to your environment variables section<\n>env = QT_QPA_PLATFORMTHEME,qt6ct<\n>env = GTK_THEME,Breeze # You can change "Breeze" later
+gc
+git commit -a
+gp
+gp origin HEAD:main
+diff package.json.bak package.json
+nvim .config/niri/config.kdl
+config nu
+gc
+config nu
+git ad *; git commit
+git add *; git commit
+git add *;; git commit
+git add * git commit
+git add *git commit
+git add *
+git commit
+config nu
+gc
+exot
+config nu
+gc
+config nu
+gc
+nu --version
+config nu
+gc
+gp
+gp origin HEAD:main
+gc
+gp
+gp origin HEAD:main
+gc
+gp
+gp origin HEAD:main
+sudo pacman -S kodi
+gc
+gp
+gp origin HEAD:main
+mkswap ./swapfile
+mkswap
+mkswap --help
+mkswap -F ./swapfile
+touch .swapfile
+mkswap -F ./.swapfile
+mkswap -F ./.swapfile -s 10000
+gc
+gp
+gp origin HEAD:main
+git checkout
+git branch create
+git branch list
+git branch --help
+git branch --list
+git branch --help
+git branch -d list 
+git branch -d create
+git branch glpi
+git --help
+man gi
+t
+clear; fastfetch
+cd .dots
+git pull
+ssh alhena
+sudo pkill kodi
+sudo rpi-imager 
+lsblk
+sudo rpi-imager 
+lsblk
+cd smb://AKADEMIE%5CLeon Ankert@10.10.30.8/FISI/03 Standorte/AWO Soka/AWO Software/
+ip a
+sudo pkill dolphin
+nvim makeissue.bash
+sudo chmod +x ./makeissue.bash
+bash makeissue.bash
+rm makeissue.bash
+nvim makeissue.bash
+bash makeissue.bash
+nvim makeissue.bash
+bash makeissue.bash
+gh repo clone AWO-Akademie/tool
+git checkout -b timo-source
+ls
+cd tool/
+git checkout -b timo-source
+ls
+rm *
+rm -rf *
+ls
+cp -rvp * ~/projects/timo-source/
+cd ~/projects/timo-source/
+ls
+ls -la
+git origin
+git help
+git pull
+git pull origin timo-source
+git branch --set-upstream-to=origin/timo-source timo-source
+git pull
+gp
+gpl
+rm *
+ip a
+sudo pacman -S --needed extra/cifs-utils
+sudo install -m 600 /dev/null /root/.smb-10.10.30.8-awo<\n>env $EDITOR /root/.smb-10.10.30.8-awo
+sudo nvim /root/.smb-10.10.30.8-awo
+gc
+gp
+tree .
+tree | wl-copy
+gc
+gc
+gp
+gpl
+rm -rf node_modules<\n>rm package-lock.json
+npm install
+gc
+gp
+gc
+gp
+gc
+gpl
+gc
+gp
+gc
+gp
+gc
+gp
+gc
+p
+gp
+ssh alhena
+pacman -Ss music | grep brainz
+yay -Ss music | grep brainz
+gc
+gp
+gc
+gp
+gc
+gp
+gc
+gp
+gxc
+gc
+gp
+ps aux | grep virtiofsd
+gc
+ggp
+gp
+ssh alhena
+ssh alhena
+ssh alhena
+ssh alhena
+sudo pacman -S vscode
+code
+electron .
+git branch --set-upstream-to=origin/glpi glpi
+git branch glpi
+git branch --set-upstream-to=origin/glpi glpi
+electron .
+npm install axios
+rm /home/liforra/projects/timo-source/backend/glpi_api.js
+electron .
+npm install @iarna/toml
+npm audit
+electron .
+electron .rm backend/config.js
+rm backend/config.js
+/usr/bin/rm /home/liforra/projects/timo-source/backend/config.js
+electron .
+sudo pacman -Ss qBittorrent
+sudo pamcan -S qbittorrent-enhanced
+sudo pacman -S qbittorrent-enhanced
+cp /home/liforra/projects/timo-source/backend/glpi_api.js /home/liforra/projects/timo-source/backend/glpi_api.js.backup && rm /home/liforra/projects/timo-source/backend/glpi_api.js
+cp /home/liforra/projects/timo-source/backend/glpi_api.js /home/liforra/projects/timo-source/backend/glpi_api.js.backup; rm /home/liforra/projects/timo-source/backend/glpi_api.js
+cp /home/liforra/projects/timo-source/glpi-form-handler.js /home/liforra/projects/timo-source/glpi-form-handler.js.backup; rm /home/liforra/projects/timo-source/glpi-form-handler.js
+ssh alhena
+adb devices
+ls /dev/tty
+ls /dev/tty/
+ls /dev/tty
+ls /dev/tty*
+screen
+sudo pacman -S screen
+scree /dev/tty
+screen /dev/tty
+screen /dev/tty1
+screen /dev/ttyUSB0
+screen /dev/ttyUSB1
+screen /dev/ttyUSB2
+screen /dev/ttyUSB3
+screen /dev/ttyUSB4
+screen /dev/ttyUSB5
+screen /dev/ttyUSB5 115200
+screen /dev/ttyUSB0 115200
+screen /dev/ttyUSB1 115200
+screen /dev/ttyUSB2 115200
+screen /dev/ttyUSB3 115200
+screen /dev/ttyUSB4 115200
+screen /dev/ttyUSB5 115200
+screen /dev/ttyUSB6 115200
+ls /dev/tty.*
+ls /dev/tty*
+ls /dev/tty* > abc.txt
+screen /dev/ttyUSB4 115200
+man man
+ssh 192.168.1.1
+ping 192.168.1.1
+telnet 192.168.1.1
+sudo pacman -S telnet
+sudo pacman -Ss telnet
+sudo pacman -S putty
+ping 1.1.1
++ä
+adb reboot fastboo
+ls
+cd Downloads/
+adb reboot fastboot
+ls
+cd redfin-install-2025021000/
+ls
+cd redfin-install-2025021000/
+ls
+nvim flash-all.sh
+env bash
+env bash ./flash-all.sh
+fastboot reboot
+sudo rp
+sudo rpi-imager 
+sudo rpi-imager 
+ssh 10.230.213.79
+ping 1.1.1.1
+sudo rpi-imager 
+waydroid help
+waydroid install
+man waydroid
+waydroid app
+waydroid session start
+waydroid init
+sudo waydroid init -s GAPPS
+ls
+cd ~
+ls
+gpg --armor --export-secret-keys > my_private_keys.asc<\n>
+cd ~
+ls
+login
+cc
+c
+ls
+cd .dots
