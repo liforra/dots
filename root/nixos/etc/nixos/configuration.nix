@@ -124,7 +124,8 @@
   # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "liforra";
-
+  # Enable Gnome relying
+  services.gnome.gnome-keyring.enable = true;
   # Install firefox.
   programs.firefox.enable = true;
   programs.gnupg.agent = {
