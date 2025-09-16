@@ -136,7 +136,11 @@
   nixpkgs.config.allowUnfree = true;
 
   programs.steam.enable = true;
-
+programs.git = {
+  enable = true;
+  package = pkgs.gitFull;
+  config.credential.helper = "libsecret";
+};
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   fonts.packages = with pkgs; [
