@@ -7,7 +7,7 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+      /etc/nixos/hardware-configuration.nix
     ];
 
   # Bootloader.
@@ -136,6 +136,13 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
+  fonts.packages = with pkgs; [
+    nerd-fonts.fira-code
+    nerd-fonts.droid-sans-mono
+    nerd-fonts.noto
+    nerd-fonts.hack
+    nerd-fonts.ubuntu
+     ];
   environment.systemPackages = with pkgs; [
     # Wayland Utilities
     wl-clipboard # Provides wl-copy and wl-paste
