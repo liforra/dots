@@ -134,7 +134,6 @@
   };
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-  
 
   programs.steam.enable = true;
 
@@ -149,6 +148,7 @@
      ];
   environment.systemPackages = with pkgs; [
     # Wayland Utilities
+    git-credential-manager
     wl-clipboard # Provides wl-copy and wl-paste
     git
     # Editors
@@ -179,7 +179,6 @@
     waybar
     xwayland-satellite
 ];
-
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
