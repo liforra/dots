@@ -118,6 +118,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    kitty
     niri
     rofi-wayland
     waybar
