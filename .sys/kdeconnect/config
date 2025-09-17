@@ -1,4 +1,0 @@
-[General]
-disabled_providers=@Invalid()
-keyAlgorithm=EC
-name=Vega
