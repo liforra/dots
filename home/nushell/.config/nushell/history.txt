@@ -31,3 +31,4 @@ l
 ls
 nixconf
 nicxonf
+nixconf

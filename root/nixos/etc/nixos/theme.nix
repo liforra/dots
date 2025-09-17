@@ -7,13 +7,13 @@
   ];
   nixpkgs.config.qt5 = {
     enable = true;
-    platformTheme = "qt5ct"; 
+    platformTheme = "qt6ct"; 
       style = {
         package = pkgs.utterly-nord-plasma;
         name = "Utterly Nord Plasma";
       };
   };
-  environment.sessionVariables.QT_QPA_PLATFORMTHEME = "qt5ct";
+  environment.sessionVariables.QT_QPA_PLATFORMTHEME = "qt6ct";
   # Add themes, icons, cursors, GTK settings, font defaults here later.
   # Example (commented):
   # environment.systemPackages = with pkgs; [
