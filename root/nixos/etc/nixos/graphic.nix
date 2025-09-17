@@ -69,8 +69,9 @@
     hyprlock
     xwayland-satellite
     nautilus # Required for Gnome Portals
+    gnome-control-center
 
-
+    kdePackages.dolphin
     vscodium
     # Other GUI apps from your original config
     kdePackages.kleopatra

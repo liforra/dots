@@ -23,3 +23,9 @@ git commit -m "resolve merge" | wl-copy
 git commit -m "resolve merge" | wl-copy
 git commit -m "resolve merge" 
 git diff --name-only --diff-filter=U
+sudo mv dots dots.bak
+git clone https://github.com/liforra/dots.git
+nixos-rebuild switch
+sudo nixos-rebuild switch
+l
+ls
