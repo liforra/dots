@@ -1,6 +1,45 @@
 { config, pkgs, lib, ... }:
 
 {
+
+
+
+
+
+  # Network configuration (from graphic.nix, essential for servers)
+  networking.networkmanager.enable = true; # or use systemd-networkd for servers
+  networking.firewall.enable = true; # Critical for servers
+
+  # Time and locales (from graphic.nix, useful for servers)
+  time.timeZone = "Europe/Berlin";
+  i18n.defaultLocale = "en_US.UTF-8";
+  i18n.supportedLocales = [ "en_US.UTF-8/UTF-8" "de_DE.UTF-8/UTF-8" ];
+  i18n.extraLocaleSettings = {
+    LC_ADDRESS = "de_DE.UTF-8";
+    LC_IDENTIFICATION = "de_DE.UTF-8";
+    LC_MEASUREMENT = "de_DE.UTF-8";
+    LC_MONETARY = "de_DE.UTF-8";
+    LC_NAME = "de_DE.UTF-8";
+    LC_NUMERIC = "de_DE.UTF-8";
+    LC_PAPER = "de_DE.UTF-8";
+    LC_TELEPHONE = "de_DE.UTF-8";
+    LC_TIME = "de_DE.UTF-8";
+  };
+
+  # Console (from graphic.nix)
+  console.keyMap = "de";
+
+  # GNOME keyring (from graphic.nix, useful for credential storage even on servers)
+  services.gnome.gnome-keyring.enable = true;
+
+
+
+
+
+
+
+
+
   # Boot + EFI
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
