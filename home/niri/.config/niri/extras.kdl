@@ -1,0 +1,29 @@
+spawn-at-startup "waybar"
+prefer-no-csd
+
+screenshot-path "~/Pictures/Screenshots/%Y-%m-%d %H-%M-%S.png"
+
+animations {
+    // off
+    // slowdown 3.0
+}
+
+window-rule {
+    match app-id=r#"^org\.wezfurlong\.wezterm$"# default-column-width {}
+}
+
+window-rule {
+    match app-id=r#"firefox$"# title="^Picture-in-Picture$" open-floating true
+}
+
+// Example: block password managers from screen capture
+/-window-rule {
+    match app-id=r#"^org\.keepassxc\.KeePassXC$"# block-out-from "screen-capture"
+    match app-id=r#"^org\.gnome\.World\.Secrets$"# block-out-from "screen-capture"
+}
+
+// Example: enable rounded corners for all windows
+/-window-rule {
+    geometry-corner-radius 12
+    clip-to-geometry true
+}
