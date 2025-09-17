@@ -13,6 +13,7 @@
         name = "Utterly Nord Plasma";
       };
   };
+  environment.sessionVariables.QT_QPA_PLATFORMTHEME = "gt6ct";
   # Add themes, icons, cursors, GTK settings, font defaults here later.
   # Example (commented):
   # environment.systemPackages = with pkgs; [

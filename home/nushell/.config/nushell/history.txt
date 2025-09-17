@@ -29,3 +29,4 @@ nixos-rebuild switch
 sudo nixos-rebuild switch
 l
 ls
+nixconf
