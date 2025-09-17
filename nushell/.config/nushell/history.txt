@@ -1,0 +1,485 @@
+bash update.sh
+cat ~/.config/niri
+realpath ~/.config/niri
+cd ~
+ls
+cd .config
+cd niri
+ls
+cd ~/.config
+cd niri
+ls
+cd ~/.config/niri
+ls
+cd ~/.config
+ls
+cd niri
+ls
+pwd
+cd .config/niri/
+nvim config.kdl
+nmtui
+nvim
+cd ~
+nvim dots/root/nixos/etc/nixos/configuration.nix
+sudo nixos-rebuild 
+sudo nixos-rebuild switch
+ls
+cd cloned
+git clone https://github.com/tlatsas/bash-spinner.git
+ls
+cd bash-spinner/
+ls
+./test.sh
+bash ./test.sh
+rm spinner.sh
+nvim spinner.sh
+bash ./test.sh
+rm test.sh
+git stash
+git reset
+ls
+rm spinner.sh
+nvim spinner.sh
+./spinner.sh
+bash ./spinner.sh
+bash test.sh
+cd ~/dots/home/scripts/
+ls
+ls -l
+ls -a
+nvim .local
+cd .local
+ls
+cd bin
+ls
+cd ..
+ls
+nvim scripts
+mkdir scripts
+cp ~/cloned/bash-spinner/spinner.sh .
+ls
+cd ..
+./apply.sh
+~/scripts/
+ls
+ls -a
+cd ..
+spinner.sh
+cd ~/dots/home/scripts
+ls
+mv spinner.sh ./scripts/
+cd ..
+./apply.sh
+cd ~
+cd scripts
+ls
+ls -a
+cd ~/scripts
+cd ~
+ls
+cd scripts
+cd ~
+nvim scripts
+cd ~/scripts
+bash
+cd scripts
+pwd
+cd ~
+cd ./scripts
+cd ~/scripts
+ls
+cd scripts
+ls
+cd scripts
+realpath ~/scripts
+ls
+install
+git
+git help
+nvim nixconf
+./nixconf
+basj ./nixconf
+bash ./nixconf
+stop_spinner
+bash
+help
+nvim nixconf
+./spinner.sh
+bash ./nixconf
+cd ~/scripts
+ls
+cd scripts
+ls
+cd scripts/
+nvim nixconf
+nvim spinner.sh
+nvim nixconf
+bash ./nixconf
+nvim nixconf
+bash ./nixconf
+nvim nixconf
+bash ./nixconf
+nvim spinner.sh#
+nvim spinner.sh
+bash ./nixconf
+nvim spinner.sh
+nvim nixconf
+nvim spinner.sh
+bash ./nixconf
+nvim nixconf
+./nixconf
+bash ./nixconf
+bash ./nixconf test
+nvim nixconf
+bash ./nixconf test
+nvim nixconf
+bash ./nixconf test
+bash ./nixconf configuration.nix
+nvim nixconf
+bash ./nixconf configuration.nix
+nvim nixconf
+bash ./nixconf configuration.nix
+bash ./nixconf
+nvim nixconf
+bash ./nixconf
+nvim nixconf
+bash ./nixconf
+nvim nixconf
+bash ./nixconf
+nvim nixconf
+bash ./nixconf
+nvim nixconf
+bash ./nixconf
+nvim nixconf
+bash ./nixconf
+nvim nixconf
+bash
+nvim nixconf
+bash ./nixconf
+nvim nixconf
+bash ./nixconf
+bash
+nvim nixconf
+bash ./nixconf
+nvim nixconf
+bash ./nixconf
+nvim nixconf
+bash ./nixconf
+nvim nixconf
+bash ./nixconf
+sudo bash ./nixconf
+sudo -E ./nixconf
+sudo -E bash ./nixconf
+nvim nixconf
+sudo -E bash ./nixconf
+nvim nixconf
+sudo chmod +x ./nixconf
+./nixconf
+sudo chmod +x ./nixconf
+nvim nixconf
+sudo -E bash
+./nixconf
+bash ./nixconf
+nvim nixconf
+bash ./nixconf
+nvim nixconf
+bash ./nixconf
+cd scripts/
+ls
+cd ..
+ls
+cd scripts
+ls
+./nixconf
+nvim nixconf
+./nixconf
+cd ~/dots
+ls
+git commit -m "Added NixOS"
+git commit -m "Added Fonts to NixOS"
+bash
+gpgconf --kill all
+export GPG_TTY=$(tty)
+$env.GPG_TTY=$env.tty
+$env.GPG_TTY=$env.TTY
+$env.GPG_TTY="$env.TTY"
+let $env.GPG_TTY="$env.TTY"
+let $env.GPG_TTY "$env.TTY"
+config env
+config nu
+let $env.GPG_TTYi = "$env.TTY"
+$env.GPG_TTY = "$env.TTY"
+echo $env.GPG_TTY
+$env.GPG_TTY = $env.TTY
+bash
+$env.GPG_TTY = tty
+$env.GPG_TTY = ^tty
+echo $env.GPG_TTY
+nvim ~/dots/home/nushell/.config/nushell/config.nu
+ls
+nvim nixconf
+ls
+./nixconf#
+./nixconf
+cd ~/dots
+git commit -m "Added Fonts to NixOS"
+reboot
+ls
+cd dots
+ls
+git commit -m "Added Fonts to NixOS"
+git commit -m "Added Nerd Fonts to NixOS"
+git push
+git config --global
+git config --global username
+git config --global user.username
+git config --global user.name
+git config --global user.password
+git push
+git login
+git auth
+./nixconf
+cd scripts/scripts
+ls
+./nixconf
+ls
+./nixconf hardware-configuration.nix
+nvim nixconf
+reboot
+cd dots
+ls
+git add *
+git commit 
+sudo git commit
+sudo -E git commit
+git add home
+sudo -E git commit
+sudo -E git add home
+sudo -E git commit
+git add home/*
+git add home
+nvim
+cd dots
+ls
+git add
+sudo -E git commit -a
+sudo -E git commit -a home
+git add home
+git add home -v
+git add home --verbose
+git commit
+git stage
+git stage home
+git stage
+git commit
+git add -R home
+git add -A home
+git commit
+git add -Av
+git add -Av home
+git add -Av *
+ls
+sudo -E git add -Av *
+sudo chown -R Ü
+sudo chown -R *
+sudo chown -R liforra:liforra *
+sudo chown -R liforra *
+sudo -E git add -Av *
+git add -Av *
+git commit
+$env.GPG_TTY = ^tty
+git commit
+cd .gnupg/
+ls
+cd private-keys-v1.d/
+ls
+cd .
+cd ..
+cd public-keys.d/
+ls
+rm pubring.db.lock
+cd ..
+ls
+find *.lock
+^find *.lock
+^find | grep *.lock
+^find | grep .lock
+gp
+git diff
+ls
+git pull
+git reset
+git diff
+git commit
+git add *
+git commit -a
+git restore home
+git commit
+gnome-keyring 
+nix-shell -p seahorse
+nix-shell -p keypunch
+cd ..
+cd scripts/scripts
+./nixconf 
+nmtui
+cd .gnupg/
+ls
+rm pubring.db.lock
+cd ~
+config nu
+nixconf
+nixocnf
+nixcon
+nixconf
+nixcon
+nixconf
+cd ~/dotrs
+cd ~/dots
+git reset
+git reset -r
+git reset --merge
+git reset
+git stash
+git reset
+ls+
+nixconf
+nixconf user.nix
+nvim ./scripts/nixconf
+fzf 
+fzf /etc/nixos/
+ls /etc/nixos/
+bash
+nvim ./scripts/nixconf
+nixconf
+nixconf Hi
+nvim ./scripts/nixconf
+nixconf user
+cd ~/dots
+cd root/nixos/etc/nixos/
+ls
+nvim basic.nix
+gc
+git diff
+rm /home/liforra/dots/.git/index.locK
+rm /home/liforra/dots/.git/index.lock
+gc
+sudo gc
+cd ~
+cd dots
+sudo -E gc
+git commit
+sudo chown -R
+sudo chown -R liforra *
+sudo chown -Rv liforra *
+git commit
+gc
+git diff
+git diff root
+git diff a/root b/root
+gc
+gp
+git-credential-libsecret
+whereis git-credential-libsecret
+nixconf
+pkgs.git-credential-manager
+git-credential-manager
+config nu
+$env.GPG_TTY = ^tty<\n>
+ls
+gc
+nvim ~/scripts/nixconf
+sudo chown -Rv liforra *
+gc
+gp
+nvim ~/scripts/nixconf
+seafish
+nixconf
+exit
+nixconf
+git
+cd dots
+git diff
+ls
+cd ..
+nixconf
+clear
+reboot
+nmtui
+kitty
+nixconf
+ls
+cd dots
+ls
+gp
+git push
+sudo pkill git
+git push
+cd /etc/nixos/
+ls
+su
+sudo su
+cd ~/dots
+ls
+cd root
+cd nixos/etc/
+ls
+cd nixos/
+ls
+mv configuration.nix ~/configuration.nix.bak
+ls
+nvim users.nix
+nvim graphic.nix
+nvim cli.nix
+nvim laptop.nix
+nvim desktop.nix
+nvim theme.nix
+nvim server.nix
+ls
+cd ~/dots
+./apply
+./apply.sh
+nixconf
+rg
+rg test
+rg hardware
+nixconf
+cd dots
+rg nushell
+ls
+nixconf
+cd dots
+cd root/nixos/etc/nixos/
+ls
+nvim server.nix
+reboot
+cd dots
+gp
+nmuti
+nmtui
+ping github.com
+git push --verbose
+cd root
+cd nixos/etc/nixos
+cp /etc/nixos/configuration.nix ./configuration.nix.example
+nvim configuration.nix.example
+gc
+gp
+nixconf
+gp
+gpl
+ls
+cd .mnt
+ls
+sudo cryptsetup /dev/nvme0n1p2 mapped
+sudo cryptsetup luksOpen /dev/nvme0n1p2 mapped
+nixconf
+sudo mount /dev/mapped ./nvme
+sudo mount /dev/mapper/mapped ./nvme
+cd nvme
+ls
+ls -l dots
+sudo chown -Rv liforra dots
+sudo chmod u+rwx dots/
+sudo chmod o-rwx dots/
+sudo chmod g+rwx dots/
