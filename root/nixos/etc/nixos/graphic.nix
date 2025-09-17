@@ -91,6 +91,8 @@
     swaybg
     hyprlock
     xwayland-satellite
+    nautilus # Required for Gnome Portals
+
 
     vscodium
     # Other GUI apps from your original config
