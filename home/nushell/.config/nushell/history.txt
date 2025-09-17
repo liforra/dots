@@ -30,3 +30,4 @@ sudo nixos-rebuild switch
 l
 ls
 nixconf
+nicxonf
