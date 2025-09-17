@@ -1,6 +1,6 @@
 { config, pkgs, lib, ... }:
 {
-  networking.hostName = "vega"; # Change this for your server
+  networking.hostName = "Ididntedittheconfig";
   imports = [
     /etc/nixos/hardware-configuration.nix
     ./graphic.nix
