@@ -92,6 +92,7 @@
     hyprlock
     xwayland-satellite
 
+    vscodium
     # Other GUI apps from your original config
     kdePackages.kleopatra
   ];
