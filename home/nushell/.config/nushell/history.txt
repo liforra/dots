@@ -32,3 +32,103 @@ ls
 nixconf
 nicxonf
 nixconf
+nvim dots/root/nixos/etc/nixos/test.nix
+cp dots/root/nixos/etc/nixos/theme.nix dots/root/nixos/etc/nixos/test.nix
+nvim dots/root/nixos/etc/nixos/test.nix
+nixos-rebuild switch
+ls
+cd dots/
+ls
+./apply.sh
+nixconf
+nix run nixpkgs#hello
+source $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
+cathm-session-vars.sh
+cat hm-session-vars.sh
+cat $env.HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
+cat ~/.nix-profile/etc/profile.d/hm-session-vars.sh
+home-manager --version
+cat ~/.nix-profile/etc/profile.d/hm-session-vars.sh
+# Call it whatever you want, I won't judge<\n>mkdir my-home-manager<\n>cd my-home-manager<\n>git init
+nvim flake.nix
+nvim home.nix
+hello
+ls
+clear
+mkae
+make
+nix run nixpkgs#make
+nix-env nixpkgs#make
+nix-env i make
+nix-env --help
+nixconf
+nix-env nixpkgs#gnumake
+nix run nixpkgs#gnumake
+nix run nixpkgs#gnumake .
+./switch.sh
+sudo chmod +x ./switch.sh
+./switch.sh
+git add flake.nix
+git add switch.nix
+git add home.nix
+./switch.sh
+hello
+./switch.sh
+home
+hello
+./switch.sh
+gc -a
+git commit -am
+git commit -a
+./switch.sh
+ls
+hello
+./switch.sh
+./switch.sh clean
+./switch.sh
+starship
+firefox
+reboot
+ls
+cd my-home-manager/
+bluetoothctl
+bluetoot
+bluetooth
+systemctl status bluetooth
+sudo systemctl status bluetooth
+nixconf
+sudo systemctl status bluetooth
+nixconf
+nvim flake.nix
+nvim home.nix
+wq
+./switch.sh
+$env.USERNAME
+env
+env | grep name
+env | grep liforra
+env | grep liforra 
+env | grep " liforra"
+env | grep "liforra"
+env | grep name
+env | grep user
+env USER
+echo $env.USER
+echo $env.HOME
+nvim home.nix
+./switch.sh
+env LOGNAME
+echo $LOGNAME
+echo $env.LOGNAME
+touch a
+nvim a
+cat a
+clear
+nmtui
+ls
+cd my-home-manager/
+LS
+Ls
+ls
+nvim home.nix
+cd ~/dots
