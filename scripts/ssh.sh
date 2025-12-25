@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
 # SSH/Mosh enhanced wrapper
+# Version 0.9.4
 
 set -euo pipefail
 
 REAL_SSH=$(which ssh)
 ENHANCED_CONFIG="$HOME/.ssh/enhanced_config"
 SSH_CONFIG="$HOME/.ssh/config"
-VERSION="0.9.1"
+VERSION="0.9.4"
 
 # Defaults
 DEFAULT_MOSH_START=60001
@@ -31,7 +32,7 @@ RESET="\e[0m"
 log() {
   local lvl=$1
   shift
-  if [ "$VERBOSITY" -ge "$lvl" ]; then
+  if [ "$VERBOSITY" -ge "$lvl" ] || [ "$lvl" -eq 0 ]; then
     echo -e "$*"
   fi
 }
@@ -142,111 +143,128 @@ if [ "$NO_TERM" -eq 0 ]; then
 fi
 
 # ===== Helper functions =====
-parse_enhanced_hosts() {
-  awk '/^Host[[:space:]]+/ {for(i=2;i<=NF;i++) print $i}' "$ENHANCED_CONFIG"
+parse_hosts() {
+  local file="$1"
+  awk '/^Host[[:space:]]+/ {for(i=2;i<=NF;i++) print $i}' "$file"
 }
 
-parse_ssh_hosts() {
-  awk '/^Host[[:space:]]+/ {for(i=2;i<=NF;i++) print $i}' "$SSH_CONFIG" | grep -vFf <(parse_enhanced_hosts)
+find_host_config() {
+  local host="$1"
+  local file="$2"
+  awk "/^Host[[:space:]]+.*\b$host\b/,/^Host[[:space:]]+/" "$file" | sed '$d'
 }
 
 # Select host via GUI/TUI
 if [ "$USE_GUI" -eq 1 ]; then
   [ ! -x "$(command -v zenity)" ] && echo "zenity required" && exit 1
-  HOST_LIST=$(
-    parse_enhanced_hosts
-    parse_ssh_hosts
-  )
+  HOST_LIST=$(parse_hosts "$ENHANCED_CONFIG"; parse_hosts "$SSH_CONFIG")
   INPUT=$(echo "$HOST_LIST" | zenity --list --title="Select Host" --column="Host" --height=400 --width=500)
   [ -z "$INPUT" ] && exit 1
 fi
 
 if [ "$USE_TUI" -eq 1 ]; then
   [ ! -x "$(command -v fzf)" ] && echo "fzf required" && exit 1
-  HOST_LIST=$(
-    parse_enhanced_hosts
-    parse_ssh_hosts
-  )
+  HOST_LIST=$(parse_hosts "$ENHANCED_CONFIG"; parse_hosts "$SSH_CONFIG")
   INPUT=$(echo "$HOST_LIST" | fzf --prompt="Select host: ")
   [ -z "$INPUT" ] && exit 1
 fi
 
-# Parse host config
-HOSTS=()
+# ===== Initialize variables =====
+TARGET=""
 USER=""
 PORT=""
 IDENTITY=""
 OPTIONS=()
+MOSH_UDP_START=$DEFAULT_MOSH_START
+MOSH_UDP_END=$DEFAULT_MOSH_END
 
+# Try enhanced config first
 if [ -f "$ENHANCED_CONFIG" ] && grep -q -E "^Host[[:space:]]+.*\b$INPUT\b" "$ENHANCED_CONFIG"; then
-  CONF_BLOCK=$(awk "/^Host[[:space:]]+.*\b$INPUT\b/,/^Host[[:space:]]+/ {print}" "$ENHANCED_CONFIG")
-  HOSTS=($(echo "$CONF_BLOCK" | grep -i "^HostName" | cut -d' ' -f2 | tr ',' ' '))
-  USER=$(echo "$CONF_BLOCK" | grep -i "^User" | cut -d' ' -f2)
-  PORT=$(echo "$CONF_BLOCK" | grep -i "^Port" | cut -d' ' -f2)
-  IDENTITY=$(echo "$CONF_BLOCK" | grep -i "^IdentityFile" | cut -d' ' -f2)
-  OPTIONS=$(echo "$CONF_BLOCK" | grep -i "^Option" | cut -d' ' -f2-)
-  MOSH_UDP_START=$(echo "$CONF_BLOCK" | grep -i "^MoshPortStart" | cut -d' ' -f2)
-  MOSH_UDP_END=$(echo "$CONF_BLOCK" | grep -i "^MoshPortEnd" | cut -d' ' -f2)
-  SCRIPT_SHELL=$(echo "$CONF_BLOCK" | grep -i "^ScriptShell" | cut -d' ' -f2 || echo "$SCRIPT_SHELL")
-  [ -z "$MOSH_UDP_START" ] && MOSH_UDP_START=$DEFAULT_MOSH_START
-  [ -z "$MOSH_UDP_END" ] && MOSH_UDP_END=$DEFAULT_MOSH_END
-else
-  HOSTS=("$INPUT")
+  CONF_BLOCK=$(find_host_config "$INPUT" "$ENHANCED_CONFIG" || true)
+  HOSTS=($(echo "$CONF_BLOCK" | grep -i "^HostName" | awk '{print $2}' || true))
+  TARGET="${HOSTS[0]:-$INPUT}"
+  USER=$(echo "$CONF_BLOCK" | grep -i "^User" | awk '{print $2}' || true)
+  PORT=$(echo "$CONF_BLOCK" | grep -i "^Port" | awk '{print $2}' || true)
+  IDENTITY=$(echo "$CONF_BLOCK" | grep -i "^IdentityFile" | awk '{print $2}' || true)
+  OPTIONS=($(echo "$CONF_BLOCK" | grep -i "^Option" | awk '{$1=""; print $0}' || true))
+  MOSH_UDP_START=$(echo "$CONF_BLOCK" | grep -i "^MoshPortStart" | awk '{print $2}' || echo "$DEFAULT_MOSH_START")
+  MOSH_UDP_END=$(echo "$CONF_BLOCK" | grep -i "^MoshPortEnd" | awk '{print $2}' || echo "$DEFAULT_MOSH_END")
+  SCRIPT_SHELL=$(echo "$CONF_BLOCK" | grep -i "^ScriptShell" | awk '{print $2}' || echo "$SCRIPT_SHELL")
 fi
 
-# ===== Try connecting to a host =====
+# Fallback to SSH config
+if [ -z "$TARGET" ]; then
+  CONF_BLOCK=$(find_host_config "$INPUT" "$SSH_CONFIG" || true)
+  HOSTS=($(echo "$CONF_BLOCK" | grep -i "^HostName" | awk '{print $2}' || true))
+  TARGET="${HOSTS[0]:-$INPUT}"
+  USER=$(echo "$CONF_BLOCK" | grep -i "^User" | awk '{print $2}' || true)
+  PORT=$(echo "$CONF_BLOCK" | grep -i "^Port" | awk '{print $2}' || true)
+  IDENTITY=$(echo "$CONF_BLOCK" | grep -i "^IdentityFile" | awk '{print $2}' || true)
+  OPTIONS=($(echo "$CONF_BLOCK" | grep -i "^Option" | awk '{$1=""; print $0}' || true))
+fi
+
+[ -z "${OPTIONS[*]+x}" ] && OPTIONS=()
+
+# ===== Connection function =====
 try_host() {
   local TARGET="$1"
   shift
   local SSH_FLAGS=("$@")
 
-  log 1 "Trying $TARGET..."
+  log 0 "Trying $TARGET..."
 
+  # Copy terminfo if needed
   if [ "$KITTY_TERM" -eq 1 ]; then
     SSH_FLAGS+=("-o" "SendEnv=TERMINFO_DIRS")
     export TERMINFO_DIRS="$KITTY_TERMINFO_DIR"
-    # Copy terminfo if missing
-    ssh "$TARGET" "infocmp xterm-kitty >/dev/null 2>&1 || mkdir -p ~/.terminfo && scp $TERMINFO_DIRS/* $TARGET:~/.terminfo/"
+    ssh "$TARGET" "infocmp xterm-kitty >/dev/null 2>&1 || mkdir -p ~/.terminfo && scp $TERMINFO_DIRS/* $TARGET:~/.terminfo/" || true
   fi
 
+  # Script execution
   if [ -n "$SCRIPT_FILE" ]; then
     BASENAME=$(basename "$SCRIPT_FILE")
-    log 1 "Copying script $SCRIPT_FILE to remote..."
+    log 0 "Copying script $SCRIPT_FILE to remote..."
     scp "$SCRIPT_FILE" "$TARGET:~/$BASENAME"
-    log 1 "Executing script on remote..."
+    log 0 "Executing script on remote..."
     ssh "$TARGET" "${SSH_FLAGS[@]}" "$SCRIPT_SHELL ~/$BASENAME"
     return $?
   fi
 
+  # Mosh attempt
   if command -v mosh >/dev/null 2>&1 && [ "$FORCE_SSH" -eq 0 ]; then
     if ssh "$TARGET" "command -v mosh-server >/dev/null 2>&1"; then
-      log 1 "mosh-server found on $TARGET. Attempting Mosh..."
+      log 0 "mosh-server found on $TARGET. Attempting Mosh..."
       for port in $(seq "$MOSH_UDP_START" "$MOSH_UDP_END"); do
         if mosh --ssh="$REAL_SSH ${SSH_FLAGS[*]}" --port=$port "$TARGET" "${REMOTE_CMD[@]}" 2>/dev/null; then
           return 0
+        else
+          log 0 "${YELLOW}mosh port $port not available, trying next...${RESET}"
         fi
       done
-      log 1 "Mosh failed on UDP ports $MOSH_UDP_START-$MOSH_UDP_END, falling back to SSH..."
+      log 0 "${YELLOW}All Mosh ports failed, falling back to SSH...${RESET}"
+    else
+      log 0 "${YELLOW}mosh not installed on server, using SSH...${RESET}"
     fi
   fi
 
-  log 1 "Using SSH on $TARGET..."
+  log 0 "Using SSH on $TARGET..."
   "$REAL_SSH" "${SSH_FLAGS[@]}" "$TARGET" "${REMOTE_CMD[@]}"
 }
 
-# ===== Try hosts in order =====
-for H in "${HOSTS[@]}"; do
-  TARGET="$H"
-  [ -n "$USER" ] && TARGET="$USER@$H"
+# ===== Execute hosts =====
+for H in "${HOSTS[@]:-$TARGET}"; do
+  FINAL_TARGET="$H"
+  [ -n "$USER" ] && FINAL_TARGET="$USER@$H"
   SSH_FLAGS=()
   [ -n "$PORT" ] && SSH_FLAGS+=("-p" "$PORT")
   [ -n "$IDENTITY" ] && SSH_FLAGS+=("-i" "$IDENTITY")
-  [ -n "$OPTIONS" ] && SSH_FLAGS+=($OPTIONS)
+  [ -n "${OPTIONS[*]}" ] && SSH_FLAGS+=("${OPTIONS[@]}")
 
-  if try_host "$TARGET" "${SSH_FLAGS[@]}"; then
+  if try_host "$FINAL_TARGET" "${SSH_FLAGS[@]}"; then
     exit 0
   fi
 done
 
 log 0 "All hosts failed."
 exit 1
+
