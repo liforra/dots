@@ -1,0 +1,312 @@
+#!/bin/bash
+
+# Script name for logging
+SCRIPT_NAME=$(basename "$0" .sh)
+LOG_DIR="$HOME/.log"
+LOG_FILE="$LOG_DIR/$SCRIPT_NAME.log"
+
+# Ensure log directory exists
+mkdir -p "$LOG_DIR"
+
+# Colors for output
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m' # No Color
+
+# Directories
+FLATPAK_THEME_DIR="$HOME/.local/share/flatpak/overrides/themes"
+PLASMA_THEME_DIR="$HOME/.local/share/plasma/desktoptheme"
+PLASMA_SYSTEM_DIR="/usr/share/plasma/desktoptheme"
+COLOR_SCHEME_DIR="$HOME/.local/share/color-schemes"
+COLOR_SCHEME_SYSTEM_DIR="/usr/share/color-schemes"
+GTK_THEME_DIR="$HOME/.themes"
+GTK_SYSTEM_DIR="/usr/share/themes"
+AURORAE_DIR="$HOME/.local/share/aurorae/themes"
+AURORAE_SYSTEM_DIR="/usr/share/aurorae/themes"
+
+# Cursor theme directories
+CURSOR_USER_DIR="$HOME/.local/share/icons"
+CURSOR_USER_ALT_DIR="$HOME/.icons"
+CURSOR_SYSTEM_DIR="/usr/share/icons"
+FLATPAK_CURSOR_DIR="$HOME/.local/share/flatpak/overrides/icons"
+
+# KDE Config files
+KDE_GLOBALS="$HOME/.config/kdeglobals"
+PLASMA_RC="$HOME/.config/plasmarc"
+KWIN_RC="$HOME/.config/kwinrc"
+KCMINPUT_RC="$HOME/.config/kcminputrc"
+
+# Logging function
+log() {
+    echo "$(date '+%Y-%m-%d %H:%M:%S') - $1" >> "$LOG_FILE"
+}
+
+# Start logging
+log "=== Theme Update Script Started ==="
+
+# Ensure Flatpak directories exist
+mkdir -p "$FLATPAK_THEME_DIR"
+mkdir -p "$FLATPAK_CURSOR_DIR"
+
+# Function to create/update symlinks
+create_symlink() {
+    local source=$1
+    local target=$2
+    local theme_type=$3
+
+    if [ -e "$source" ]; then
+        ln -sf "$source" "$target"
+        log "✓ Linked $theme_type: $(basename "$source")"
+        return 0
+    else
+        log "✗ $theme_type not found: $source"
+        return 1
+    fi
+}
+
+# Function to find theme in user or system directories
+find_theme() {
+    local theme_name=$1
+    local user_dir=$2
+    local system_dir=$3
+
+    if [ -d "$user_dir/$theme_name" ]; then
+        echo "$user_dir/$theme_name"
+    elif [ -d "$system_dir/$theme_name" ]; then
+        echo "$system_dir/$theme_name"
+    else
+        echo ""
+    fi
+}
+
+# Function to find cursor theme
+find_cursor_theme() {
+    local cursor_name=$1
+
+    # Check user directories first
+    if [ -d "$CURSOR_USER_DIR/$cursor_name" ]; then
+        echo "$CURSOR_USER_DIR/$cursor_name"
+    elif [ -d "$CURSOR_USER_ALT_DIR/$cursor_name" ]; then
+        echo "$CURSOR_USER_ALT_DIR/$cursor_name"
+    elif [ -d "$CURSOR_SYSTEM_DIR/$cursor_name" ]; then
+        echo "$CURSOR_SYSTEM_DIR/$cursor_name"
+    else
+        echo ""
+    fi
+}
+
+echo "🎨 Updating Flatpak theme links..."
+
+# 1. Detect GTK Theme (KDE way)
+log "Detecting GTK Theme..."
+GTK_THEME=""
+
+# Check KDE's GTK settings first
+if [ -f "$KDE_GLOBALS" ]; then
+    GTK_THEME=$(grep -oP '(?<=gtk_theme=).*' "$KDE_GLOBALS" 2>/dev/null)
+fi
+
+# Fallback to gsettings if available
+if [ -z "$GTK_THEME" ] && command -v gsettings &> /dev/null; then
+    GTK_THEME=$(gsettings get org.gnome.desktop.interface gtk-theme 2>/dev/null | tr -d "'")
+fi
+
+if [ -n "$GTK_THEME" ] && [ "$GTK_THEME" != "Default" ]; then
+    theme_path=$(find_theme "$GTK_THEME" "$GTK_THEME_DIR" "$GTK_SYSTEM_DIR")
+    if [ -n "$theme_path" ]; then
+        create_symlink "$theme_path" "$FLATPAK_THEME_DIR/$GTK_THEME" "GTK Theme"
+        flatpak override --user --env=GTK_THEME="$GTK_THEME" &>/dev/null
+        echo "✓ GTK Theme: $GTK_THEME"
+    else
+        log "✗ GTK Theme not found: $GTK_THEME"
+    fi
+else
+    log "No custom GTK theme detected"
+fi
+
+# 2. Detect Plasma Color Scheme
+log "Detecting Plasma Color Scheme..."
+COLOR_SCHEME=""
+
+if [ -f "$KDE_GLOBALS" ]; then
+    # Try different possible entries
+    COLOR_SCHEME=$(grep -oP '(?<=ColorScheme=).*' "$KDE_GLOBALS" 2>/dev/null)
+    
+    # If not found, try the [General] section
+    if [ -z "$COLOR_SCHEME" ]; then
+        COLOR_SCHEME=$(awk '/^\[General\]/{flag=1; next} /^\[/{flag=0} flag && /ColorScheme=/{gsub(/ColorScheme=/, ""); print}' "$KDE_GLOBALS" 2>/dev/null)
+    fi
+fi
+
+if [ -n "$COLOR_SCHEME" ]; then
+    # Try user directory first, then system
+    if [ -f "$COLOR_SCHEME_DIR/$COLOR_SCHEME.colors" ]; then
+        create_symlink "$COLOR_SCHEME_DIR/$COLOR_SCHEME.colors" "$FLATPAK_THEME_DIR/$COLOR_SCHEME.colors" "Color Scheme"
+        flatpak override --user --env=KDE_COLOR_SCHEME="$COLOR_SCHEME" &>/dev/null
+        echo "✓ Color Scheme: $COLOR_SCHEME"
+    elif [ -f "$COLOR_SCHEME_SYSTEM_DIR/$COLOR_SCHEME.colors" ]; then
+        create_symlink "$COLOR_SCHEME_SYSTEM_DIR/$COLOR_SCHEME.colors" "$FLATPAK_THEME_DIR/$COLOR_SCHEME.colors" "Color Scheme"
+        flatpak override --user --env=KDE_COLOR_SCHEME="$COLOR_SCHEME" &>/dev/null
+        echo "✓ Color Scheme: $COLOR_SCHEME"
+    else
+        log "✗ Color Scheme file not found: $COLOR_SCHEME.colors"
+    fi
+else
+    # Check if ShadesOfPurple.colors exists and link it anyway
+    if [ -f "$COLOR_SCHEME_DIR/ShadesOfPurple.colors" ]; then
+        create_symlink "$COLOR_SCHEME_DIR/ShadesOfPurple.colors" "$FLATPAK_THEME_DIR/ShadesOfPurple.colors" "Color Scheme"
+        flatpak override --user --env=KDE_COLOR_SCHEME="ShadesOfPurple" &>/dev/null
+        echo "✓ Color Scheme: ShadesOfPurple (detected from directory)"
+    else
+        log "No custom color scheme detected"
+    fi
+fi
+
+# 3. Detect Active Plasma Desktop Theme
+log "Detecting Plasma Desktop Theme..."
+PLASMA_THEME=""
+
+if [ -f "$PLASMA_RC" ]; then
+    PLASMA_THEME=$(grep -oP '(?<=Theme=).*' "$PLASMA_RC" 2>/dev/null)
+fi
+
+if [ -n "$PLASMA_THEME" ] && [ "$PLASMA_THEME" != "default" ]; then
+    theme_path=$(find_theme "$PLASMA_THEME" "$PLASMA_THEME_DIR" "$PLASMA_SYSTEM_DIR")
+    if [ -n "$theme_path" ]; then
+        create_symlink "$theme_path" "$FLATPAK_THEME_DIR/$PLASMA_THEME" "Plasma Theme"
+        flatpak override --user --env=PLASMA_THEME="$PLASMA_THEME" &>/dev/null
+        echo "✓ Plasma Theme: $PLASMA_THEME"
+    else
+        log "✗ Plasma Theme not found: $PLASMA_THEME"
+    fi
+else
+    log "Using default Plasma theme"
+fi
+
+# 4. Detect Window Decoration Theme
+log "Detecting Window Decoration..."
+WINDOW_DECORATION=""
+
+if [ -f "$KWIN_RC" ]; then
+    # Check for Aurorae theme
+    WINDOW_DECORATION=$(grep -A 10 '\[org.kde.kdecoration2\]' "$KWIN_RC" | grep -oP '(?<=theme=).*' 2>/dev/null)
+    
+    if [ -n "$WINDOW_DECORATION" ]; then
+        # Remove the __aurorae__svg__ prefix if present
+        CLEAN_DECORATION=$(echo "$WINDOW_DECORATION" | sed 's/__aurorae__svg__//')
+        
+        theme_path=$(find_theme "$CLEAN_DECORATION" "$AURORAE_DIR" "$AURORAE_SYSTEM_DIR")
+        if [ -n "$theme_path" ]; then
+            create_symlink "$theme_path" "$FLATPAK_THEME_DIR/$CLEAN_DECORATION" "Window Decoration"
+            echo "✓ Window Decoration: $CLEAN_DECORATION"
+        else
+            log "Window decoration '$CLEAN_DECORATION' not found in Aurorae themes"
+        fi
+    else
+        log "Using default window decoration"
+    fi
+fi
+
+# 5. Detect Mouse Cursor Theme
+log "Detecting Mouse Cursor Theme..."
+CURSOR_THEME=""
+
+# Check KDE cursor settings
+if [ -f "$KCMINPUT_RC" ]; then
+    CURSOR_THEME=$(grep -oP '(?<=cursorTheme=).*' "$KCMINPUT_RC" 2>/dev/null)
+fi
+
+# Fallback to X11 cursor settings
+if [ -z "$CURSOR_THEME" ] && [ -f "$HOME/.icons/default/index.theme" ]; then
+    CURSOR_THEME=$(grep -oP '(?<=Inherits=).*' "$HOME/.icons/default/index.theme" 2>/dev/null)
+fi
+
+# Another fallback - check Xresources
+if [ -z "$CURSOR_THEME" ] && [ -f "$HOME/.Xresources" ]; then
+    CURSOR_THEME=$(grep -oP '(?<=Xcursor.theme:\s).*' "$HOME/.Xresources" 2>/dev/null)
+fi
+
+if [ -n "$CURSOR_THEME" ] && [ "$CURSOR_THEME" != "default" ]; then
+    cursor_path=$(find_cursor_theme "$CURSOR_THEME")
+    if [ -n "$cursor_path" ]; then
+        create_symlink "$cursor_path" "$FLATPAK_CURSOR_DIR/$CURSOR_THEME" "Cursor Theme"
+        flatpak override --user --env=XCURSOR_THEME="$CURSOR_THEME" &>/dev/null
+        flatpak override --user --env=XCURSOR_PATH="$HOME/.local/share/flatpak/overrides/icons:$HOME/.local/share/icons:$HOME/.icons:/usr/share/icons" &>/dev/null
+        echo "✓ Cursor Theme: $CURSOR_THEME"
+    else
+        log "✗ Cursor Theme not found: $CURSOR_THEME"
+    fi
+else
+    log "Using default cursor theme"
+fi
+
+# 6. Link all custom user themes (as fallback)
+log "Linking additional user themes..."
+
+# Link any custom Plasma themes
+if [ -d "$PLASMA_THEME_DIR" ]; then
+    for theme in "$PLASMA_THEME_DIR"/*; do
+        if [ -d "$theme" ]; then
+            theme_name=$(basename "$theme")
+            if [ ! -L "$FLATPAK_THEME_DIR/$theme_name" ]; then
+                create_symlink "$theme" "$FLATPAK_THEME_DIR/$theme_name" "Additional Plasma Theme"
+            fi
+        fi
+    done
+fi
+
+# Link any custom Aurorae themes
+if [ -d "$AURORAE_DIR" ]; then
+    for decoration in "$AURORAE_DIR"/*; do
+        if [ -d "$decoration" ]; then
+            decoration_name=$(basename "$decoration")
+            if [ ! -L "$FLATPAK_THEME_DIR/$decoration_name" ]; then
+                create_symlink "$decoration" "$FLATPAK_THEME_DIR/$decoration_name" "Additional Window Decoration"
+            fi
+        fi
+    done
+fi
+
+# Link any custom GTK themes not already linked
+if [ -d "$GTK_THEME_DIR" ]; then
+    for theme in "$GTK_THEME_DIR"/*; do
+        if [ -d "$theme" ]; then
+            theme_name=$(basename "$theme")
+            if [ ! -L "$FLATPAK_THEME_DIR/$theme_name" ]; then
+                create_symlink "$theme" "$FLATPAK_THEME_DIR/$theme_name" "Additional GTK Theme"
+            fi
+        fi
+    done
+fi
+
+# Link cursor themes from user directories
+for cursor_dir in "$CURSOR_USER_DIR" "$CURSOR_USER_ALT_DIR"; do
+    if [ -d "$cursor_dir" ]; then
+        for cursor in "$cursor_dir"/*; do
+            if [ -d "$cursor" ]; then
+                cursor_name=$(basename "$cursor")
+                # Skip if it's not a cursor theme (check for cursors subdirectory)
+                if [ -d "$cursor/cursors" ] && [ ! -L "$FLATPAK_CURSOR_DIR/$cursor_name" ]; then
+                    create_symlink "$cursor" "$FLATPAK_CURSOR_DIR/$cursor_name" "Additional Cursor Theme"
+                fi
+            fi
+        done
+    fi
+done
+
+# Count linked themes
+THEME_COUNT=$(find "$FLATPAK_THEME_DIR" -type l 2>/dev/null | wc -l)
+CURSOR_COUNT=$(find "$FLATPAK_CURSOR_DIR" -type l 2>/dev/null | wc -l)
+
+echo ""
+echo -e "${GREEN}🎉 Theme linking complete!${NC}"
+echo "📄 Linked $THEME_COUNT themes and $CURSOR_COUNT cursor themes"
+echo "📋 Detailed log: $LOG_FILE"
+echo ""
+echo "🔄 Restart any running Flatpak apps to apply changes"
+
+# Log completion
+log "=== Theme Update Script Completed ==="
+log "Linked $THEME_COUNT themes and $CURSOR_COUNT cursor themes"
+log ""

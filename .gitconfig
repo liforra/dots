@@ -1,0 +1,17 @@
+[user]
+	name = liforra
+	email = git@liforra.de
+	signingkey = 723D4DC2FD70078D
+[commit]
+	gpgsign = true
+[core]
+	editor = nvim
+[color]
+	ui = auto
+[credential]
+	helper = store
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
