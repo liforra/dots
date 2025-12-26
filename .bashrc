@@ -132,7 +132,6 @@ alias gp="git push"
 alias gc="git commit -a"
 alias gpc="gc && gp"
 
-alias history="~/.scripts/history"
 alias clear="clear && fastfetch"
 # alias reload="source ~/.bash_profile && sleep .3 && clear"
 alias reload='exec bash'
@@ -141,6 +140,7 @@ alias cd="z"
 alias la="eza --header --icons -la"
 alias ls="eza --header --icons"
 alias tree="eza --tree --icons"
+# Only override 'history' after all startup scripts have run
 
 complin() {
   # Linux, GCC/Clang friendly
