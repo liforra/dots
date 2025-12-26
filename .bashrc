@@ -7,74 +7,25 @@ esac
 # Path to your oh-my-bash installation.
 export OSH='/home/liforra/.oh-my-bash'
 
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-bash is loaded.
+## --- Custom Shell Sources ---
+source "$OSH"/oh-my-bash.sh
+source -- ~/.local/share/blesh/ble.sh
+eval -- "$(/usr/local/bin/starship init bash --print-full-init)"
+eval "$(zoxide init bash)"
+
+# --- Oh My Bash Settings ---
+
 OSH_THEME=""
-
-# If you set OSH_THEME to "random", you can ignore themes you don't like.
-# OMB_THEME_RANDOM_IGNORED=("powerbash10k" "wanelo")
-# You can also specify the list from which a theme is randomly selected:
-# OMB_THEME_RANDOM_CANDIDATES=("font" "powerline-light" "minimal")
-
-# Uncomment the following line to use case-sensitive completion.
-# OMB_CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
-# OMB_HYPHEN_SENSITIVE="false"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_OSH_DAYS=13
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you don't want the repository to be considered dirty
-# if there are untracked files.
-# SCM_GIT_DISABLE_UNTRACKED_DIRTY="true"
-
-# Uncomment the following line if you want to completely ignore the presence
-# of untracked files in the repository.
-# SCM_GIT_IGNORE_UNTRACKED="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.  One of the following values can
-# be used to specify the timestamp format.
-# * 'mm/dd/yyyy'     # mm/dd/yyyy + time
-# * 'dd.mm.yyyy'     # dd.mm.yyyy + time
-# * 'yyyy-mm-dd'     # yyyy-mm-dd + time
-# * '[mm/dd/yyyy]'   # [mm/dd/yyyy] + [time] with colors
-# * '[dd.mm.yyyy]'   # [dd.mm.yyyy] + [time] with colors
-# * '[yyyy-mm-dd]'   # [yyyy-mm-dd] + [time] with colors
-# If not set, the default value is 'yyyy-mm-dd'.
-# HIST_STAMPS='yyyy-mm-dd'
+OMB_CASE_SENSITIVE="true"
+OMB_HYPHEN_SENSITIVE="false"
+export UPDATE_OSH_DAYS=13
+ENABLE_CORRECTION="true"
+COMPLETION_WAITING_DOTS="true"
 export HISTTIMEFORMAT=$'\e[38;5;245m[\e[38;5;39m%d.%m.%y\e[38;5;245m - \e[38;5;42m%H:%M\e[38;5;245m  \e[38;5;208m%S\e[38;5;245m]\e[0m '
-
-# Uncomment the following line if you do not want OMB to overwrite the existing
-# aliases by the default OMB aliases defined in lib/*.sh
-# OMB_DEFAULT_ALIASES="check"
-
-# Would you like to use another custom folder than $OSH/custom?
-# OSH_CUSTOM=/path/to/new-custom-folder
-
+OMB_DEFAULT_ALIASES="check"
+OSH_CUSTOM=/home/liforra/.config/omb/custom
 OMB_USE_SUDO=true
+OMB_TERM_USE_TPUT=no
 
 completions=(
   git
@@ -91,32 +42,32 @@ plugins=(
   bashmarks
 )
 
-# Example format:
-#  if [ "$DISPLAY" ] || [ "$SSH" ]; then
-#      plugins+=(tmux-autoattach)
-#  fi
+if [ "$DISPLAY" ] || [ "$SSH" ]; then
+  plugins+=(tmux-autoattach)
+fi
 
-source "$OSH"/oh-my-bash.sh
+# --- General Enviorment Variables ---
+export LANG=en_US.UTF-8
+## -- EDITOR --
+if command -v nvim &>/dev/null && [[ -f "${HOME}/.config/nvim/lua/lazyvim/init.lua" ]]; then
+  export EDITOR="nvim"
+elif command -v lvim &>/dev/null; then
+  export EDITOR="lvim"
+elif command -v nvim &>/dev/null; then
+  export EDITOR="nvim"
+elif command -v vim &>/dev/null; then
+  export EDITOR="vim"
+elif command -v micro &>/dev/null; then
+  export EDITOR="micro"
+elif command -v nano &>/dev/null; then
+  export EDITOR="nano"
+else
+  unset EDITOR
+fi
 
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Faster Shell startup (Forces ANSI Escape Sequences)
-OMB_TERM_USE_TPUT=no
-
-[[ $- != *i* ]] && return
-alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
-eval -- "$(/usr/local/bin/starship init bash --print-full-init)"
-source -- ~/.local/share/blesh/ble.sh
-eval "$(zoxide init bash)"
 
+# --- Custom Commands ---
 arg0() {
   local argv0=$1
   local program=$2
@@ -125,23 +76,57 @@ arg0() {
     exec -a "$argv0" "$program" "$@"
   )
 }
+# --- Aliases ---
+
+# This is a fix for when fastfetch hangs. I have had that problem more then once.
 alias fastfetch="timeout 10s fastfetch"
 
-fastfetch
+### - Git -
 alias gp="git push"
 alias gc="git commit -a"
 alias gpc="gc && gp"
 
-alias clear="clear && fastfetch"
-# alias reload="source ~/.bash_profile && sleep .3 && clear"
-alias reload='exec bash'
-alias ssh="~/.scripts/ssh.sh"
+### - Basic (cd,ls,tree, etc) -
 alias cd="z"
 alias la="eza --header --icons -la"
 alias ls="eza --header --icons"
 alias tree="eza --tree --icons"
 # Only override 'history' after all startup scripts have run
 
+alias clear="clear && fastfetch"
+
+### - All forms of reloading and resetting -
+alias reload='exec bash'
+shreset() {
+  local start_dir="${HOME}"
+  if [[ -n "$SHSTARTDIR" ]]; then
+    start_dir="$SHSTARTDIR"
+  fi
+  local term_type="$TERM"
+  clear
+  #echo "Resetting shell..."
+  exec bash --login -i -c "cd \"$start_dir\"; exec bash -i"
+}
+
+# Optional: track default start dir for interactive sessions
+[[ -z "$SHSTARTDIR" ]] && export SHSTARTDIR="$PWD"
+treset() {
+  command reset
+}
+alias reset="treset && shreset"
+## scripts
+
+alias ssh="~/.scripts/ssh.sh"
+
+#
+#
+#
+#
+#
+#
+#
+#
+#
 complin() {
   # Linux, GCC/Clang friendly
   export CC=gcc
