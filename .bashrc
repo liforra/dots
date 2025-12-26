@@ -4,35 +4,34 @@ case $- in
 *) return ;;
 esac
 
-# Prevent double sourcing
-if [ -n "$_DOTS_BASHRC_LOADED" ]; then
-  return
-fi
-_DOTS_BASHRC_LOADED=1
-
 # Update Dotfiles
 # Run update.sh automatically in interactive shells, but not too frequently.
-# This prevents slowing down shell startup with unnecessary git pulls.
 DOTS_DIR="$HOME/.dots"
 LAST_UPDATE_FILE="$DOTS_DIR/.last_update_check"
 UPDATE_FREQUENCY_DAYS=7 # Check for updates every 7 days
 
-if [ -f "$LAST_UPDATE_FILE" ]; then
-  LAST_UPDATE_TIMESTAMP=$(cat "$LAST_UPDATE_FILE")
-  CURRENT_TIMESTAMP=$(date +%s)
-  SECONDS_SINCE_LAST_UPDATE=$((CURRENT_TIMESTAMP - LAST_UPDATE_TIMESTAMP))
-  SECONDS_IN_DAY=$((60 * 60 * 24))
+# Guard to prevent update check and greeting from running twice (e.g. in subshells)
+if [ -z "$_DOTS_SESSION_INITIALIZED" ]; then
+    export _DOTS_SESSION_INITIALIZED=1
+    _SHOULD_RUN_GREETING=true
 
-  if [ "$SECONDS_SINCE_LAST_UPDATE" -ge "$((UPDATE_FREQUENCY_DAYS * SECONDS_IN_DAY))" ]; then
-    echo -e "\e[1;32mUpdating dotfiles...\e[0m"
-    ("$DOTS_DIR/update.sh" auto >/tmp/dotfiles-update.log 2>&1) &
-    date +%s >"$LAST_UPDATE_FILE" # Update timestamp after checking
-  fi
-else
-  # If no last update file, run update.sh once and create the file
-  echo -e "\e[1;32mRunning initial dotfiles update...\e[0m"
-  ("$DOTS_DIR/update.sh" auto >/tmp/dotfiles-update.log 2>&1) &
-  date +%s >"$LAST_UPDATE_FILE"
+    if [ -f "$LAST_UPDATE_FILE" ]; then
+      LAST_UPDATE_TIMESTAMP=$(cat "$LAST_UPDATE_FILE")
+      CURRENT_TIMESTAMP=$(date +%s)
+      SECONDS_SINCE_LAST_UPDATE=$((CURRENT_TIMESTAMP - LAST_UPDATE_TIMESTAMP))
+      SECONDS_IN_DAY=$((60 * 60 * 24))
+
+      if [ "$SECONDS_SINCE_LAST_UPDATE" -ge "$((UPDATE_FREQUENCY_DAYS * SECONDS_IN_DAY))" ]; then
+        echo -e "\e[1;32mUpdating dotfiles...\e[0m"
+        ("$DOTS_DIR/update.sh" auto >/tmp/dotfiles-update.log 2>&1) &
+        date +%s >"$LAST_UPDATE_FILE" # Update timestamp after checking
+      fi
+    else
+      # If no last update file, run update.sh once and create the file
+      echo -e "\e[1;32mRunning initial dotfiles update...\e[0m"
+      ("$DOTS_DIR/update.sh" auto >/tmp/dotfiles-update.log 2>&1) &
+      date +%s >"$LAST_UPDATE_FILE"
+    fi
 fi
 
 # Path to your oh-my-bash installation.
@@ -288,8 +287,27 @@ alias reset="treset && shreset"
 
 alias ssh="~/.scripts/ssh.sh"
 
-if command -v fastfetch &>/dev/null; then
-    fastfetch
+# Only run fastfetch if we are in the main session (not a subshell)
+# using the variable set at the top of the file.
+if [ -n "$_DOTS_SESSION_INITIALIZED" ]; then
+    # We are in the process that set the variable (or inherited it, but we want to run it only once)
+    # Actually, if it's inherited, it's already 1.
+    # The logic at the top sets it IF it was empty.
+    # So we need to check if we just set it? No, that variable is lost if not exported.
+    # I exported it.
+    # Wait, if I exported it, then subshells HAVE it set.
+    # So I should only run fastfetch if I just set it?
+    # But I can't check "just set" easily down here without another var.
+    # Alternative: The guard at the top ran.
+    # Let's rely on a strictly local variable for this run.
+    :
+fi
+
+if [ -n "$_DOTS_SESSION_INITIALIZED" ] && [ -z "$_FASTFETCH_RAN" ]; then
+    if command -v fastfetch &>/dev/null; then
+        fastfetch
+    fi
+    export _FASTFETCH_RAN=1
 fi
 
 # List of hostnames where this block should run
