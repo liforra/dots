@@ -4,6 +4,31 @@ case $- in
 *) return ;;
 esac
 
+# Update Dotfiles
+# Run update.sh automatically in interactive shells, but not too frequently.
+# This prevents slowing down shell startup with unnecessary git pulls.
+DOTS_DIR="$HOME/.dots"
+LAST_UPDATE_FILE="$DOTS_DIR/.last_update_check"
+UPDATE_FREQUENCY_DAYS=7 # Check for updates every 7 days
+
+if [ -f "$LAST_UPDATE_FILE" ]; then
+    LAST_UPDATE_TIMESTAMP=$(cat "$LAST_UPDATE_FILE")
+    CURRENT_TIMESTAMP=$(date +%s)
+    SECONDS_SINCE_LAST_UPDATE=$((CURRENT_TIMESTAMP - LAST_UPDATE_TIMESTAMP))
+    SECONDS_IN_DAY=$((60 * 60 * 24))
+    
+    if [ "$SECONDS_SINCE_LAST_UPDATE" -ge "$((UPDATE_FREQUENCY_DAYS * SECONDS_IN_DAY))" ]; then
+        echo "Checking for dotfiles updates (last checked > ${UPDATE_FREQUENCY_DAYS} days ago)..."
+        "$DOTS_DIR/update.sh" || echo "Dotfiles update failed. Please check manually."
+        date +%s > "$LAST_UPDATE_FILE" # Update timestamp after checking
+    fi
+else
+    # If no last update file, run update.sh once and create the file
+    echo "Running initial dotfiles update..."
+    "$DOTS_DIR/update.sh" || echo "Initial dotfiles update failed. Please check manually."
+    date +%s > "$LAST_UPDATE_FILE"
+fi
+
 # Path to your oh-my-bash installation.
 export OSH='/home/liforra/.oh-my-bash'
 
