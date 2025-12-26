@@ -65,6 +65,7 @@ OSH_THEME=""
 # * '[yyyy-mm-dd]'   # [yyyy-mm-dd] + [time] with colors
 # If not set, the default value is 'yyyy-mm-dd'.
 # HIST_STAMPS='yyyy-mm-dd'
+export HISTTIMEFORMAT=$'\e[38;5;245m[\e[38;5;39m%d.%m.%y\e[38;5;245m - \e[38;5;42m%H:%M\e[38;5;245m  \e[38;5;208m%S\e[38;5;245m]\e[0m '
 
 # Uncomment the following line if you do not want OMB to overwrite the existing
 # aliases by the default OMB aliases defined in lib/*.sh
@@ -73,65 +74,30 @@ OSH_THEME=""
 # Would you like to use another custom folder than $OSH/custom?
 # OSH_CUSTOM=/path/to/new-custom-folder
 
-# To disable the uses of "sudo" by oh-my-bash, please set "false" to
-# this variable.  The default behavior for the empty value is "true".
 OMB_USE_SUDO=true
 
-# To enable/disable display of Python virtualenv and condaenv
-# OMB_PROMPT_SHOW_PYTHON_VENV=true  # enable
-# OMB_PROMPT_SHOW_PYTHON_VENV=false # disable
-
-# To enable/disable Spack environment information
-# OMB_PROMPT_SHOW_SPACK_ENV=true  # enable
-# OMB_PROMPT_SHOW_SPACK_ENV=false # disable
-
-# Which completions would you like to load? (completions can be found in ~/.oh-my-bash/completions/*)
-# Custom completions may be added to ~/.oh-my-bash/custom/completions/
-# Example format: completions=(ssh git bundler gem pip pip3)
-# Add wisely, as too many completions slow down shell startup.
 completions=(
   git
   composer
   ssh
 )
 
-# Which aliases would you like to load? (aliases can be found in ~/.oh-my-bash/aliases/*)
-# Custom aliases may be added to ~/.oh-my-bash/custom/aliases/
-# Example format: aliases=(vagrant composer git-avh)
-# Add wisely, as too many aliases slow down shell startup.
 aliases=(
   general
 )
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-bash/plugins/*)
-# Custom plugins may be added to ~/.oh-my-bash/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
   bashmarks
 )
 
-# Which plugins would you like to conditionally load? (plugins can be found in ~/.oh-my-bash/plugins/*)
-# Custom plugins may be added to ~/.oh-my-bash/custom/plugins/
 # Example format:
 #  if [ "$DISPLAY" ] || [ "$SSH" ]; then
 #      plugins+=(tmux-autoattach)
 #  fi
 
-# If you want to reduce the initialization cost of the "tput" command to
-# initialize color escape sequences, you can uncomment the following setting.
-# This disables the use of the "tput" command, and the escape sequences are
-# initialized to be the ANSI version:
-#
-#OMB_TERM_USE_TPUT=no
-
 source "$OSH"/oh-my-bash.sh
 
-# User configuration
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
@@ -141,20 +107,8 @@ source "$OSH"/oh-my-bash.sh
 #   export EDITOR='mvim'
 # fi
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-bash libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-bash
-# users are encouraged to define aliases within the OSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias bashconfig="mate ~/.bashrc"
-# alias ohmybash="mate ~/.oh-my-bash"
+# Faster Shell startup (Forces ANSI Escape Sequences)
+OMB_TERM_USE_TPUT=no
 
 [[ $- != *i* ]] && return
 alias grep='grep --color=auto'
@@ -171,8 +125,8 @@ arg0() {
     exec -a "$argv0" "$program" "$@"
   )
 }
-
 alias fastfetch="timeout 10s fastfetch"
+
 fastfetch
 alias gp="git push"
 alias gc="git commit -a"
@@ -186,3 +140,30 @@ alias cd="z"
 alias la="eza --header --icons -la"
 alias ls="eza --header --icons"
 alias tree="eza --tree --icons"
+
+complin() {
+  # Linux, GCC/Clang friendly
+  export CC=gcc
+  export CXX=g++
+  export CFLAGS="-O2 -DNDEBUG -Wall -Wextra -Wpedantic \
+-fno-omit-frame-pointer \
+-fstack-protector-strong \
+-D_FORTIFY_SOURCE=2 \
+-fPIE \
+-march=x86-64 -mtune=generic"
+  export CXXFLAGS="$CFLAGS"
+  export LDFLAGS="-pie -Wl,-z,relro,-z,now"
+
+  echo "Linux compilation environment loaded (gcc/g++, x86_64)"
+}
+compwin() {
+  # Windows target via MinGW-w64
+  export CC=x86_64-w64-mingw32-gcc
+  export CXX=x86_64-w64-mingw32-g++
+  export CFLAGS="-O2 -DNDEBUG -Wall -Wextra -Wpedantic \
+-march=x86-64 -mtune=generic"
+  export CXXFLAGS="$CFLAGS"
+  export LDFLAGS=""
+
+  echo "Windows compilation environment loaded (MinGW-w64, x86_64)"
+}
