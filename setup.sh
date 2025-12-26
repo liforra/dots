@@ -121,7 +121,50 @@ else
 fi
 
 # --- 5. Run Dotfiles Linker ---
-echo "Linking dotfiles..."
+echo "Linking dotfiles for current user..."
 "$DOTS_DIR/install.sh"
+
+# --- 6. Extended Installation (Root/Other Users) ---
+read -p "Do you want to install dotfiles for root as well? [y/N/e] (e = specify users): " extra_response
+
+TARGET_USERS=()
+
+if [[ "$extra_response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+    TARGET_USERS+=("root")
+elif [[ "$extra_response" =~ ^[eE]$ ]]; then
+    read -p "Enter usernames separated by commas (e.g. root, bob): " user_input
+    IFS=',' read -ra RAW_USERS <<< "$user_input"
+    for u in "${RAW_USERS[@]}"; do
+        TARGET_USERS+=("$u")
+    done
+fi
+
+if [ ${#TARGET_USERS[@]} -gt 0 ]; then
+    echo "Adjusting permissions for shared access (chmod o+x HOME, chmod -R o+rX DOTS_DIR)..."
+    # Ensure parent dir is traversable so others can reach the symlink targets
+    chmod o+x "$HOME"
+    # Ensure the actual files are readable
+    chmod -R o+rX "$DOTS_DIR"
+
+    for target in "${TARGET_USERS[@]}"; do
+        # Trim whitespace
+        target=$(echo "$target" | xargs)
+        
+        if [ -z "$target" ]; then continue; fi
+
+        if id "$target" &>/dev/null; then
+            echo "Installing dotfiles for user: $target"
+            if [ "$target" == "root" ]; then
+                # Run install script as root
+                sudo "$DOTS_DIR/install.sh"
+            else
+                # Run install script as target user
+                sudo -u "$target" "$DOTS_DIR/install.sh"
+            fi
+        else
+            echo "Warning: User '$target' does not exist. Skipping."
+        fi
+    done
+fi
 
 echo "Setup complete! Please restart your shell."
