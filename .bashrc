@@ -4,6 +4,12 @@ case $- in
 *) return ;;
 esac
 
+# Prevent double sourcing
+if [ -n "$_DOTS_BASHRC_LOADED" ]; then
+  return
+fi
+_DOTS_BASHRC_LOADED=1
+
 # Update Dotfiles
 # Run update.sh automatically in interactive shells, but not too frequently.
 # This prevents slowing down shell startup with unnecessary git pulls.
@@ -282,7 +288,9 @@ alias reset="treset && shreset"
 
 alias ssh="~/.scripts/ssh.sh"
 
-fastfetch
+if command -v fastfetch &>/dev/null; then
+    fastfetch
+fi
 
 # List of hostnames where this block should run
 
