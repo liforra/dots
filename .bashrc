@@ -101,6 +101,33 @@ arg0() {
     exec -a "$argv0" "$program" "$@"
   )
 }
+
+show_short_motd() {
+  local pkg_count="N/A"
+
+  # Detect package manager and count upgradable packages
+  if command -v apt &>/dev/null; then
+    pkg_count=$(apt list --upgradable 2>/dev/null | grep -vc Listing)
+  elif command -v dnf &>/dev/null; then
+    pkg_count=$(dnf check-update 2>/dev/null | grep -v '^$' | wc -l)
+  elif command -v pacman &>/dev/null; then
+    pkg_count=$(checkupdates 2>/dev/null | wc -l)
+  fi
+
+  # Count logged-in users
+  local user_count
+  user_count=$(who | wc -l)
+
+  # Colors
+  local green='\e[38;5;42m'
+  local yellow='\e[38;5;226m'
+  local red='\e[38;5;208m'
+  local reset='\e[0m'
+
+  echo -e "${red}>>>${reset} ${yellow}${pkg_count}${reset} Packages updatable"
+  echo -e "${red}>>>${reset} ${green}${user_count}${reset} Users logged in"
+}
+
 # --- Aliases ---
 
 # This is a fix for when fastfetch hangs. I have had that problem more then once.
@@ -144,6 +171,17 @@ alias reset="treset && shreset"
 alias ssh="~/.scripts/ssh.sh"
 
 fastfetch
+
+# List of hostnames where this block should run
+
+case "$(</etc/hostname)" in
+alhena | antares | sirius | chaosserver | argon)
+  show_short_motd
+  ;;
+*)
+  # Optional: settings for all other hosts
+  ;;
+esac
 #
 #
 #
