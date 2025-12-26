@@ -1,4 +1,12 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+# Ensure readlink -f is available
+if ! readlink -f "$0" >/dev/null 2>&1; then
+    echo "Error: 'readlink -f' is required. Please install coreutils."
+    echo "  On Termux: pkg install coreutils"
+    echo "  On macOS:  brew install coreutils"
+    exit 1
+fi
 
 DOTS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 HOME_DIR="$HOME"

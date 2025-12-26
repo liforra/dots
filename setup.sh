@@ -1,14 +1,17 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # setup.sh - Installs dependencies and sets up dotfiles
-# Supports Arch Linux and Ubuntu/Debian
+# Supports Arch Linux, Ubuntu/Debian, and Termux
 
 set -e
 
 DOTS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # --- 1. Detect OS ---
-if [ -f /etc/os-release ]; then
+if [ -n "$TERMUX_VERSION" ] || [[ "$(uname -o 2>/dev/null)" == "Android" ]]; then
+    OS="Termux"
+    ID="termux"
+elif [ -f /etc/os-release ]; then
     . /etc/os-release
     OS=$NAME
     ID=$ID
@@ -24,7 +27,9 @@ echo "Detected OS: $OS ($ID)"
 install_package() {
     PACKAGE=$1
     echo "Installing $PACKAGE..."
-    if [[ "$ID" == "arch" || "$ID_LIKE" == *"arch"* ]]; then
+    if [[ "$ID" == "termux" ]]; then
+        pkg install -y "$PACKAGE"
+    elif [[ "$ID" == "arch" || "$ID_LIKE" == *"arch"* ]]; then
         sudo pacman -S --noconfirm --needed "$PACKAGE"
     elif [[ "$ID" == "ubuntu" || "$ID" == "debian" || "$ID_LIKE" == *"debian"* ]]; then
         sudo apt-get update -y
@@ -46,16 +51,24 @@ else
     install_package curl
     install_package wget
 
-    # Starship (Universal installer)
-    if ! command -v starship &> /dev/null; then
-        echo "Installing Starship..."
-        curl -sS https://starship.rs/install.sh | sh -s -- -y
+    # Starship
+    if [[ "$ID" == "termux" ]]; then
+        install_package starship
     else
-        echo "Starship already installed."
+        if ! command -v starship &> /dev/null; then
+            echo "Installing Starship..."
+            curl -sS https://starship.rs/install.sh | sh -s -- -y
+        else
+            echo "Starship already installed."
+        fi
     fi
 
     # Distro-specific packages
-    if [[ "$ID" == "arch" || "$ID_LIKE" == *"arch"* ]]; then
+    if [[ "$ID" == "termux" ]]; then
+        install_package zoxide
+        install_package fastfetch
+        install_package eza
+    elif [[ "$ID" == "arch" || "$ID_LIKE" == *"arch"* ]]; then
         install_package zoxide
         install_package fastfetch
         install_package eza
@@ -125,46 +138,50 @@ echo "Linking dotfiles for current user..."
 "$DOTS_DIR/install.sh"
 
 # --- 6. Extended Installation (Root/Other Users) ---
-read -p "Do you want to install dotfiles for root as well? [y/N/e] (e = specify users): " extra_response
+if [[ "$ID" == "termux" ]]; then
+    echo "Skipping multi-user/root setup on Termux."
+else
+    read -p "Do you want to install dotfiles for root as well? [y/N/e] (e = specify users): " extra_response
 
-TARGET_USERS=()
+    TARGET_USERS=()
 
-if [[ "$extra_response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
-    TARGET_USERS+=("root")
-elif [[ "$extra_response" =~ ^[eE]$ ]]; then
-    read -p "Enter usernames separated by commas (e.g. root, bob): " user_input
-    IFS=',' read -ra RAW_USERS <<< "$user_input"
-    for u in "${RAW_USERS[@]}"; do
-        TARGET_USERS+=("$u")
-    done
-fi
+    if [[ "$extra_response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+        TARGET_USERS+=("root")
+    elif [[ "$extra_response" =~ ^[eE]$ ]]; then
+        read -p "Enter usernames separated by commas (e.g. root, bob): " user_input
+        IFS=',' read -ra RAW_USERS <<< "$user_input"
+        for u in "${RAW_USERS[@]}"; do
+            TARGET_USERS+=("$u")
+        done
+    fi
 
-if [ ${#TARGET_USERS[@]} -gt 0 ]; then
-    echo "Adjusting permissions for shared access (chmod o+x HOME, chmod -R o+rX DOTS_DIR)..."
-    # Ensure parent dir is traversable so others can reach the symlink targets
-    chmod o+x "$HOME"
-    # Ensure the actual files are readable
-    chmod -R o+rX "$DOTS_DIR"
+    if [ ${#TARGET_USERS[@]} -gt 0 ]; then
+        echo "Adjusting permissions for shared access (chmod o+x HOME, chmod -R o+rX DOTS_DIR)..."
+        # Ensure parent dir is traversable so others can reach the symlink targets
+        chmod o+x "$HOME"
+        # Ensure the actual files are readable
+        chmod -R o+rX "$DOTS_DIR"
 
-    for target in "${TARGET_USERS[@]}"; do
-        # Trim whitespace
-        target=$(echo "$target" | xargs)
-        
-        if [ -z "$target" ]; then continue; fi
+        for target in "${TARGET_USERS[@]}"; do
+            # Trim whitespace
+            target=$(echo "$target" | xargs)
+            
+            if [ -z "$target" ]; then continue; fi
 
-        if id "$target" &>/dev/null; then
-            echo "Installing dotfiles for user: $target"
-            if [ "$target" == "root" ]; then
-                # Run install script as root
-                sudo "$DOTS_DIR/install.sh"
+            if id "$target" &>/dev/null; then
+                echo "Installing dotfiles for user: $target"
+                if [ "$target" == "root" ]; then
+                    # Run install script as root
+                    sudo "$DOTS_DIR/install.sh"
+                else
+                    # Run install script as target user
+                    sudo -u "$target" "$DOTS_DIR/install.sh"
+                fi
             else
-                # Run install script as target user
-                sudo -u "$target" "$DOTS_DIR/install.sh"
+                echo "Warning: User '$target' does not exist. Skipping."
             fi
-        else
-            echo "Warning: User '$target' does not exist. Skipping."
-        fi
-    done
+        done
+    fi
 fi
 
 echo "Setup complete! Please restart your shell."
