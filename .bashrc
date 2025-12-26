@@ -30,12 +30,26 @@ else
 fi
 
 # Path to your oh-my-bash installation.
-export OSH='/home/liforra/.oh-my-bash'
+export OSH="${HOME}/.oh-my-bash"
+
+# Fix for Termux/Android where USER might be empty
+if [ -z "$USER" ]; then
+    export USER=$(whoami)
+fi
 
 ## --- Custom Shell Sources ---
-source "$OSH"/oh-my-bash.sh
-source -- ~/.local/share/blesh/ble.sh
-eval -- "$(/usr/local/bin/starship init bash --print-full-init)"
+if [ -f "$OSH/oh-my-bash.sh" ]; then
+    source "$OSH"/oh-my-bash.sh
+fi
+
+if [ -f "${HOME}/.local/share/blesh/ble.sh" ]; then
+    source -- "${HOME}/.local/share/blesh/ble.sh"
+fi
+
+if command -v starship &>/dev/null; then
+    eval -- "$(starship init bash --print-full-init)"
+fi
+
 eval "$(zoxide init bash)"
 
 # --- Oh My Bash Settings ---
@@ -272,7 +286,13 @@ fastfetch
 
 # List of hostnames where this block should run
 
-case "$(</etc/hostname)" in
+if [ -f /etc/hostname ]; then
+    HOSTNAME_VAL=$(</etc/hostname)
+else
+    HOSTNAME_VAL=$(hostname 2>/dev/null || echo "unknown")
+fi
+
+case "$HOSTNAME_VAL" in
 alhena | antares | sirius | chaosserver | argon)
   show_short_motd
   ;;
