@@ -132,6 +132,7 @@ alias gp="git push"
 alias gc="git commit -a"
 alias gpc="gc && gp"
 
+alias history="~/.scripts/history"
 alias clear="clear && fastfetch"
 # alias reload="source ~/.bash_profile && sleep .3 && clear"
 alias reload='exec bash'
