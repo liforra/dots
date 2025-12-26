@@ -51,6 +51,13 @@ else
     install_package curl
     install_package wget
 
+    # Install xz-utils (needed for extracting ble.sh)
+    if [[ "$ID" == "arch" || "$ID_LIKE" == *"arch"* ]]; then
+        install_package xz
+    else
+        install_package xz-utils
+    fi
+
     # Starship
     if [[ "$ID" == "termux" ]]; then
         install_package starship
