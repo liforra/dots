@@ -10,6 +10,10 @@ cd "$DOTS_DIR"
 if [ -d ".git" ]; then
     # Check for uncommitted changes
     if [ -n "$(git status --porcelain)" ]; then
+        if [ "$1" == "auto" ]; then
+             echo "Uncommitted changes found. Skipping auto-update."
+             exit 0
+        fi
         echo "⚠️  WARNING: You have uncommitted changes in your dotfiles repository."
         git status
         read -p "Do you want to stash them and proceed with pull? (Stash will be popped after) [y/N] " stash_resp
@@ -49,10 +53,12 @@ else
     exit 1
 fi
 
-# Ask to run setup for dependencies
-read -p "Do you want to run setup.sh to check for new dependencies? [y/N] " setup_resp
-if [[ "$setup_resp" =~ ^([yY][eE][sS]|[yY])$ ]]; then
-    ./setup.sh
+if [ "$1" != "auto" ]; then
+    # Ask to run setup for dependencies
+    read -p "Do you want to run setup.sh to check for new dependencies? [y/N] " setup_resp
+    if [[ "$setup_resp" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+        ./setup.sh
+    fi
 fi
 
 echo "Update complete."

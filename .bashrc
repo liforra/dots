@@ -18,14 +18,14 @@ if [ -f "$LAST_UPDATE_FILE" ]; then
     SECONDS_IN_DAY=$((60 * 60 * 24))
     
     if [ "$SECONDS_SINCE_LAST_UPDATE" -ge "$((UPDATE_FREQUENCY_DAYS * SECONDS_IN_DAY))" ]; then
-        echo "Checking for dotfiles updates (last checked > ${UPDATE_FREQUENCY_DAYS} days ago)..."
-        "$DOTS_DIR/update.sh" || echo "Dotfiles update failed. Please check manually."
+        echo -e "\e[1;32mUpdating dotfiles...\e[0m"
+        ("$DOTS_DIR/update.sh" auto > /tmp/dotfiles-update.log 2>&1) &
         date +%s > "$LAST_UPDATE_FILE" # Update timestamp after checking
     fi
 else
     # If no last update file, run update.sh once and create the file
-    echo "Running initial dotfiles update..."
-    "$DOTS_DIR/update.sh" || echo "Initial dotfiles update failed. Please check manually."
+    echo -e "\e[1;32mRunning initial dotfiles update...\e[0m"
+    ("$DOTS_DIR/update.sh" auto > /tmp/dotfiles-update.log 2>&1) &
     date +%s > "$LAST_UPDATE_FILE"
 fi
 
