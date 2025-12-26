@@ -92,6 +92,11 @@ fi
 
 # --- General Enviorment Variables ---
 export LANG=en_US.UTF-8
+if [ -n "$TERMUX_VERSION" ] || [ "$PREFIX" = "/data/data/com.termux/files/usr" ]; then
+  export LANG=C.UTF-8
+  export LC_ALL=C.UTF-8
+fi
+
 ## -- EDITOR --
 if command -v nvim &>/dev/null && [[ -f "${HOME}/.config/nvim/lua/lazyvim/init.lua" ]]; then
   export EDITOR="nvim"
