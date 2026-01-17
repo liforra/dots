@@ -130,14 +130,9 @@ show_short_motd() {
   local pkg_count="N/A"
 
   # Detect package manager and count upgradable packages
-  if command -v apt &>/dev/null; then
-    pkg_count=$(apt list --upgradable 2>/dev/null | grep -vc Listing)
-  elif command -v dnf &>/dev/null; then
-    pkg_count=$(dnf check-update 2>/dev/null | grep -v '^$' | wc -l)
-  elif command -v pacman &>/dev/null; then
-    pkg_count=$(checkupdates 2>/dev/null | wc -l)
+  if command -v ~/.dots/.bin/updates >/dev/null 2>&1; then
+    ~/.dots/.bin/updates
   fi
-
   # Count logged-in users
   local user_count
   user_count=$(who | wc -l)
@@ -148,7 +143,6 @@ show_short_motd() {
   local red='\e[38;5;208m'
   local reset='\e[0m'
 
-  echo -e "${red}>>>${reset} ${yellow}${pkg_count}${reset} Packages updatable"
   echo -e "${red}>>>${reset} ${green}${user_count}${reset} Users logged in"
 }
 # -------------------------
@@ -252,8 +246,13 @@ mv() {
 
 # --- Aliases ---
 
-# This is a fix for when fastfetch hangs. I have had that problem more then once.
+# Nicer Programs
+alias python="ipython"
 
+# default config for programs
+alias ip="ip -c"
+
+# This is a fix for when fastfetch hangs. I have had that problem more then once.
 alias fastfetch="timeout 10s fastfetch"
 alias fastfetch="fastfetch && show_short_motd"
 
@@ -368,3 +367,11 @@ compwin() {
 
   echo "Windows compilation environment loaded (MinGW-w64, x86_64)"
 }
+
+# pnpm
+export PNPM_HOME="/home/liforra/.local/share/pnpm"
+case ":$PATH:" in
+*":$PNPM_HOME:"*) ;;
+*) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

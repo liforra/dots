@@ -47,3 +47,5 @@ alias cd="z"
 alias la="eza --header --icons -la"
 alias ls="eza --header --icons"
 alias tree="eza --tree --icons"
+
+. "$HOME/.cargo/env"

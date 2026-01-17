@@ -19,6 +19,11 @@
       "keyColor": "31"
     },
     {
+      "key": "󰇅 host",
+      "type": "host",
+      "keyColor": "36"
+    },
+    {
       "key": "󰇅 hname",
       "type": "title",
       "format": "{host-name}",

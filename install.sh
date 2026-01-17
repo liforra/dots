@@ -2,13 +2,13 @@
 
 # Ensure readlink -f is available
 if ! readlink -f "$0" >/dev/null 2>&1; then
-    echo "Error: 'readlink -f' is required. Please install coreutils."
-    echo "  On Termux: pkg install coreutils"
-    echo "  On macOS:  brew install coreutils"
-    exit 1
+  echo "Error: 'readlink -f' is required. Please install coreutils."
+  echo "  On Termux: pkg install coreutils"
+  echo "  On macOS:  brew install coreutils"
+  exit 1
 fi
 
-DOTS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+DOTS_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 HOME_DIR="$HOME"
 CONFIG_DIR="$HOME/.config"
 BACKUP_DIR="$HOME/.dots-bak"
@@ -16,52 +16,52 @@ LOG_FILE="$BACKUP_DIR/restore_log.txt"
 
 # Create backup directory if it doesn't exist
 if [ ! -d "$BACKUP_DIR" ]; then
-    mkdir -p "$BACKUP_DIR"
-    echo "Created backup directory: $BACKUP_DIR"
+  mkdir -p "$BACKUP_DIR"
+  echo "Created backup directory: $BACKUP_DIR"
 fi
 
 # Create log file if it doesn't exist
 if [ ! -f "$LOG_FILE" ]; then
-    touch "$LOG_FILE"
+  touch "$LOG_FILE"
 fi
 
 echo "Setting up dotfiles from $DOTS_DIR..."
 echo "Backups will be stored in $BACKUP_DIR"
 
 link_config() {
-    local source="$1"
-    local target="$2"
+  local source="$1"
+  local target="$2"
 
-    if [ ! -e "$source" ]; then
-        echo "Warning: Source $source does not exist. Skipping."
-        return
+  if [ ! -e "$source" ]; then
+    echo "Warning: Source $source does not exist. Skipping."
+    return
+  fi
+
+  # Check if target exists or is a broken link
+  if [ -e "$target" ] || [ -L "$target" ]; then
+    # Check if it's already the correct symlink
+    if [ -L "$target" ] && [ "$(readlink -f "$target")" == "$source" ]; then
+      echo "Skipping $target (already correctly linked)"
+      return
     fi
 
-    # Check if target exists or is a broken link
-    if [ -e "$target" ] || [ -L "$target" ]; then
-        # Check if it's already the correct symlink
-        if [ -L "$target" ] && [ "$(readlink -f "$target")" == "$source" ]; then
-            echo "Skipping $target (already correctly linked)"
-            return
-        fi
+    # Generate unique backup name
+    local filename=$(basename "$target")
+    local timestamp=$(date +%Y%m%d_%H%M%S)
+    local backup_path="$BACKUP_DIR/${filename}_${timestamp}"
 
-        # Generate unique backup name
-        local filename=$(basename "$target")
-        local timestamp=$(date +%Y%m%d_%H%M%S)
-        local backup_path="$BACKUP_DIR/${filename}_${timestamp}"
+    echo "Backing up $target -> $backup_path"
+    mv "$target" "$backup_path"
 
-        echo "Backing up $target -> $backup_path"
-        mv "$target" "$backup_path"
-        
-        # Log the operation: ORIGINAL_PATH|BACKUP_PATH
-        echo "$target|$backup_path" >> "$LOG_FILE"
-    fi
+    # Log the operation: ORIGINAL_PATH|BACKUP_PATH
+    echo "$target|$backup_path" >>"$LOG_FILE"
+  fi
 
-    # Create parent directory if needed
-    mkdir -p "$(dirname "$target")"
-    
-    echo "Linking $source -> $target"
-    ln -s "$source" "$target"
+  # Create parent directory if needed
+  mkdir -p "$(dirname "$target")"
+
+  echo "Linking $source -> $target"
+  ln -s "$source" "$target"
 }
 
 # --- Root level files ---
@@ -88,5 +88,5 @@ link_config "$DOTS_DIR/kitty" "$CONFIG_DIR/kitty"
 link_config "$DOTS_DIR/tmux" "$CONFIG_DIR/tmux"
 link_config "$DOTS_DIR/zellij" "$CONFIG_DIR/zellij"
 link_config "$DOTS_DIR/fastfetch" "$CONFIG_DIR/fastfetch"
-
+link_config "$DOTS_DIR/tealdeer" "$CONFIG_DIR/tealdeer"
 echo "Dotfiles installation complete!"
