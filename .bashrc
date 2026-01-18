@@ -127,23 +127,22 @@ arg0() {
 }
 
 show_short_motd() {
-  local pkg_count="N/A"
 
   # Detect package manager and count upgradable packages
   if command -v ~/.dots/.bin/updates >/dev/null 2>&1; then
     ~/.dots/.bin/updates
   fi
   # Count logged-in users
-  local user_count
-  user_count=$(who | wc -l)
+  #local user_count
+  #user_count=$(who | wc -l)
 
   # Colors
-  local green='\e[38;5;42m'
-  local yellow='\e[38;5;226m'
-  local red='\e[38;5;208m'
-  local reset='\e[0m'
+  #local green='\e[38;5;42m'
+  #local yellow='\e[38;5;226m'
+  #local red='\e[38;5;208m'
+  #local reset='\e[0m'
 
-  echo -e "${red}>>>${reset} ${green}${user_count}${reset} Users logged in"
+  #echo -e "${red}>>>${reset} ${green}${user_count}${reset} Users logged in"
 }
 # -------------------------
 # Translate common cp flags to rsync
@@ -375,3 +374,7 @@ case ":$PATH:" in
 *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# tabtab source for electron-forge package
+# uninstall by removing these lines or running `tabtab uninstall electron-forge`
+[ -f /usr/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.bash ] && . /usr/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.bash
