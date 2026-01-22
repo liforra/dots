@@ -14,11 +14,26 @@ if [ -n "$_DOTS_SESSION_INITIALIZED" ]; then
   :
 fi
 
-if [ -n "$_DOTS_SESSION_INITIALIZED" ] && [ -z "$_FASTFETCH_RAN" ]; then
-  if command -v fastfetch &>/dev/null; then
-    fastfetch
+if [ -n "$_DOTS_SESSION_INITIALIZED" ]; then
+  should_run_fastfetch=false
+  if [ -n "$TMUX" ]; then
+    # In Tmux: run if new pane
+    if [ "$_FASTFETCH_TMUX_PANE" != "$TMUX_PANE" ]; then
+      should_run_fastfetch=true
+      export _FASTFETCH_TMUX_PANE="$TMUX_PANE"
+    fi
+  elif [ -z "$_FASTFETCH_RAN" ]; then
+    # Not in Tmux: run if not ran before
+    should_run_fastfetch=true
   fi
-  export _FASTFETCH_RAN=1
+
+  if [ "$should_run_fastfetch" = true ]; then
+    if command -v fastfetch &>/dev/null; then
+      fastfetch
+    fi
+    export _FASTFETCH_RAN=1
+  fi
+  unset should_run_fastfetch
 fi
 
 # List of hostnames where this block should run
@@ -49,4 +64,5 @@ fi
 
 # tabtab source for electron-forge package
 # uninstall by removing these lines or running `tabtab uninstall electron-forge`
-[ -f /usr/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.bash ] && . /usr/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.bash
+# Disabled due to shell startup times
+#[ -f /usr/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.bash ] && . /usr/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.bash
