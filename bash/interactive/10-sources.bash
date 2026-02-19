@@ -1,5 +1,5 @@
 # Path to your oh-my-bash installation.
-export OSH="${HOME}/.oh-my-bash"
+#export OSH="${HOME}/.oh-my-bash"
 
 # Fix for Termux/Android where USER might be empty
 if [ -z "$USER" ]; then
@@ -22,4 +22,6 @@ if command -v starship &>/dev/null; then
       sed 's|/usr/local/bin/starship|starship|g'
   )"
 fi
-eval "$(zoxide init bash)"
+if command -v zoxide &>/dev/null; then
+  eval "$(zoxide init bash)"
+fi

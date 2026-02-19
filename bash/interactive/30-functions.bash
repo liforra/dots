@@ -9,105 +9,10 @@ show_short_motd() {
   fi
 }
 # -------------------------
-# Translate common cp flags to rsync
-# -------------------------
-_cp_translate_args() {
-  local rsync_flags="-ah --progress --partial --info=progress2"
-  local src=()
-  local dest=""
-
-  while [[ $# -gt 0 ]]; do
-    case "$1" in
-    -r | -R | --recursive)
-      rsync_flags="$rsync_flags -r"
-      shift
-      ;;
-    -v | --verbose)
-      rsync_flags="$rsync_flags -v"
-      shift
-      ;;
-    -f | --force)
-      rsync_flags="$rsync_flags --ignore-existing"
-      shift
-      ;;
-    --)
-      shift
-      break
-      ;;
-    -*)
-      echo "cp: unsupported option $1"
-      return 1
-      ;;
-    *)
-      break ;; 
-    esac
-  done
-
-  # Last argument is destination
-  dest="${!#}"
-
-  # Everything before last is source
-  src=("${@:1:$#-1}")
-
-  echo "$rsync_flags" "${src[@]}" "$dest"
-}
-
-cp() {
-  if [ $# -lt 2 ]; then
-    echo "Usage: cp [options] source... destination"
-    return 1
-  fi
-  eval rsync $($_cp_translate_args "$@")
-}
 
 # -------------------------
 # Translate common mv flags to rsync
 # -------------------------
-_mv_translate_args() {
-  local rsync_flags="-ah --progress --partial --info=progress2 --remove-source-files"
-  local src=()
-  local dest=""
-
-  while [[ $# -gt 0 ]]; do
-    case "$1" in
-    -v | --verbose)
-      rsync_flags="$rsync_flags -v"
-      shift
-      ;;
-    -f | --force)
-      rsync_flags="$rsync_flags --ignore-existing"
-      shift
-      ;;
-    --)
-      shift
-      break
-      ;;
-    -*)
-      echo "mv: unsupported option $1"
-      return 1
-      ;;
-    *)
-      break ;; 
-    esac
-  done
-
-  dest="${!#}"
-  src=("${@:1:$#-1}")
-
-  echo "$rsync_flags" "${src[@]}" "$dest"
-}
-
-mv() {
-  if [ $# -lt 2 ]; then
-    echo "Usage: mv [options] source... destination"
-    return 1
-  fi
-  eval rsync $($_mv_translate_args "$@")
-  # Clean up empty directories
-  for src in "${@:1:$#-1}"; do
-    [ -d "$src" ] && find "$src" -type d -empty -delete
-  done
-}
 
 shreset() {
   local start_dir="${HOME}"
@@ -119,7 +24,11 @@ shreset() {
   #echo "Resetting shell..."
   exec bash --login -i -c "cd \"$start_dir\"; exec bash -i"
 }
+initpy() {
+  uv init
+  uv add liforra-utils["toml"]
 
+}
 # Optional: track default start dir for interactive sessions
 [[ -z "$SHSTARTDIR" ]] && export SHSTARTDIR="$PWD"
 treset() {

@@ -81,6 +81,8 @@ link_config "$DOTS_DIR/nushell" "$CONFIG_DIR/nushell"
 link_config "$DOTS_DIR/starship.toml" "$CONFIG_DIR/starship.toml"
 link_config "$DOTS_DIR/nvim" "$CONFIG_DIR/nvim"
 link_config "$DOTS_DIR/hypr" "$CONFIG_DIR/hypr"
+link_config "$DOTS_DIR/xdg-desktop-portal" "$CONFIG_DIR/xdg-desktop-portal"
+
 link_config "$DOTS_DIR/niri" "$CONFIG_DIR/niri"
 link_config "$DOTS_DIR/waybar" "$CONFIG_DIR/waybar"
 link_config "$DOTS_DIR/rofi" "$CONFIG_DIR/rofi"

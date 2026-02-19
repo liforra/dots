@@ -1,98 +1,63 @@
-@import "mocha.css";
-
 * {
-  font-family: NotoSans Nerd Font;
-  font-size: 14px;
+  font-family: 'SF Pro Text', 'Inter', 'NotoSans Nerd Font', sans-serif;
+  font-size: 13px;
   min-height: 0;
+  padding: 0;
+  margin: 0;
 }
 
 #waybar {
-  background: @crust;
-  color: @text;
-  border-radius: 14px;
+  background: transparent;
+  color: #c6d0f5;
+  font-weight: 500;
+}
+
+#workspaces, #custom-uptime, #cpu, #clock, #custom-pomodoro, #tray, #bluetooth, #pulseaudio, #backlight, #network, #battery {
+  background-color: #1a1b26;
+  padding: 0.3rem 0.7rem;
+  margin: 5px 0px;
 }
 
 #workspaces {
-  background: @surface0;
-  margin: 6px;
-  border-radius: 12px;
+  border-radius: 6px;
+  margin-left: 7px;
+  margin-right: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
-#workspaces button {
-  color: @lavender;
-  border-radius: 12px;
-  padding: 3px;
-}
-
-#workspaces button.active {
-  color: @pink;
-}
-
-#workspaces button:hover {
-  color: @pink;
-}
-
-#custom-music,
-#clock,
-#tray,
-#cpu,
-#memory,
-#battery,
-#pulseaudio {
-  background: @surface0;
-  margin: 6px 0;
-  padding: 0 12px;
-  border-radius: 12px;
-}
-
-#custom-music {
-  color: @yellow;
+#custom-uptime, #cpu, #clock, #custom-pomodoro {
+  border-radius: 6px;
+  margin-right: 5px;
 }
 
 #tray {
-  margin-right: 6px;
-}
-
-#cpu {
-  color: @blue;
-  border-radius: 12px 0 0 12px;
-  padding-right: 4px;
-}
-
-#memory {
-  color: @green;
-  border-radius: 0;
-  padding-right: 4px;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  margin-left: 0px;
 }
 
 #battery {
-  color: @maroon;
-  border-radius: 0;
-  padding-right: 4px;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  margin-right: 7px;
 }
 
-#pulseaudio {
-  color: @peach;
-  border-radius: 0 12px 12px 0;
-  margin-right: 13px;
+#workspaces button {
+  color: #babbf1;
+  padding: 0 6px;
+  background: transparent;
 }
 
-#custom-notification {
-  font-size: 18px;
-  margin-right: 13px;
+#workspaces button.active {
+  color: #99d1db;
 }
 
-#custom-power {
-  color: @red;
-  font-size: 18px;
-  margin-right: 17px;
+#workspaces button.persistent {
+  color: rgba(186, 187, 241, 0.3); /* Leicht transparent für leere Workspaces */
 }
 
-#custom-exit,
-#custom-lock,
-#custom-suspend,
-#custom-hibernate,
-#custom-reboot {
-  font-size: 18px;
-  margin-right: 8px;
-}
+#clock { color: #99d1db; }
+#custom-uptime { color: #babbf1; }
+#cpu { color: #c6d0f5; }
+#bluetooth.connected { color: #99d1db; }
