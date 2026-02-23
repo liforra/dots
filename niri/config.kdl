@@ -270,16 +270,16 @@ layout {
 // See the binds section below for more spawn examples.
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
-spawn-at-startup "waybar"
+//spawn-at-startup "waybar"
 spawn-at-startup "kwalletd6"
-spawn-at-startup "swaybg" "-i" "/home/liforra/wallpaper.jpg"
+//spawn-at-startup "swaybg" "-i" "/home/liforra/wallpaper.jpg"
 spawn-at-startup "xwayland-satellite"
-spawn-at-startup "swayidle" "-w" "timeout" "601" "niri msg action power-off-monitors" "timeout" "600" "hyprlock -f" "before-sleep" "hyprlock -f"
-spawn-at-startup "dunst" "--startup_notification"
+//spawn-at-startup "swayidle" "-w" "timeout" "601" "niri msg action power-off-monitors" "timeout" "600" "hyprlock -f" "before-sleep" "hyprlock -f"
+//spawn-at-startup "dunst" "--startup_notification"
 spawn-at-startup "niri" "msg" "set-dynamic-cast-window" "--id $(niri msg --json pick-window | jq .id)"
 spawn-at-startup "/usr/lib/kdeconnectd"
 spawn-at-startup "/usr/lib/indicator-kdeconnect"
-
+spawn-at-startup "caelestia shell"
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 //
 //
