@@ -6,12 +6,22 @@
 	gpgsign = true
 [core]
 	editor = nvim
+	autocrlf = input
 [color]
 	ui = auto
 [credential]
-	helper = store
+	credentialStore = secretservice
+	helper = /usr/bin/git-credential-manager
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[credential "https://dev.azure.com"]
+	useHttpPath = true
+[credential "https://codeberg.org"]
+	provider = generic
+	authtype = oauth
+[credential "https://exitech.uber.space"]
+	provider = generic
+	authtype = oauth

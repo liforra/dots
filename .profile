@@ -3,3 +3,8 @@
 PATH="$PATH:/home/liforra/.local/bin"
 
 . "$HOME/.cargo/env"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/liforra/.lmstudio/bin"
+# End of LM Studio CLI section
+

@@ -49,3 +49,8 @@ alias ls="eza --header --icons"
 alias tree="eza --tree --icons"
 
 . "$HOME/.cargo/env"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/liforra/.lmstudio/bin"
+# End of LM Studio CLI section
+

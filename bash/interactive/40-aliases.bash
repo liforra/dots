@@ -12,9 +12,18 @@ alias fastfetch="fastfetch && show_short_motd"
 
 ### - Git -
 alias gp="git push"
-alias gc="git commit -a"
+alias gc="git commit"
 alias gpc="gc && gp"
+alias ga="git add"
+alias gr="git remote"
 
+alias gcl="git clone"
+
+alias gce="git clone"
+alias gpl="git pull"
+alias gph="git push"
+alias gad="git add"
+alias gre="git remote"
 ### - Basic (cd,ls,tree, etc) -
 alias cd="z"
 alias la="eza --header --icons -la"

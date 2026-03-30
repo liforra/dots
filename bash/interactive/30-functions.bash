@@ -13,7 +13,13 @@ show_short_motd() {
 # -------------------------
 # Translate common mv flags to rsync
 # -------------------------
-
+nmtui() {
+  if command -v gazelle >/dev/null; then
+    gazelle
+  else
+    command nmtui
+  fi
+}
 shreset() {
   local start_dir="${HOME}"
   if [[ -n "$SHSTARTDIR" ]]; then

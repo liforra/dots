@@ -394,3 +394,8 @@ esac
 # tabtab source for electron-forge package
 # uninstall by removing these lines or running `tabtab uninstall electron-forge`
 [ -f /usr/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.bash ] && . /usr/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.bash
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/liforra/.lmstudio/bin"
+# End of LM Studio CLI section
+

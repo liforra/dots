@@ -174,23 +174,6 @@ if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
         bash ble-nightly/ble.sh --install "$HOME/.local/share"
         rm -rf ble-nightly
     fi
-
-    # Rust & Yolk
-    # Check if we should install yolk via package manager or cargo
-    # Since yolk is primarily a cargo crate, we default to cargo unless explicitly found (rare)
-    
-    if ! command -v cargo &> /dev/null; then
-        echo "Installing Rust (cargo)..."
-        curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-        source "$HOME/.cargo/env"
-    fi
-
-    if ! command -v yolk &> /dev/null; then
-        echo "Installing yolk..."
-        cargo install yolk_dots
-    else
-        echo "Yolk already installed."
-    fi
 fi
 
 # --- 5. Mode Specific Installs ---
@@ -237,7 +220,7 @@ fi
 
 # --- 6. Run Dotfiles Linker ---
 echo "Linking dotfiles for current user..."
-"$DOTS_DIR/install.sh" yolk
+"$DOTS_DIR/install.sh"
 
 # --- 7. Extended Installation (Root/Other Users) ---
 if [[ "$ID" == "termux" ]]; then
@@ -268,9 +251,9 @@ else
             if id "$target" &>/dev/null; then
                 echo "Installing dotfiles for user: $target"
                 if [ "$target" == "root" ]; then
-                    sudo "$DOTS_DIR/install.sh" yolk
+                    sudo "$DOTS_DIR/install.sh"
                 else
-                    sudo -u "$target" "$DOTS_DIR/install.sh" yolk
+                    sudo -u "$target" "$DOTS_DIR/install.sh"
                 fi
             fi
         done

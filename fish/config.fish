@@ -32,3 +32,8 @@ alias tree "eza --tree --icons"
 # The 'z' command is handled by the zoxide plugin for fish
 # To use it, you need to install the z plugin for oh-my-fish
 # omf install z
+
+# Added by LM Studio CLI (lms)
+set -gx PATH $PATH /home/liforra/.lmstudio/bin
+# End of LM Studio CLI section
+
